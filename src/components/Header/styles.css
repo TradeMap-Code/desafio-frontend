@@ -4,8 +4,7 @@
 
   display: flex;
   align-items: center;
-
-  border-bottom: 1px solid var(--green-theme3);
+  background: var(--background2);
 }
 
 .header-container img {
