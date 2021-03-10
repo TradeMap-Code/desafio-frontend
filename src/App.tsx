@@ -1,5 +1,15 @@
+//---------------------------------------------------------------< components >
+import Header from "./components/Header";
+//-------------------------------------------------------------------< styles >
+import "./styles/global.css";
+//==================================================================[ < App > ]
 function App() {
-  return <div className="App">Hello world!</div>;
+  //-----------------------------------------------------------------< return >
+  return (
+    <div className="App">
+      <Header />
+    </div>
+  );
 }
 
 export default App;

@@ -1,0 +1,13 @@
+.header-container {
+  height: 4rem;
+  padding: 0 2rem;
+
+  display: flex;
+  align-items: center;
+
+  border-bottom: 1px solid var(--green-theme3);
+}
+
+.header-container img {
+  width: 3rem;
+}
