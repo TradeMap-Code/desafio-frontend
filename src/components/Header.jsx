@@ -11,8 +11,16 @@ export function Header({ setActivePage }) {
         </div>
         <div className={styles.navOptions}>
           <ul>
-            <li onClick={() => setActivePage('list')}>Lista</li>
-            <li onClick={() => setActivePage('favorites')}>Favotiros</li>
+            <li>
+              <a href='/' onClick={() => setActivePage('list')}>
+                Lista de Ações
+              </a>
+            </li>
+            <li>
+              <a href='/' onClick={() => setActivePage('favorites')}>
+                Ações Favoritas
+              </a>
+            </li>
           </ul>
         </div>
       </div>
