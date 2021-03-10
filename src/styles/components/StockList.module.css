@@ -1,0 +1,27 @@
+.stockListed {
+  margin: 0 1rem;
+  padding: 1rem;
+  
+}
+
+.stockGroup {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  padding: 0.5rem 5rem;
+
+}
+
+
+@media(max-width: 1060px) {
+  .stockGroup {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+@media(max-width: 755px) {
+  .stockGroup {
+    grid-template-columns: 1fr;
+  }
+}
