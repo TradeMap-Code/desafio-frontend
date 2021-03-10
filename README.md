@@ -1,53 +1,46 @@
-# Desafio Front-End
+# Getting Started with Create React App
 
-Esse é o nosso desafio para os candidatos à vaga de front-end no [TradeMap](https://www.linkedin.com/company/trademaphub)
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Mesmo que você não esteja em nosso processo seletivo, você pode iniciá-lo resolvendo esse desafio.
+## Available Scripts
 
-# O Desafio
+In the project directory, you can run:
 
-Te daremos alguns requísitos do que a aplicação precisa ter, porém, todos são funcionais. Tudo que envolve estilização e/ou experiência, fica à seu critério.
+### `yarn start`
 
-Esperamos que com isso, obtenhamos respostas diferentes e criativas, afinal, somos diferentes e criativos.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## Requísitos:
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-- Sua aplicação precisa ser feita em React ou Angular.
-- Ela precisa ter duas páginas: **Lista** e **Favoritos**.
-    - **Lista**:
-        - A página deve ser capaz de listar todos os ativos presentes no arquivo `stocks.json`
-        - Cada ativo precisa ter um [gráfico de área](https://chartio.com/learn/charts/area-chart-complete-guide/#:~:text=An%20area%20chart%20combines%20the,like%20in%20a%20bar%20chart.), onde cada ponto equivale a uma entrada do `array` presente na propriedade `chart`.
-        - A página deve ser capaz de ordenar os ativos dessa lista por: **Preço** e **Variação**
-        - A página deve conter um botão de **favoritar** em cada um dos ativos da lista.
-    - **Favoritos**:
-        - A página deve ser capaz de listar todos os ativos que foram **favoritados** na página de lista.
-        - A página deve ser capaz de ordenar os ativos dessa lista por: **Preço** e **Variação**.
-        - Os ativos favoritos devem ser persistidos ao recarregar a página.
-- Seu repositório precisa ter instruções de como executá-lo.
+### `yarn test`
 
-## Bonus:
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-- Utilize variáveis CSS para armazenar as cores utilizadas na estilização da sua aplicação.
-- Crie temas para sua aplicação.
-- Caso esteja desenvolvendo em React, utilize Redux no controle de estado da aplicação.
-- Crie testes unitários para os seus componentes.
+### `yarn build`
 
-## Será um diferencial se você:
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-- Realizar o deploy da sua aplicação. **Utilizar Docker te garantirá mais pontos.**
-- Utilizar apenas componentes criados por você. Não é que não gostamos de Design System, mas queremos testar sua capacidade de criar componentes reutilizáveis.
-- Utilizar [commits semânticos](https://www.conventionalcommits.org/pt-br/v1.0.0-beta.4/)
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-## Como entregar o teste
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-1. Faça um fork desse repositório.
-2. Resolva o desafio da melhor maneira que você puder.
-3. Envie um pull-request para análise do resultado.
+### `yarn eject`
 
-## Precisa de inspiração?
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-É assim que apresentamos nossos ativos hoje:
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-![Stock Example](.github/stock_example.png)
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-**Obs: não copie essa imagem, apenas a use de inspiração para criar seu próprio componente.**
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
