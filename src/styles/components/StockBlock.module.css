@@ -1,0 +1,18 @@
+.stockWrapper {
+  max-width: 20rem;
+  background: #f2f7f7;
+  padding: .5rem;
+  border-radius: 1rem;
+  box-shadow: 10px red;
+}
+
+.stockHeader h1 {
+  font-weight: normal;
+  color: #0E8281;
+}
+
+.stockFooter li {
+  font-size: 1rem;
+  display: inline-block;
+  padding: .5rem 1rem .5rem 0;
+}
