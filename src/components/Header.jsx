@@ -12,12 +12,12 @@ export function Header({ setActivePage }) {
         <div className={styles.navOptions}>
           <ul>
             <li>
-              <a href='/' onClick={() => setActivePage('list')}>
+              <a href='/#' onClick={() => setActivePage('list')}>
                 Lista de Ações
               </a>
             </li>
             <li>
-              <a href='/' onClick={() => setActivePage('favorites')}>
+              <a href='/#' onClick={() => setActivePage('favorites')}>
                 Ações Favoritas
               </a>
             </li>
