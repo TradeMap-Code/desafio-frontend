@@ -1,8 +1,8 @@
 import styles from '../styles/components/Filter.module.css';
 import { IoMdArrowDropdown } from 'react-icons/io';
 
-export function Filter({ options, onSelectFilter }) {
-  const listedOptions = options.map((option) => {
+export function Filter({ filterOptions, onSelectFilter }) {
+  const listedOptions = filterOptions.map((option) => {
     return (
       <li key={option.value}>
         <a href='/#' onClick={() => onSelectFilter(option.value)}>

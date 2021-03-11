@@ -5,5 +5,11 @@
 }
 
 body {
-  font: 16px, 'Helvetica Neue', Arial, sans-serif;
+  font: 62.5%, 'Helvetica Neue', Arial, sans-serif;
+  background: #b9bdbd;
+  /* #ebeded   */
+}
+
+a {
+  text-decoration: none;
 }

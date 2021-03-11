@@ -1,20 +1,24 @@
 import styles from '../styles/components/StockList.module.css';
-import stocks from '../stocks.json';
 import { StockBlock } from './StockBlock';
 
-export function StockList() {
+export function StockList({ stocks, onButtonClick }) {
   const listedStocks = stocks.map((stock) => {
     return (
-      <div className={styles.stockListed}>
-      <StockBlock
-        key={stock.company}
-        stockName={stock.stock}
-        price={stock.price}
-        variation={stock.variation}
-        chart={stock.chart}
-      />
+      <div key={stock.company} className={styles.stockListed}>
+        <StockBlock
+          company={stock.company}
+          stockName={stock.stock}
+          price={stock.price}
+          variation={stock.variation}
+          chart={stock.chart}
+          onButtonClick={onButtonClick}
+        />
       </div>
     );
   });
-  return <div className={styles.stockGroup}>{listedStocks}</div>;
+  return (
+    <div className={styles.listedStockPage}>
+      <div className={styles.stockGroup}>{listedStocks}</div>
+    </div>
+  );
 }
