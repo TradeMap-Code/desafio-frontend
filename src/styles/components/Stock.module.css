@@ -1,17 +1,36 @@
 .container {
-  display: grid;
-  grid-template-columns: 2fr 2fr 1fr;
-}
-
-.container > div  {
   display: flex;
   flex-direction: column;
-  margin-top: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  background: var(--white);
+  border-radius: 8px;
+  width: 500px;
+}
+
+
+.data {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.data > div {
+  display: flex;
+}
+
+.data > div > p:last-child {
+  margin-left: 1rem;
 }
 
 .container > div:last-child {
   align-items: center;
   justify-content: center;
+  padding: 20px 0;
+  background: #e4e4eb;
+  width: 100%;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 
 .container > div > div p {

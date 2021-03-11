@@ -1,6 +1,7 @@
 import React from 'react';
 
 import styles from '../styles/components/Stock.module.css'
+import Chart from './Chart';
 
 type StockProps = {
   stock: string;
@@ -15,23 +16,19 @@ type StockProps = {
 const Stock: React.FC<StockProps> = ({ chart, country, company, exchange, price, stock, variation }) => {
   return (
     <div className={styles.container}>
-      <div>
-        <strong>{`${stock} - ${company}`}</strong>
+      
+      <strong>{`${stock} - ${company}`}</strong>
+
+      <div className={styles.chart}>
+        <Chart chart={chart} stock={stock} price={price} variation={variation} />
+      </div>
+
+      <div className={styles.data}>
         <div>
           <p>Exchange: {exchange}</p>
           <p>country: {country}</p>
         </div>
-
-        <div>
-          <p>price: {price}</p>
-          <p>variation: {variation}</p>
-        </div>
       </div>
-
-      <div className={styles.chart}>
-        chart
-      </div>
-
 
       <div className={styles.favorites}>
         favorites
