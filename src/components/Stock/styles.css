@@ -1,0 +1,13 @@
+.stock-container {
+  /* width: fit-content; */
+  /* width: 100%; */
+  flex: 1;
+  min-width: 15rem;
+  max-width: 20rem;
+  /* height: 15rem; */
+
+  /* display: inline-flex; */
+  flex-direction: column;
+
+  background: var(--background3);
+}

@@ -9,6 +9,7 @@
   --foreground: #f0f0f0;
   --background1: #030303;
   --background2: #181818;
+  --background3: #262626;
   --green-theme1: #00a330;
   --green-theme2: #00b37b;
   --green-theme3: #00747d;
@@ -38,6 +39,13 @@
   }
 }
 
+html,
+body,
+#root,
+.App {
+  height: 100vh;
+}
+
 body {
   background: var(--background1);
   color: var(--foreground);
@@ -48,6 +56,12 @@ input,
 textarea,
 button {
   font: 400 1rem "Roboto", sans-serif;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
 }
 
 button {
