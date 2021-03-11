@@ -1,19 +1,26 @@
-import React from "react";
-import stocks from "../../stocks.json";
+import React from 'react';
+import stocks from '../../stocks.json';
+import Chart from '../../components/Chart';
 
 const Home = () => {
   return (
-    <div className='container'>
-      <div className='card'>
+    <div className="container">
+      <div className="charts">
         {stocks &&
           stocks.map((stock, id) => {
             return (
-              <div key={id}>
-                <h1>{stock.company}</h1>
-              </div>
+              <Chart
+                key={id}
+                company={stock.company}
+                stock={stock.stock}
+                country={stock.country}
+                price={stock.price}
+                variation={stock.variation}
+              />
             );
           })}
       </div>
+      <Chart />
     </div>
   );
 };

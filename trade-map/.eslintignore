@@ -1,0 +1,5 @@
+docs
+scripts
+cypress
+CHANGELOG.md
+**/*.d.ts
