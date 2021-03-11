@@ -30,3 +30,11 @@
   margin-top: 50px;
   padding: 0 200px 50px 50px;
 }
+
+.header > div:last-child > div {
+  display: flex;
+}
+
+.header > div:last-child > div > button:last-child {
+  margin-left: 2rem;
+}

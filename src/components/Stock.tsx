@@ -1,6 +1,8 @@
 import React from 'react';
+import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 
 import styles from '../styles/components/Stock.module.css'
+import Button from './Button';
 import Chart from './Chart';
 
 type StockProps = {
@@ -30,9 +32,11 @@ const Stock: React.FC<StockProps> = ({ chart, country, company, exchange, price,
         </div>
       </div>
 
-      <div className={styles.favorites}>
-        favorites
-      </div>
+
+      <Button>
+        Favoritar
+        <AiOutlineHeart />
+      </Button>
     </div>
   );
 };

@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--dark-blue);
+  height: 56px;
+  width: 300px;
+  border-radius: 10px;
+  border: 0;
+  padding: 0 16px;
+  color: var(--white);
+  width: 100%;
+  font-weight: 500;
+  margin-top: 16px;
+  transition: filter 0.2s;
+}
+
+.container:hover {
+  
+  filter: brightness(0.9);
+}
+
+.container > svg {
+  margin-left: 0.4rem;
+  font-size: 1.3rem;
+}

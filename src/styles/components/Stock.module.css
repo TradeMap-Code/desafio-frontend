@@ -36,3 +36,12 @@
 .container > div > div p {
   margin-top: 0.5rem;
 }
+
+.container > button {
+  background: var(--gray-line);
+  color: var(--dark-blue);
+}
+
+.container > button > svg {
+  color: var(--red);
+}
