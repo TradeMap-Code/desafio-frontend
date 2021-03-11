@@ -1,8 +1,15 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+
+import Routes from './routes';
+
+import './styles/global.css';
 
 function App() {
   return (
-   <h1>Trade Map</h1>
+    <BrowserRouter>
+      <Routes />
+    </BrowserRouter>
   );
 }
 

@@ -1,0 +1,32 @@
+
+.header {
+  background: var(--yellow);
+  margin-right: 16rem;
+  border-bottom-right-radius: 65px;
+}
+
+.header > div {
+  padding-left: 50px;
+}
+
+.header > div:first-child {
+  margin-top: 20px;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.header > div:nth-child(2) {
+  padding-left: 0;
+  margin-top: 10px;
+  height: 1.5px;
+  border-radius: 4px;
+  background: var(--dark-blue);
+}
+
+.header > div:last-child {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 50px;
+  padding: 0 200px 50px 50px;
+}

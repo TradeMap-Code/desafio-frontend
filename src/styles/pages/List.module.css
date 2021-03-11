@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.stockList {
+  margin: 20px 480px 20px 100px;
+}
+
+.stockList > div {
+  margin-top: 40px;
+}
+
+.stockList > div > div {
+  display: flex;
+  margin-top: 0.5rem;
+}
+
+.stockList > div > div > p:last-child {
+  margin-left: 1rem;
+}

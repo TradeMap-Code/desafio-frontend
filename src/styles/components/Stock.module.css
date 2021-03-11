@@ -1,0 +1,19 @@
+.container {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr;
+}
+
+.container > div  {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.5rem;
+}
+
+.container > div:last-child {
+  align-items: center;
+  justify-content: center;
+}
+
+.container > div > div p {
+  margin-top: 0.5rem;
+}
