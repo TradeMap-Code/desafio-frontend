@@ -1,0 +1,21 @@
+.buttonWrapper {
+  display: inline-block;
+}
+
+.favoriteButton {
+  float: right;
+  text-align: center;
+  background: #3d9998;
+  border: none;
+  border-radius: 1rem;
+  padding: 0.25rem;
+  cursor: pointer;
+}
+
+.favoriteButton:hover {
+  background-color: #c5e019;
+}
+
+.favoriteButton .favoriteButton {
+  color: #000;
+}
