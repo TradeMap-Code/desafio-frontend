@@ -16,17 +16,21 @@ const Header: React.FC = () => {
         Trade Map
       </div>
 
-      <div />
-
       <div>
-        <strong>List</strong>
-
         <div>
-          <Button onClick={() => history.push('/')}>
+          <Button
+            disabled={history.location.pathname === '/' || false}
+            className={history.location.pathname === '/' ? styles.buttonDisabled : undefined}
+            onClick={() => history.push('/')}
+          >
             List
             <FiList />
           </Button>
-          <Button onClick={() => history.push('/favorites')}>
+          <Button
+            disabled={history.location.pathname === '/favorites' || false}
+            className={history.location.pathname === '/favorites' ? styles.buttonDisabled : undefined}
+            onClick={() => history.push('/favorites')}
+          >
             Favorites
             <FiHeart />
           </Button>
