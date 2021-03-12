@@ -13,3 +13,8 @@ body {
 a {
   text-decoration: none;
 }
+
+.app-wrapper {
+  max-width: 1300px;
+  margin: 0 auto;
+}

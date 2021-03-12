@@ -1,21 +1,21 @@
-.stockListed {
-  padding: 1rem;
-}
-
 .stockGroup {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-
   padding: 0.5rem 5rem;
 }
 
-@media (max-width: 1060px) {
+.stockListed {
+  padding: 1rem;
+  margin: auto;
+}
+
+@media (max-width: 1220px) {
   .stockGroup {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-@media (max-width: 755px) {
+@media (max-width: 880px) {
   .stockGroup {
     grid-template-columns: 1fr;
   }

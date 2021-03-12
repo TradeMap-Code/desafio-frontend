@@ -86,7 +86,7 @@ export default function App() {
   }
 
   return (
-    <>
+    <div className={'app-wrapper'}>
       <header>
         <Header setActivePage={setActivePage} />
       </header>
@@ -110,6 +110,6 @@ export default function App() {
           />
         )}
       </section>
-    </>
+    </div>
   );
 }

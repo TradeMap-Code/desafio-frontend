@@ -18,9 +18,5 @@ export function StockList({ stocks, onButtonClick, onFilterSet }) {
       </div>
     );
   });
-  return (
-    <div className={styles.listedStockPage}>
-      <div className={styles.stockGroup}>{listedStocks}</div>
-    </div>
-  );
+  return <div className={styles.stockGroup}>{listedStocks}</div>;
 }
