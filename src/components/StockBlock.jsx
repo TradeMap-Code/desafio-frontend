@@ -40,7 +40,15 @@ export function StockBlock({
 
       <div className={styles.stockFooter}>
         <ul>
-          <li>Variação: {variation}%</li>
+          <li
+            className={
+              variation > 0
+                ? styles.positiveVariation
+                : styles.negativeVariation
+            }
+          >
+            Variação: <span>{variation}%</span>
+          </li>
           <li>Preço: R$ {price}</li>
         </ul>
       </div>
