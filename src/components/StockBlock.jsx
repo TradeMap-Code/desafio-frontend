@@ -12,11 +12,8 @@ export function StockBlock({
 }) {
   let xChartValue = 1;
   const dataArr = chart.map((variation) => {
-    console.log(company)
     return { x: xChartValue++, y: variation };
-   
   });
-  console.log(dataArr);
 
   return (
     <div className={styles.stockWrapper}>

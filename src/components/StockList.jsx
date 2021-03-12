@@ -1,8 +1,10 @@
 import styles from '../styles/components/StockList.module.css';
 import { StockBlock } from './StockBlock';
 
-export function StockList({ stocks, onButtonClick }) {
-  const listedStocks = stocks.map((stock) => {
+export function StockList({ stocks, onButtonClick, onFilterSet }) {
+  const filteredStocks = onFilterSet(stocks);
+
+  const listedStocks = filteredStocks.map((stock) => {
     return (
       <div key={stock.company} className={styles.stockListed}>
         <StockBlock

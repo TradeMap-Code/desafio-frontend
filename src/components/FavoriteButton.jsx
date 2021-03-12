@@ -1,5 +1,3 @@
-import { AiOutlineStar } from 'react-icons/ai';
-
 import styles from '../styles/components/FavoriteButton.module.css';
 
 export function FavoriteButton({ onButtonClick, company }) {
@@ -12,7 +10,7 @@ export function FavoriteButton({ onButtonClick, company }) {
           onButtonClick(company);
         }}
       >
-        <AiOutlineStar /> Favoritar
+        Favoritar
       </button>
     </div>
   );

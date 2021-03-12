@@ -5,7 +5,7 @@ export function Filter({ filterOptions, onSelectFilter }) {
   const listedOptions = filterOptions.map((option) => {
     return (
       <li key={option.value}>
-        <a href='/#' onClick={() => onSelectFilter(option.value)}>
+        <a href='/#' onClick={() => onSelectFilter(option.label, option.value)}>
           {option.label}
         </a>
       </li>
