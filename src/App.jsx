@@ -61,7 +61,6 @@ export default function App() {
 
   function onSetFilterState(label, value) {
     setActiveFilter({ label, value });
-    console.log('i got clicked', activeFilter);
   }
 
   function onFilterSet(stocksArray) {
@@ -82,7 +81,7 @@ export default function App() {
     } else if (activeFilter.value === 'lower') {
       return stockOrderVariation;
     }
-    return stocks;
+    return stocksArray === stocks ? stocks : favoriteStocks;
   }
 
   return (
@@ -101,6 +100,7 @@ export default function App() {
             onFilterSet={onFilterSet}
             onButtonClick={onFavoriteStock}
             stocks={stocks}
+            buttonFavText={'favoritar'}
           />
         ) : (
           <FavoriteList
