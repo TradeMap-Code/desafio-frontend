@@ -1,4 +1,5 @@
 import { Reducer } from 'redux';
+import Cookies from 'js-cookie';
 import Stocks from '../../../data/stocks.json';
 
 import { State } from './types';
@@ -6,7 +7,7 @@ import { State } from './types';
 const INITIAL_STATE: State = {
   priceOrderInverse: false,
   variationOrderInverse: false,
-  favoritesStocks: [],
+  favoritesStocks: Cookies.get('favoritesStocks') ? Cookies.getJSON('favoritesStocks') as string[] : [],
   stocks: Stocks,
 };
 
@@ -17,12 +18,14 @@ const stateReducer: Reducer<State> = (state = INITIAL_STATE, action) => {
         const stock = action.payload;
         const { favoritesStocks } = state
         favoritesStocks.push(stock);
+        Cookies.set('favoritesStocks', favoritesStocks);
         return { ...state, favoritesStocks: favoritesStocks}
       }
       case 'REMOVE_STOCK_FROM_FAVORITES': {
         const stock = action.payload;
         const { favoritesStocks } = state
         const updateFavoriteStocks = favoritesStocks.filter(favoriteStock => favoriteStock !== stock);
+        Cookies.set('favoritesStocks', updateFavoriteStocks);
         return { ...state, favoritesStocks: updateFavoriteStocks}
       }
       case 'UPDATE_PRICE_ORDER': {
