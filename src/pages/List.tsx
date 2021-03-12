@@ -1,72 +1,73 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { FiArrowDown, FiArrowUp } from 'react-icons/fi';
+import { useSelector, useDispatch } from 'react-redux';
+
 import Button from '../components/Button';
 import Header from '../components/Header';
 import Stock from '../components/Stock';
 
-import Stocks from '../data/stocks.json';
+import { State } from '../redux/modules/state/types';
 import styles from '../styles/pages/List.module.css';
 
-type StockTypes = {
-  stock: string;
-  exchange: string;
-  country: string;
-  company: string;
-  variation: number;
-  price: number;
-  chart: number[];
-}
 
 const List: React.FC = () => {
 
-  const [stocks, setStocks] = useState<StockTypes[]>(Stocks);
-  const [priceOrderInverse, setPriceOrderInverse] = useState(false);
-  const [variationOrderInverse, setVariationOrderInverse] = useState(false);
+  const dispatch = useDispatch();
+  const appState = useSelector((state: State) => state);
+
+  const stocks = useSelector((state: State) => state.stocks);
+  const priceOrderInverse = useSelector((state: State) => state.priceOrderInverse);
+  const variationOrderInverse = useSelector((state: State) => state.variationOrderInverse);
 
   function handlePriceOrder(inverse: boolean) {
     if(inverse) {
-      const sortedStocks = stocks.sort((stockA, stockB) => stockB.price - stockA.price);
-      setStocks(sortedStocks);
-      setPriceOrderInverse(true);
+      dispatch({
+        type: 'UPDATE_PRICE_ORDER',
+        payload: inverse
+      });
     } else {
-      const sortedStocks = stocks.sort((stockA, stockB) => stockA.price - stockB.price);
-      setStocks(sortedStocks);
-      setPriceOrderInverse(false);
+      dispatch({
+        type: 'UPDATE_PRICE_ORDER',
+        payload: inverse
+      });
     }
   }
 
   function handleVariationOrder(inverse: boolean) {
     if(inverse) {
-      const sortedStocks = stocks.sort((stockA, stockB) => stockB.variation - stockA.variation);
-      setStocks(sortedStocks);
-      setVariationOrderInverse(true);
+      dispatch({
+        type: 'UPDATE_VARIATION_ORDER',
+        payload: inverse
+      });
     } else {
-      const sortedStocks = stocks.sort((stockA, stockB) => stockA.variation - stockB.variation);
-      setStocks(sortedStocks);
-      setVariationOrderInverse(false);
+      dispatch({
+        type: 'UPDATE_VARIATION_ORDER',
+        payload: inverse
+      });
     }
   }
 
   return (
     <div className={styles.container}>
       <Header />
-      
       <div className={styles.orderButtons}>
         <Button onClick={() => handlePriceOrder(!priceOrderInverse)}>
-          Ordenar Preço
+          Ordenar por Preço
           {priceOrderInverse ? <FiArrowDown /> : <FiArrowUp />}
         </Button>
 
 
         <Button onClick={() => handleVariationOrder(!variationOrderInverse)}>
-          Ordenar Variação
+          Ordenar por Variação
           {variationOrderInverse ? <FiArrowDown /> : <FiArrowUp />}
         </Button>
       </div>
-      
+      {console.log(appState)}
       <div className={styles.stockList}>
         {stocks.map(stock => (
-          <Stock {...stock} />
+          <div key={stock.stock}>
+            <Stock {...stock} />
+          </div>
         ))}
       </div>
     </div>

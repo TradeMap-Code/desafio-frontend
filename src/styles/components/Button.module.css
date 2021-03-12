@@ -5,6 +5,7 @@
   background: var(--dark-blue);
   height: 56px;
   border-radius: 10px;
+  outline: none;
   border: 0;
   padding: 0 16px;
   color: var(--white);

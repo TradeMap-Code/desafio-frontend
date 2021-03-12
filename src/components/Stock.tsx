@@ -1,5 +1,7 @@
 import React from 'react';
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
+import { useDispatch, useSelector } from 'react-redux';
+import { State } from '../redux/modules/state/types';
 
 import styles from '../styles/components/Stock.module.css'
 import Button from './Button';
@@ -16,6 +18,17 @@ type StockProps = {
 }
 
 const Stock: React.FC<StockProps> = ({ chart, country, company, exchange, price, stock, variation }) => {
+  
+  const dispatch = useDispatch();
+  const favoritesStocks = useSelector((state: State) => state.favoritesStocks);
+
+  function handleAddStockToFavorites() {
+    dispatch({
+      type: 'ADD_STOCK_TO_FAVORITES',
+      payload: stock
+    });
+  }
+
   return (
     <div className={styles.container}>
       
@@ -32,10 +45,9 @@ const Stock: React.FC<StockProps> = ({ chart, country, company, exchange, price,
         </div>
       </div>
 
-
-      <Button>
+      <Button disabled={favoritesStocks.includes(stock)} onClick={handleAddStockToFavorites}>
         Favoritar
-        <AiOutlineHeart />
+        {favoritesStocks.includes(stock) ? <AiFillHeart /> : <AiOutlineHeart />}
       </Button>
     </div>
   );
