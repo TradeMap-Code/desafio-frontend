@@ -7,7 +7,6 @@
 body {
   font: 62.5%, 'Helvetica Neue', Arial, sans-serif;
   background: #b9bdbd;
-  /* #ebeded   */
 }
 
 a {
@@ -15,6 +14,6 @@ a {
 }
 
 .app-wrapper {
-  max-width: 1300px;
   margin: 0 auto;
+  max-width: 1500px;
 }

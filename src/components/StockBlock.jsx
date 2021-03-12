@@ -9,6 +9,7 @@ export function StockBlock({
   onButtonClick,
   company,
   chart,
+  buttonFavText,
 }) {
   let xChartValue = 1;
   const dataArr = chart.map((variation) => {
@@ -19,7 +20,11 @@ export function StockBlock({
     <div className={styles.stockWrapper}>
       <div className={styles.stockHeader}>
         <h1>{stockName}</h1>
-        <FavoriteButton onButtonClick={onButtonClick} company={company} />
+        <FavoriteButton
+          onButtonClick={onButtonClick}
+          company={company}
+          buttonFavText={buttonFavText}
+        />
       </div>
       <XYPlot
         width={300}

@@ -9,6 +9,7 @@ export function FavoriteList({ onButtonClick, favoriteStocks, onFilterSet }) {
           onFilterSet={onFilterSet}
           stocks={favoriteStocks}
           onButtonClick={onButtonClick}
+          buttonFavText={'remover'}
         />
       </div>
     </div>

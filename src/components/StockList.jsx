@@ -1,7 +1,7 @@
 import styles from '../styles/components/StockList.module.css';
 import { StockBlock } from './StockBlock';
 
-export function StockList({ stocks, onButtonClick, onFilterSet }) {
+export function StockList({ stocks, onButtonClick, onFilterSet, buttonFavText }) {
   const filteredStocks = onFilterSet(stocks);
 
   const listedStocks = filteredStocks.map((stock) => {
@@ -14,6 +14,7 @@ export function StockList({ stocks, onButtonClick, onFilterSet }) {
           variation={stock.variation}
           chart={stock.chart}
           onButtonClick={onButtonClick}
+          buttonFavText={buttonFavText}
         />
       </div>
     );
