@@ -12,7 +12,7 @@ export function FavoriteButton({ onButtonClick, company }) {
           onButtonClick(company);
         }}
       >
-        Favoritar <AiOutlineStar />
+        <AiOutlineStar /> Favoritar
       </button>
     </div>
   );
