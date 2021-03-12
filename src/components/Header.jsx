@@ -5,7 +5,7 @@ export function Header({ setActivePage }) {
     <nav>
       <div className={styles.navWrapper}>
         <div className={styles.navLogo}>
-          <a href='https://trademap.com.br/'>
+          <a href='https://trademap.com.br/' target='_blank' rel='noreferrer'>
             <b>TradeMap</b>
           </a>
         </div>
