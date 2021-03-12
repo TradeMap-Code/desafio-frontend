@@ -9,7 +9,6 @@ import Stock from '../components/Stock';
 import { State } from '../redux/modules/state/types';
 import styles from '../styles/pages/List.module.css';
 
-
 const List: React.FC = () => {
 
   const dispatch = useDispatch();
@@ -18,6 +17,8 @@ const List: React.FC = () => {
   const stocks = useSelector((state: State) => state.stocks);
   const priceOrderInverse = useSelector((state: State) => state.priceOrderInverse);
   const variationOrderInverse = useSelector((state: State) => state.variationOrderInverse);
+
+
 
   function handlePriceOrder(inverse: boolean) {
     if(inverse) {
@@ -62,7 +63,6 @@ const List: React.FC = () => {
           {variationOrderInverse ? <FiArrowDown /> : <FiArrowUp />}
         </Button>
       </div>
-      {console.log(appState)}
       <div className={styles.stockList}>
         {stocks.map(stock => (
           <div key={stock.stock}>

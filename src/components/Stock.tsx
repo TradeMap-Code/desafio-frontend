@@ -29,6 +29,13 @@ const Stock: React.FC<StockProps> = ({ chart, country, company, exchange, price,
     });
   }
 
+  function handleRemoveStockToFavorites() {
+    dispatch({
+      type: 'REMOVE_STOCK_FROM_FAVORITES',
+      payload: stock
+    });
+  }
+
   return (
     <div className={styles.container}>
       
@@ -45,7 +52,9 @@ const Stock: React.FC<StockProps> = ({ chart, country, company, exchange, price,
         </div>
       </div>
 
-      <Button disabled={favoritesStocks.includes(stock)} onClick={handleAddStockToFavorites}>
+      <Button
+        onClick={favoritesStocks.includes(stock) ? handleRemoveStockToFavorites : handleAddStockToFavorites}
+      >
         Favoritar
         {favoritesStocks.includes(stock) ? <AiFillHeart /> : <AiOutlineHeart />}
       </Button>

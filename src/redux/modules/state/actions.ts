@@ -8,6 +8,15 @@ export function addStockToFavorite(stock: string) {
   };
 }
 
+export function removeStockToFavorite(stock: string) {
+  return {
+    type: 'REMOVE_STOCK_FROM_FAVORITES',
+    payload: {
+      stock,
+    },
+  };
+}
+
 export function updatePriceOrder(inverseOrder: boolean) {
   return {
     type: 'UPDATE_PRICE_ORDER',

@@ -6,7 +6,7 @@ import { State } from './types';
 const INITIAL_STATE: State = {
   priceOrderInverse: false,
   variationOrderInverse: false,
-  favoritesStocks: ['PETR4'],
+  favoritesStocks: [],
   stocks: Stocks,
 };
 
@@ -18,6 +18,12 @@ const stateReducer: Reducer<State> = (state = INITIAL_STATE, action) => {
         const { favoritesStocks } = state
         favoritesStocks.push(stock);
         return { ...state, favoritesStocks: favoritesStocks}
+      }
+      case 'REMOVE_STOCK_FROM_FAVORITES': {
+        const stock = action.payload;
+        const { favoritesStocks } = state
+        const updateFavoriteStocks = favoritesStocks.filter(favoriteStock => favoriteStock !== stock);
+        return { ...state, favoritesStocks: updateFavoriteStocks}
       }
       case 'UPDATE_PRICE_ORDER': {
         const inverseOrder = action.payload;

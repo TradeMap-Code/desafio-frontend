@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.orderButtons {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 20px 240px 0px 100px;
+}
+
+.orderButtons > button {
+  width: 250px;
+}
+
+
+.stockList {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 20px 240px 20px 100px;
+}
+
+.stockList > div {
+  margin-top: 40px;
+}
