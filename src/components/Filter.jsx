@@ -1,7 +1,12 @@
 import styles from '../styles/components/Filter.module.css';
 import { IoMdArrowDropdown } from 'react-icons/io';
 
-export function Filter({ filterOptions, onSelectFilter, activeFilter }) {
+export function Filter({
+  filterOptions,
+  onSelectFilter,
+  activeFilter,
+  activePage,
+}) {
   const listedOptions = filterOptions.map((option) => {
     return (
       <li key={option.value}>
@@ -14,6 +19,7 @@ export function Filter({ filterOptions, onSelectFilter, activeFilter }) {
 
   return (
     <div className={styles.filterWrapper}>
+      <h1>{activePage === 'list' ? 'Lista de Ações' : 'Ações Favoritas'}</h1>
       <div className={styles.filterOptions}>
         <label>
           {activeFilter.label} <IoMdArrowDropdown />

@@ -91,6 +91,7 @@ export default function App() {
       </header>
       <section>
         <Filter
+          activePage={activePage}
           filterOptions={filterOptions}
           activeFilter={activeFilter}
           onSelectFilter={onSetFilterState}

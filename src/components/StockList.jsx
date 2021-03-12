@@ -1,7 +1,12 @@
 import styles from '../styles/components/StockList.module.css';
 import { StockBlock } from './StockBlock';
 
-export function StockList({ stocks, onButtonClick, onFilterSet, buttonFavText }) {
+export function StockList({
+  stocks,
+  onButtonClick,
+  onFilterSet,
+  buttonFavText,
+}) {
   const filteredStocks = onFilterSet(stocks);
 
   const listedStocks = filteredStocks.map((stock) => {
@@ -19,5 +24,9 @@ export function StockList({ stocks, onButtonClick, onFilterSet, buttonFavText })
       </div>
     );
   });
-  return <div className={styles.stockGroup}>{listedStocks}</div>;
+  return (
+    <div className={styles.stockListWrapper}>
+      <div className={styles.stockGroup}>{listedStocks}</div>
+    </div>
+  );
 }
