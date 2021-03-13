@@ -39,15 +39,17 @@ export default function App() {
     label: 'Sem filtro',
     value: 'none',
   });
-  const [favoriteStocks, setFavoriteStock] = useState();
+  const [favoriteStocks, setFavoriteStock] = useState([]);
 
   useEffect(() => {
     if (getLocalStore === null) {
       localStorage.setItem('favoriteStocks', JSON.stringify([]));
+    } else {
+      setFavoriteStock(JSON.parse(getLocalStore));
     }
-    setFavoriteStock(JSON.parse(getLocalStore));
   }, []);
 
+  console.log(favoriteStocks);
   function onFavoriteStock(selected) {
     return stocks.map((stock) => {
       if (stock.company === selected) {
