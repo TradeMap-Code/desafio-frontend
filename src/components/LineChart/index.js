@@ -1,17 +1,20 @@
-import { useEffect, useState } from "react";
-import Chart from "react-apexcharts";
+import { useEffect, useState } from 'react';
+import Information from '../Information';
+import Chart from 'react-apexcharts';
 import './style.css';
 
 function LineChart({ stocks }) {
     const [selectValue, setSelectValue] = useState('PETR4');
     const [stock, setStock] = useState(null);
+    const [dataTable, setDataTable] = useState();
 
     useEffect(() => {
         const active = stocks.filter((item) => {
             return item.stock === selectValue;
-        })
+        });
 
         stocks = active;
+        setDataTable(stocks);
 
     }, [selectValue, stocks]);
 
@@ -30,7 +33,7 @@ function LineChart({ stocks }) {
                         text: stocks[0].company,
                         align: 'left',
                         style: {
-                            color: "#00ff00"
+                            color: "#c9d1d9"
                         }
                     },
                     xaxis: {
@@ -65,7 +68,7 @@ function LineChart({ stocks }) {
 
     return (
         <div>
-            <div className="select">
+            <div className="select__content">
                 <select name="actives" id="actives" className="select__input" onChange={({ target }) => setSelectValue(target.value)}>
                     <option disabled value="selected" selected>Selecione o ativo</option>
                     {stocks.map((active) => (
@@ -76,6 +79,7 @@ function LineChart({ stocks }) {
                     ))}
                 </select>
             </div>
+            {dataTable && <Information stock={dataTable} />}
             {stock && <Chart
                 options={stock.options}
                 series={stock.series}
@@ -83,7 +87,6 @@ function LineChart({ stocks }) {
                 height="300px"
                 className="chart__content"
             />}
-
         </div>
     );
 };

@@ -1,0 +1,18 @@
+.table__content {
+  color: var(--white);
+  font-family: var(--font);
+  text-align: center;
+}
+
+.table__content table {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.table__content table th {
+  color: var(--text-color-primary);
+}
+
+.table__content table td {
+  color: var(--text-color-secondary);
+}

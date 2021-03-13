@@ -1,8 +1,8 @@
-import Logo from "../../components/Logo";
-import LineChart from "../../components/LineChart";
-import stock from "../../stocks.json";
+import Logo from '../../components/Logo';
+import LineChart from '../../components/LineChart';
+import stock from '../../stocks.json';
 import './style.css';
-import { useState } from "react";
+import { useState } from 'react';
 
 function List() {
     const [data] = useState(stock);

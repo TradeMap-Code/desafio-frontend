@@ -1,4 +1,4 @@
-.select {
+.select__content {
   width: 60%;
   margin: 0 auto;
 }
@@ -15,6 +15,10 @@
 .chart__content {
   width: 80%;
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 20px;
   background-color: var(--bgChart);
+}
+
+.table__content {
+  margin-top: 50px;
 }
