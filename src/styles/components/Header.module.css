@@ -4,10 +4,12 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  background: var(--yellow);
-  margin-right: 16rem;
+  background: var(--text);
+  color: var(--white);
+  margin-right: 12%;
   padding: 0 8rem 1.5rem 0;
   border-bottom-right-radius: 65px;
+  box-shadow: 0 1px 5px var(--dark-green);
 }
 
 .header > div {
@@ -29,6 +31,6 @@
   filter: brightness(1.5);
 }
 
-.header > div:last-child > div > button:last-child {
+.header > div:last-child > div > button {
   margin-left: 2rem;
 }

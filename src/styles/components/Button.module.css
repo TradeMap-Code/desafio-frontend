@@ -2,13 +2,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: var(--dark-blue);
   height: 56px;
   border-radius: 10px;
   outline: none;
   border: 0;
   padding: 0 16px;
-  color: var(--white);
   width: 100%;
   font-weight: 500;
   margin-top: 16px;

@@ -11,7 +11,7 @@ const Header: React.FC = () => {
   const history = useHistory();
 
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header}`}>
       <div>
         Trade Map
       </div>

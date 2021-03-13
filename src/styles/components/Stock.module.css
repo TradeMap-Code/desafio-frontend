@@ -6,6 +6,9 @@
   background: var(--white);
   border-radius: 8px;
   width: 500px;
+  padding-top: 20px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 
@@ -23,24 +26,11 @@
   margin-left: 1rem;
 }
 
-.container > div:last-child {
-  align-items: center;
-  justify-content: center;
-  padding: 20px 0;
-  background: #e4e4eb;
-  width: 100%;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
-}
 
 .container > div > div p {
   margin-top: 0.5rem;
 }
 
-.container > button {
-  background: var(--gray-line);
-  color: var(--dark-blue);
-}
 
 .container > button > svg {
   color: var(--red);

@@ -20,7 +20,8 @@ type StockProps = {
 const Stock: React.FC<StockProps> = ({ chart, country, company, exchange, price, stock, variation }) => {
   
   const dispatch = useDispatch();
-  const favoritesStocks = useSelector((state: State) => state.favoritesStocks);
+  const appState = useSelector((state: State) => state);
+  const { favoritesStocks } = appState;
 
   function handleAddStockToFavorites() {
     dispatch({

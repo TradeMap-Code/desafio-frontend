@@ -8,11 +8,13 @@
 :root {
   --white: #fff;
   --background: #f2f3f5;
+  --dark-background: #2a2a2a;
   --gray-line: #dcdde0;
   --text: #666666;
   --text-highlight: #b3b9ff;
   --red: #e83f5b;
   --green:#4cd62b;
+  --dark-green: #1D7173;
   --yellow: #fbe8a6;
   --orange: #f4976c;
   --dark-blue: #303c6c;
@@ -32,19 +34,23 @@
   }
 }
 
+
 body {
-  background: var(--background);
+  background: var(--dark-background);
   color: var(--text);
 }
-
 
 body, input, textarea, button {
   font: 400 1rem "Inter", sans-serif;
 }
 
+
 button {
   cursor: pointer;
+  background: var(--dark-green);
+  color: var(--white);
 }
+
 
 a {
   color: inherit;

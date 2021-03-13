@@ -12,7 +12,6 @@ import styles from '../styles/pages/List.module.css';
 const List: React.FC = () => {
 
   const dispatch = useDispatch();
-  const appState = useSelector((state: State) => state);
 
   const stocks = useSelector((state: State) => state.stocks);
   const priceOrderInverse = useSelector((state: State) => state.priceOrderInverse);
@@ -49,7 +48,7 @@ const List: React.FC = () => {
   }
 
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container}`}>
       <Header />
       <div className={styles.orderButtons}>
         <Button onClick={() => handlePriceOrder(!priceOrderInverse)}>
