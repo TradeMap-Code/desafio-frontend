@@ -1,6 +1,8 @@
 import React from 'react';
 import { Line } from '@reactchartjs/react-chart.js';
 
+import './styles.css';
+
 const getStockData = (stock, n) => ({
   labels: [...Array(n).keys()],
   datasets: [

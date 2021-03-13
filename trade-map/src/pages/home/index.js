@@ -2,6 +2,7 @@ import React from 'react';
 import stocks from '../../stocks.json';
 import Chart from '../../components/Chart';
 
+import './styles.css';
 const Home = () => {
   return (
     <div className="container">
