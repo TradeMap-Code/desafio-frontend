@@ -1,13 +1,17 @@
 import { useEffect, useState } from 'react';
 import Information from '../Information';
 import Chart from 'react-apexcharts';
-import { AiFillHeart } from 'react-icons/ai';
+import { FiArrowDown, FiArrowUp } from 'react-icons/fi';
+import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 import './style.css';
 
 function LineChart({ stocks }) {
     const [selectValue, setSelectValue] = useState('PETR4');
-    const [stock, setStock] = useState(null);
+    const [stock, setStock] = useState();
     const [dataTable, setDataTable] = useState();
+    const [price, setPrice] = useState(true);
+    const [variation, setVariation] = useState(true);
+    const [favorites, setFavorites] = useState([]);
 
     useEffect(() => {
         const active = stocks.filter((item) => {
@@ -67,57 +71,59 @@ function LineChart({ stocks }) {
         };
     }, [selectValue, stocks]);
 
-    function handleOrderBigPrice() {
-        stocks.sort((a, b) => {
-            if (a.price > b.price)
-                return -1;
-            if (a.price < b.price)
-                return 1;
-            return 0;
-        });
+    function handleOrderPrice() {
+        setPrice(!price);
+        if (price === true) {
+            stocks.sort((a, b) => {
+                if (a.price > b.price)
+                    return -1;
+                if (a.price < b.price)
+                    return 1;
+                return 0;
+            });
+        } else {
+            stocks.sort((a, b) => {
+                if (a.price < b.price)
+                    return -1;
+                if (a.price > b.price)
+                    return 1;
+                return 0;
+            });
+        }
 
         setSelectValue(stocks[0].stock);
         setDataTable(stocks);
     };
 
-    function handleOrderLowPrice() {
-        stocks.sort((a, b) => {
-            if (a.price < b.price)
-                return -1;
-            if (a.price > b.price)
-                return 1;
-            return 0;
-        });
+    function handleOrderVariation() {
+        setVariation(!variation);
+
+        if (variation === true) {
+            stocks.sort((a, b) => {
+                if (a.variation > b.variation)
+                    return -1;
+                if (a.variation < b.variation)
+                    return 1;
+                return 0;
+            });
+        } else {
+            stocks.sort((a, b) => {
+                if (a.variation < b.variation)
+                    return -1;
+                if (a.variation > b.variation)
+                    return 1;
+                return 0;
+            });
+        }
 
         setSelectValue(stocks[0].stock);
         setDataTable(stocks);
     };
 
-    function handleOrderBigVariation() {
-        stocks.sort((a, b) => {
-            if (a.variation > b.variation)
-                return -1;
-            if (a.variation < b.variation)
-                return 1;
-            return 0;
-        });
-
-        setSelectValue(stocks[0].stock);
-        setDataTable(stocks);
-    };
-
-    function handleOrderLowVariation() {
-        stocks.sort((a, b) => {
-            if (a.variation < b.variation)
-                return -1;
-            if (a.variation > b.variation)
-                return 1;
-            return 0;
-        });
-
-        setSelectValue(stocks[0].stock);
-        setDataTable(stocks);
-    };
+    function handleFavorite() {
+        setFavorites([...favorites, '1']);
+        console.log(favorites);
+    }
 
     return (
         <div>
@@ -133,14 +139,12 @@ function LineChart({ stocks }) {
                 </select>
             </div>
             <div className="btn__group">
-                <div className="btn__price">
-                    <button onClick={handleOrderBigPrice}>Ordenar por maior Preço</button>
-                    <button onClick={handleOrderLowPrice}>Ordenar por menor Preço</button>
-                </div>
-                <div className="btn__variation">
-                    <button onClick={handleOrderBigVariation}>Ordenar por maior Variação</button>
-                    <button onClick={handleOrderLowVariation}>Ordenar por menor Variação</button>
-                </div>
+                <button onClick={handleOrderPrice}>
+                    {price ? 'Ordenar por maior Preço' : 'Ordenar por menor Preço'} {price ? <FiArrowUp /> : <FiArrowDown />}
+                </button>
+                <button onClick={handleOrderVariation}>
+                    {price ? 'Ordenar por maior Variação' : 'Ordenar por menor Variação'} {variation ? <FiArrowUp /> : <FiArrowDown />}
+                </button>
             </div>
             {dataTable && <Information stock={dataTable} />}
             {stock && <Chart
@@ -150,7 +154,7 @@ function LineChart({ stocks }) {
                 height="300px"
                 className="chart__content"
             />}
-            <button>Adicionar Favorito <AiFillHeart /></button>
+            <button onClick={handleFavorite}>Adicionar Favorito <AiFillHeart /></button>
         </div>
     );
 };

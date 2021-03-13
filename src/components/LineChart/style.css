@@ -26,15 +26,6 @@
 .btn__group {
   text-align: center;
   margin-top: 10px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.btn__group .btn__price,
-.btn__group .btn__variation {
-  display: flex;
-  flex-direction: column;
 }
 
 .btn__group button {
