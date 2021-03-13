@@ -4,10 +4,10 @@ import { StockBlock } from './StockBlock';
 export function StockList({
   stocks,
   onButtonClick,
-  onFilterSet,
+  displayFilteredStockList,
   buttonFavText,
 }) {
-  const filteredStocks = onFilterSet(stocks);
+  const filteredStocks = displayFilteredStockList(stocks);
 
   const listedStocks = filteredStocks.map((stock) => {
     return (

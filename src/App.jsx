@@ -1,12 +1,17 @@
 import { useState } from 'react';
 
+import Cookies from 'universal-cookie';
+import stocks from './stocks.json';
+
 import { FavoriteList } from './components/FavoriteList';
 import { Header } from './components/Header';
 import { StockList } from './components/StockList';
 import { Filter } from './components/Filter';
 
-import stocks from './stocks.json';
 import './styles/global.css';
+
+// const cookies = new Cookies();
+// const stockListedCookie = cookies.get('favoriteStocks');
 
 const filterOptions = [
   {
@@ -52,6 +57,7 @@ export default function App() {
     favoriteStocks.map((favorited) => {
       if (favorited.company === selected) {
         const findIndex = favoriteStocks.indexOf(favorited);
+        // removes stock from list and return new array.
         favoriteStocks.splice(findIndex, 1);
         return setFavoriteStock([...favoriteStocks]);
       }
@@ -63,12 +69,12 @@ export default function App() {
     setActiveFilter({ label, value });
   }
 
-  function onFilterSet(stocksArray) {
+  function displayFilteredStockList(stocksArray) {
     const stockOrderByPrice = stocksArray
       .sort((stockA, stockB) => stockA.price - stockB.price)
       .slice(0, stocks.lenght);
 
-    const stockOrderVariation = stocksArray
+    const stockOrderByVariation = stocksArray
       .sort((stockA, stockB) => stockA.variation - stockB.variation)
       .slice(0, stocks.lenght);
 
@@ -77,10 +83,12 @@ export default function App() {
     } else if (activeFilter.value === 'cheapest') {
       return stockOrderByPrice;
     } else if (activeFilter.value === 'higher') {
-      return stockOrderVariation.reverse();
+      return stockOrderByVariation.reverse();
     } else if (activeFilter.value === 'lower') {
-      return stockOrderVariation;
+      return stockOrderByVariation;
     }
+
+    // determines wich stocks array to display
     return stocksArray === stocks ? stocks : favoriteStocks;
   }
 
@@ -98,14 +106,14 @@ export default function App() {
         />
         {activePage === 'list' ? (
           <StockList
-            onFilterSet={onFilterSet}
+            displayFilteredStockList={displayFilteredStockList}
             onButtonClick={onFavoriteStock}
             stocks={stocks}
             buttonFavText={'favoritar'}
           />
         ) : (
           <FavoriteList
-            onFilterSet={onFilterSet}
+            displayFilteredStockList={displayFilteredStockList}
             onButtonClick={onUnfavoriteStock}
             favoriteStocks={favoriteStocks}
           />
