@@ -20,12 +20,21 @@
 }
 
 .table__content {
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 .btn__group {
   text-align: center;
   margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.btn__group .btn__price,
+.btn__group .btn__variation {
+  display: flex;
+  flex-direction: column;
 }
 
 .btn__group button {
@@ -35,7 +44,7 @@
   outline: none;
   border: none;
   border-radius: 5px;
-  margin: 0 5px;
+  margin: 5px;
   cursor: pointer;
   transition: all ease-in 0.2s;
 }

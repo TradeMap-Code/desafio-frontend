@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Information from '../Information';
 import Chart from 'react-apexcharts';
+import { AiFillHeart } from 'react-icons/ai';
 import './style.css';
 
 function LineChart({ stocks }) {
@@ -132,10 +133,14 @@ function LineChart({ stocks }) {
                 </select>
             </div>
             <div className="btn__group">
-                <button onClick={handleOrderBigPrice}>Ordenar por maior Preço</button>
-                <button onClick={handleOrderLowPrice}>Ordenar por menor Preço</button>
-                <button onClick={handleOrderBigVariation}>Ordenar por maior Variação</button>
-                <button onClick={handleOrderLowVariation}>Ordenar por menor Variação</button>
+                <div className="btn__price">
+                    <button onClick={handleOrderBigPrice}>Ordenar por maior Preço</button>
+                    <button onClick={handleOrderLowPrice}>Ordenar por menor Preço</button>
+                </div>
+                <div className="btn__variation">
+                    <button onClick={handleOrderBigVariation}>Ordenar por maior Variação</button>
+                    <button onClick={handleOrderLowVariation}>Ordenar por menor Variação</button>
+                </div>
             </div>
             {dataTable && <Information stock={dataTable} />}
             {stock && <Chart
@@ -145,6 +150,7 @@ function LineChart({ stocks }) {
                 height="300px"
                 className="chart__content"
             />}
+            <button>Adicionar Favorito <AiFillHeart /></button>
         </div>
     );
 };
