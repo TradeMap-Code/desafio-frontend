@@ -66,6 +66,58 @@ function LineChart({ stocks }) {
         };
     }, [selectValue, stocks]);
 
+    function handleOrderBigPrice() {
+        stocks.sort((a, b) => {
+            if (a.price > b.price)
+                return -1;
+            if (a.price < b.price)
+                return 1;
+            return 0;
+        });
+
+        setSelectValue(stocks[0].stock);
+        setDataTable(stocks);
+    };
+
+    function handleOrderLowPrice() {
+        stocks.sort((a, b) => {
+            if (a.price < b.price)
+                return -1;
+            if (a.price > b.price)
+                return 1;
+            return 0;
+        });
+
+        setSelectValue(stocks[0].stock);
+        setDataTable(stocks);
+    };
+
+    function handleOrderBigVariation() {
+        stocks.sort((a, b) => {
+            if (a.variation > b.variation)
+                return -1;
+            if (a.variation < b.variation)
+                return 1;
+            return 0;
+        });
+
+        setSelectValue(stocks[0].stock);
+        setDataTable(stocks);
+    };
+
+    function handleOrderLowVariation() {
+        stocks.sort((a, b) => {
+            if (a.variation < b.variation)
+                return -1;
+            if (a.variation > b.variation)
+                return 1;
+            return 0;
+        });
+
+        setSelectValue(stocks[0].stock);
+        setDataTable(stocks);
+    };
+
     return (
         <div>
             <div className="select__content">
@@ -78,6 +130,12 @@ function LineChart({ stocks }) {
                         </option>
                     ))}
                 </select>
+            </div>
+            <div className="btn__group">
+                <button onClick={handleOrderBigPrice}>Ordenar por maior Preço</button>
+                <button onClick={handleOrderLowPrice}>Ordenar por menor Preço</button>
+                <button onClick={handleOrderBigVariation}>Ordenar por maior Variação</button>
+                <button onClick={handleOrderLowVariation}>Ordenar por menor Variação</button>
             </div>
             {dataTable && <Information stock={dataTable} />}
             {stock && <Chart
