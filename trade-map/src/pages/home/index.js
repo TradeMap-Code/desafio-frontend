@@ -16,11 +16,12 @@ const Home = () => {
                 country={stock.country}
                 price={stock.price}
                 variation={stock.variation}
+                chart={stock.chart}
+                chartLength={stock.chart.length}
               />
             );
           })}
       </div>
-      <Chart />
     </div>
   );
 };

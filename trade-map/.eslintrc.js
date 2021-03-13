@@ -2,7 +2,13 @@ module.exports = {
   env: {
     es6: true,
   },
-  extends: ['airbnb', 'prettier', 'prettier/react'],
+  extends: [
+    'airbnb',
+    'prettier',
+    'prettier/prettier',
+    'prettier/react',
+    'prettier/babel',
+  ],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
