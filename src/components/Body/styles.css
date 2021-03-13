@@ -5,7 +5,7 @@
   text-align: justify;
 }
 
-.body-container ul {
+.body-container > ul {
   margin: 2rem 4rem;
 
   display: flex;

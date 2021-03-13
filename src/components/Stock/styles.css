@@ -1,13 +1,77 @@
 .stock-container {
-  /* width: fit-content; */
-  /* width: 100%; */
-  flex: 1;
   min-width: 15rem;
   max-width: 20rem;
-  /* height: 15rem; */
+  padding: 1rem;
 
-  /* display: inline-flex; */
+  flex: 1;
   flex-direction: column;
 
   background: var(--background3);
+  border-radius: 5px;
+}
+
+.stock-container > header {
+  margin-bottom: 0.5rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stock-container > header h1 {
+  font-size: 1.5rem;
+}
+
+.stock-container > header h1 p {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--foreground2);
+}
+
+.stock-container > header svg {
+  width: 1.5rem;
+  height: 1.5rem;
+
+  cursor: pointer;
+}
+
+.stock-container > .graph-container {
+  height: 10rem;
+
+  background: var(--background2);
+}
+
+.stock-container > .graph-container svg {
+  height: 100%;
+
+  stroke: var(--foreground2);
+  stroke-width: 2px;
+}
+
+.stock-container > footer {
+  padding-top: 1rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stock-container > footer h3 {
+  font-size: 1.5rem;
+}
+
+.stock-container > footer span {
+  padding: 0.25rem 0.5rem;
+
+  border-radius: 5px;
+  font-family: "Inconsolata", monospace;
+  line-height: 1.5rem;
+}
+
+.stock-container > footer .increase {
+  background-color: var(--green);
+}
+
+.stock-container > footer .decrease {
+  background-color: var(--red);
 }

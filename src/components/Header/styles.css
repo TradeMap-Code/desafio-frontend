@@ -9,6 +9,6 @@
   background: var(--background2);
 }
 
-.header-container img {
+.header-container > img {
   width: 3rem;
 }
