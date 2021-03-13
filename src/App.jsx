@@ -1,6 +1,4 @@
-import { useState } from 'react';
-
-import Cookies from 'universal-cookie';
+import { useEffect, useState } from 'react';
 import stocks from './stocks.json';
 
 import { FavoriteList } from './components/FavoriteList';
@@ -10,8 +8,7 @@ import { Filter } from './components/Filter';
 
 import './styles/global.css';
 
-// const cookies = new Cookies();
-// const stockListedCookie = cookies.get('favoriteStocks');
+const getLocalStore = localStorage.getItem('favoriteStocks');
 
 const filterOptions = [
   {
@@ -42,12 +39,23 @@ export default function App() {
     label: 'Sem filtro',
     value: 'none',
   });
-  const [favoriteStocks, setFavoriteStock] = useState([]);
+  const [favoriteStocks, setFavoriteStock] = useState();
+
+  useEffect(() => {
+    if (getLocalStore === null) {
+      localStorage.setItem('favoriteStocks', JSON.stringify([]));
+    }
+    setFavoriteStock(JSON.parse(getLocalStore));
+  }, []);
 
   function onFavoriteStock(selected) {
-    stocks.map((stock) => {
+    return stocks.map((stock) => {
       if (stock.company === selected) {
-        return setFavoriteStock([...favoriteStocks, stock]);
+        setFavoriteStock([...favoriteStocks, stock]);
+        localStorage.setItem(
+          'favoriteStocks',
+          JSON.stringify([...favoriteStocks, stock])
+        );
       }
       return null;
     });
@@ -57,9 +65,13 @@ export default function App() {
     favoriteStocks.map((favorited) => {
       if (favorited.company === selected) {
         const findIndex = favoriteStocks.indexOf(favorited);
-        // removes stock from list and return new array.
+        // removes selected stock from list and returns new array.
         favoriteStocks.splice(findIndex, 1);
-        return setFavoriteStock([...favoriteStocks]);
+        setFavoriteStock([...favoriteStocks]);
+        return localStorage.setItem(
+          'favoriteStocks',
+          JSON.stringify(favoriteStocks)
+        );
       }
       return null;
     });
