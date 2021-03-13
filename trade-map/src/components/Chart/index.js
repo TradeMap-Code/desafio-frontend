@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 
 const Chart = ({ id, company, stock, country, price, variation }) => {
   return (
-    <div className='chart-container'>
+    <div className="chart-container">
       <div key={id}>
         <h1>{company}</h1>
         <div>
@@ -21,7 +21,7 @@ const Chart = ({ id, company, stock, country, price, variation }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Chart
+export default Chart;
