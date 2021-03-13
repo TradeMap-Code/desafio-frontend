@@ -5,10 +5,10 @@
 body {
   margin: 0;
   padding: 0;
-  background: radial-gradient(
-    circle at 120.71% 50%, #ffb35c 0, #ffa454 16.67%, 
-    #fd9149 33.33%, #f2793c 50%, #e66031 66.67%, 
-    #de4a2c 83.33%, #d8342d 100%
+  background: linear-gradient(
+    980deg, #8fffff 0, #7ffffb 16.67%,
+  #73f5ec 33.33%, #6cd8d8 50%, #67bbc1 66.67%, 
+  #64a3ac 83.33%, #618e98 100%
   );
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
