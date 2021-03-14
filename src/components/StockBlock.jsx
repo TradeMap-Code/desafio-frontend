@@ -42,6 +42,7 @@ export function StockBlock({
 
       <div className={styles.stockFooter}>
         <ul>
+        <li>{country}</li>
           <li
             className={
               variation > 0
@@ -52,7 +53,6 @@ export function StockBlock({
             Variação: <span>{variation}%</span>
           </li>
           <li>Preço: R$ {price}</li>
-          <li>{country}</li>
         </ul>
       </div>
     </div>
