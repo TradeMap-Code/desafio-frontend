@@ -53,15 +53,20 @@ const Favorites = (): ReactElement => {
           <h2>Favoritos</h2>
           <TMButton onClick={handleOrderByPrice}>
             Preço
-            {priceHigher && <AiFillCaretUp size={16} />}
-            {!priceHigher && <AiFillCaretDown size={16} />}
+            {priceHigher && <AiFillCaretUp size={12} />}
+            {!priceHigher && <AiFillCaretDown size={12} />}
           </TMButton>
           <TMButton onClick={handleOrderByVariation}>
             Variação
-            {variationHigher && <AiFillCaretUp size={16} />}
-            {!variationHigher && <AiFillCaretDown size={16} />}
+            {variationHigher && <AiFillCaretUp size={12} />}
+            {!variationHigher && <AiFillCaretDown size={12} />}
           </TMButton>
-          <ListStocks stockChart={stockChart} />
+          {
+            stockChart.length === 0
+              ? <p><br />Não há nenhum favorito :(</p>
+              : <ListStocks stockChart={stockChart} />
+          }
+
         </main>
 
       </div>
