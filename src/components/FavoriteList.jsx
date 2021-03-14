@@ -1,17 +1,18 @@
 import { StockList } from './StockList';
 
-export function FavoriteList({ onButtonClick, favoriteStocks, displayFilteredStockList }) {
+export function FavoriteList({
+  onButtonClick,
+  favoriteStocks,
+  displayFilteredStockList,
+}) {
   return (
     <div>
-      {console.log(favoriteStocks)}
-      <div>
-        <StockList
-          displayFilteredStockList={displayFilteredStockList}
-          stocks={favoriteStocks}
-          onButtonClick={onButtonClick}
-          buttonFavText={'remover'}
-        />
-      </div>
+      <StockList
+        displayFilteredStockList={displayFilteredStockList}
+        stocks={favoriteStocks}
+        onButtonClick={onButtonClick}
+        buttonFavText={'remover'}
+      />
     </div>
   );
 }
