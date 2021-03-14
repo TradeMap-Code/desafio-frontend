@@ -15,14 +15,13 @@ const Favorites = (): ReactElement => {
   const [stockChart, setStockChart] = useState<Stock[]>([])
   const [priceHigher, setPriceHigher] = useState(false)
   const [variationHigher, setVariationHigher] = useState(false)
-  const [favoritesStock, setFavoritesStock] = usePersistedState('favorites', [''])
+  const [favoritesStock] = usePersistedState('favorites', [''])
+  const [favoritesStockView] = useState(getStockData(stocks)
+    .filter((stock: Stock) => favoritesStock.includes(stock.series[0].name)))
 
   useEffect(() => {
-    const favStocks = getStockData(stocks)
-      .filter((stock: Stock) => favoritesStock.includes(stock.series[0].name))
-
-    setStockChart(favStocks)
-  }, [])
+    setStockChart(favoritesStockView)
+  }, [favoritesStockView])
 
   function handleOrderByPrice() {
     if (priceHigher) {
