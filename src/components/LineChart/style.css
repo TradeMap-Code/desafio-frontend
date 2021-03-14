@@ -14,8 +14,7 @@
 
 .chart__content {
   width: 80%;
-  margin: 0 auto;
-  margin-top: 20px;
+  margin: 20px auto;
   background-color: var(--bgChart);
 }
 
@@ -43,4 +42,27 @@
 .btn__group button:hover {
   background-color: var(--text-color-primary);
   color: var(--black);
+}
+
+.btn__fav {
+  padding: 5px 15px;
+  background-color: var(--favorite);
+  color: white;
+  margin: 0 auto;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: all ease-in 0.2s;
+}
+
+.btn__fav:hover {
+  background-color: var(--favorite-hover);
+}
+
+.btn__icon {
+  font-size: 1.5em;
+  margin-left: 5px;
 }
