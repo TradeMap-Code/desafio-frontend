@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
 import stocks from './stocks.json';
 
 import { FavoriteList } from './components/FavoriteList';
@@ -34,7 +36,6 @@ const filterOptions = [
 ];
 
 export default function App() {
-  const [activePage, setActivePage] = useState('list');
   const [activeFilter, setActiveFilter] = useState({
     label: 'Sem filtro',
     value: 'none',
@@ -103,34 +104,34 @@ export default function App() {
     // determines wich stocks array to display
     return stocksArray === stocks ? stocks : favoriteStocks;
   }
-
   return (
     <div className={'app-wrapper'}>
-      <header>
-        <Header setActivePage={setActivePage} />
-      </header>
-      <section>
+      <Router>
+        <Header />
+
         <Filter
-          activePage={activePage}
           filterOptions={filterOptions}
           activeFilter={activeFilter}
           onSelectFilter={onSetFilterState}
         />
-        {activePage === 'list' ? (
-          <StockList
-            displayFilteredStockList={displayFilteredStockList}
-            onButtonClick={onFavoriteStock}
-            stocks={stocks}
-            buttonFavText={'favoritar'}
-          />
-        ) : (
-          <FavoriteList
-            displayFilteredStockList={displayFilteredStockList}
-            onButtonClick={onUnfavoriteStock}
-            favoriteStocks={favoriteStocks}
-          />
-        )}
-      </section>
+        <Switch>
+          <Route exact path='/'>
+            <StockList
+              displayFilteredStockList={displayFilteredStockList}
+              onButtonClick={onFavoriteStock}
+              stocks={stocks}
+              buttonFavText={'favoritar'}
+            />
+          </Route>
+          <Route path='/favoritos'>
+            <FavoriteList
+              displayFilteredStockList={displayFilteredStockList}
+              onButtonClick={onUnfavoriteStock}
+              favoriteStocks={favoriteStocks}
+            />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }

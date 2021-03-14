@@ -1,6 +1,7 @@
 import styles from '../styles/components/Header.module.css';
+import { Link } from 'react-router-dom';
 
-export function Header({ setActivePage }) {
+export function Header() {
   return (
     <nav>
       <div className={styles.navWrapper}>
@@ -12,14 +13,10 @@ export function Header({ setActivePage }) {
         <div className={styles.navOptions}>
           <ul>
             <li>
-              <a href='/#' onClick={() => setActivePage('list')}>
-                Lista de Ações
-              </a>
+              <Link to='/'>Lista de Ações</Link>
             </li>
             <li>
-              <a href='/#' onClick={() => setActivePage('favorites')}>
-                Ações Favoritas
-              </a>
+              <Link to='/favoritos'>Ações Favoritas</Link>
             </li>
           </ul>
         </div>

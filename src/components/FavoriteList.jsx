@@ -3,6 +3,7 @@ import { StockList } from './StockList';
 export function FavoriteList({ onButtonClick, favoriteStocks, displayFilteredStockList }) {
   return (
     <div>
+      {console.log(favoriteStocks)}
       <div>
         <StockList
           displayFilteredStockList={displayFilteredStockList}

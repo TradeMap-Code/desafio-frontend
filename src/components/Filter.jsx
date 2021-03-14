@@ -5,7 +5,6 @@ export function Filter({
   filterOptions,
   onSelectFilter,
   activeFilter,
-  activePage,
 }) {
   const listedOptions = filterOptions.map((option) => {
     return (
@@ -19,7 +18,6 @@ export function Filter({
 
   return (
     <div className={styles.filterWrapper}>
-      <h1>{activePage === 'list' ? 'Lista de Ações' : 'Ações Favoritas'}</h1>
       <div className={styles.filterOptions}>
         <label>
           {activeFilter.label} <IoMdArrowDropdown />
