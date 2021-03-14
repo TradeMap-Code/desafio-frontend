@@ -48,13 +48,13 @@ const List = (): ReactElement => {
           <h2>Lista</h2>
           <TMButton onClick={handleOrderByPrice}>
             Preço
-            {priceHigher && <AiFillCaretUp size={16} />}
-            {!priceHigher && <AiFillCaretDown size={16} />}
+            {priceHigher && <AiFillCaretUp size={12} />}
+            {!priceHigher && <AiFillCaretDown size={12} />}
           </TMButton>
           <TMButton onClick={handleOrderByVariation}>
             Variação
-            {variationHigher && <AiFillCaretUp size={16} />}
-            {!variationHigher && <AiFillCaretDown size={16} />}
+            {variationHigher && <AiFillCaretUp size={12} />}
+            {!variationHigher && <AiFillCaretDown size={12} />}
           </TMButton>
           <ListStocks stockChart={stockChart} />
         </main>

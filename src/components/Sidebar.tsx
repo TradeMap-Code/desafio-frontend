@@ -13,11 +13,11 @@ export default function Sidebar() {
 
         <img src={iconImg} alt="icon" />
         <Link to="/">
-          <AiOutlineUnorderedList size={20} />
+          <AiOutlineUnorderedList size={18} />
           <span>Lista</span>
         </Link>
         <Link to="/favorites">
-          <AiFillStar size={20} />
+          <AiFillStar size={18} />
           <span>Favoritos</span>
         </Link>
       </aside>

@@ -20,9 +20,9 @@ const SwitchTheme: React.FC<Props> = ({ toggleTheme }) => {
           checked={title === 'light'}
           checkedIcon={false}
           uncheckedIcon={false}
-          height={22}
-          width={50}
-          handleDiameter={22}
+          height={18}
+          width={40}
+          handleDiameter={18}
           onColor={colors.button}
           offColor={shade(0.3, colors.button)}
         />

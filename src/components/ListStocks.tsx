@@ -47,7 +47,7 @@ const ListStocks: React.FC<Props> = ({ stockChart }) => {
             options={stock.options}
             series={stock.series}
             type="line"
-            height="300px"
+            height="250px"
           />
 
           {!favoritesStock.includes(stock.series[0].name)
@@ -55,7 +55,7 @@ const ListStocks: React.FC<Props> = ({ stockChart }) => {
             <TMButton
               onClick={() => handleFavorite(stock.series[0].name)}
             >
-              <AiOutlineStar size={18} />
+              <AiOutlineStar size={14} />
             </TMButton>
           )}
 
@@ -64,7 +64,7 @@ const ListStocks: React.FC<Props> = ({ stockChart }) => {
             <TMButton
               onClick={() => handleFavorite(stock.series[0].name)}
             >
-              <AiFillStar size={18} />
+              <AiFillStar size={14} />
             </TMButton>
           )}
         </div>

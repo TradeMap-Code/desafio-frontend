@@ -4,13 +4,13 @@ import styled from 'styled-components'
 export const Container = styled.div`
   position: relative;
   height: 0rem;
-  width: 16rem;
+  width: 12rem;
   z-index: 1;
 
   aside.app-sidebar {
     height: 100%;
-    width: 16rem;
-    padding: 32px 24px;
+    width: 12rem;
+    padding: 24px 18px;
     background: linear-gradient(329.54deg, ${(props) => props.theme.colors.background} 0%, ${(props) => props.theme.colors.sidebar} 100%);
     display: flex;
     flex-direction: column;
@@ -19,11 +19,11 @@ export const Container = styled.div`
   }
   aside.app-sidebar img {
     width: 100%;
-    margin-bottom: 2.4rem;
+    margin-bottom: 1.6rem;
   }
   aside.app-sidebar a {
     width: 100%;
-    height: 48px;
+    height: 38px;
     border: 0;
     background: ${(props) => props.theme.colors.button};
     border-radius: 4px;
@@ -42,6 +42,7 @@ export const Container = styled.div`
   aside.app-sidebar a span{
     width: 80%;
     margin-left: 0.4rem;
+    font-size: 16px;
   }
   aside.app-sidebar a:hover,
   aside.app-sidebar button:hover {

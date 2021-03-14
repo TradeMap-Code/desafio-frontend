@@ -8,7 +8,7 @@ export const Container = styled.div`
   }
 
   #page-main main {
-    width: 900px;
+    width: 700px;
     margin: 64px auto;
     padding: 1rem;
     background: ${(props) => props.theme.colors.backgroundText};

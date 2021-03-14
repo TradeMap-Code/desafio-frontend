@@ -24,10 +24,14 @@ export const Container = styled.div`
     flex-direction: column;
   }
 
+  .chart .stock-information span{
+    font-size: 14px;
+  }
+
   .chart button{
     float: right;
-    width: 3.6rem;
-    height: 2.2rem;
+    width: 3rem;
+    height: 2rem;
     background: ${(props) => props.theme.colors.button};
     border: none;
     border-radius: 4px;
