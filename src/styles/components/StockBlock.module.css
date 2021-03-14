@@ -1,6 +1,6 @@
 .stockWrapper {
   max-width: 20rem;
-  background: #f2f7f7;
+  background: var(--background);
   padding: 0.5rem;
   border-radius: 1rem;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
@@ -12,13 +12,13 @@
 }
 
 .stockHeader h1 {
-  color: #015c5b;
+  color: var(--title);
   display: inline;
 }
 
 .stockHeader h3 {
   max-width: 10rem;
-  opacity: .5;
+  opacity: 0.5;
   padding: 0 1rem;
   font-size: 1rem;
 }
@@ -35,9 +35,9 @@
 }
 
 .stockFooter li.positiveVariation span {
-  color: #1f7025;
+  color: var(--green);
 }
 
-.stockFooter li.negativeVariation span{
-  color: #d4002a;
+.stockFooter li.negativeVariation span {
+  color: var(--red);
 }
