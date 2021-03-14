@@ -32,6 +32,11 @@ const options = {
   legend: false,
 };
 
+const setVariationClass = (variation) => {
+  const defaultClass = 'stock-variation';
+  return variation < 0 ? `${defaultClass} down` : `${defaultClass} up`;
+};
+
 const Chart = ({
   id,
   company,
@@ -45,20 +50,24 @@ const Chart = ({
   return (
     <div className="chart-container">
       <div key={id}>
-        <h1>{company}</h1>
+        <div className="chart-header">
+          <h1>{company}</h1>
+          <button>Favorito</button>
+        </div>
+
+        <div className={setVariationClass(variation)}>
+          <p>Variação</p>
+          <h1>{variation}</h1>
+        </div>
         <div>
           <h3>{stock}</h3> <h3>{country}</h3>
         </div>
-        <div className="chart-container">
+        <div className="stock-chart">
           <Line data={getStockData(chart, chartLength)} options={options} />
         </div>
         <div>
           <p>Preço</p>
           <h1>{price}</h1>
-        </div>
-        <div>
-          <p>Variação</p>
-          <h1>{variation}</h1>
         </div>
       </div>
     </div>
