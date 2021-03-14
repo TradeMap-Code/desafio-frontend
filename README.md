@@ -1,42 +1,39 @@
-# MyPokelist
+# TradeMap
 
 <p align="center">
-   <img src="./.github/logo.png" alt="MyPokelist" width="280"/>
+   <img src="./.github/logo.png" alt="trademap" width="280"/>
 </p>
 
 <p align="center">	
    <a href="https://www.linkedin.com/in/douglas-alves-marcelino-704250180/">
-      <img alt="Douglas Alves Marcelino" src="https://img.shields.io/badge/-Douglas%20Alves%20Marcelino-D60000?style=flat&logo=Linkedin&logoColor=white" />
+      <img alt="Douglas Alves Marcelino" src="https://img.shields.io/badge/-Douglas%20Alves%20Marcelino-109c50?style=flat&logo=Linkedin&logoColor=white" />
    </a>
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/TheeDouglasAM3/mypokelist?color=D60000">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/TheeDouglasAM3/desafio-frontend?color=109c50">
 
-  <a href="https://github.com/TheeDouglasAM3/mypokelist/commits/master">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/TheeDouglasAM3/mypokelist?color=D60000">
+  <a href="https://github.com/TheeDouglasAM3/desafio-frontend/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/TheeDouglasAM3/desafio-frontend?color=109c50">
   </a> 
-  <img alt="License" src="https://img.shields.io/badge/license-MIT-D60000">
-  <a href="https://github.com/TheeDouglasAM3/mypokelist/stargazers">
-    <img alt="Stargazers" src="https://img.shields.io/github/stars/TheeDouglasAM3/mypokelist?color=D60000&logo=github">
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-109c50">
+  <a href="https://github.com/TheeDouglasAM3/desafio-frontend/stargazers">
+    <img alt="Stargazers" src="https://img.shields.io/github/stars/TheeDouglasAM3/desafio-frontend?color=109c50&logo=github">
   </a>
 </p>
 
-Projeto criado com o intuito de adquirir mais conhecimentos sobre as tecnologias ReactJS e Typescript
+Projeto criado para participar do desafio de candidatos à vaga de front-end no TradeMap
 
 
 # :star: Sumário
 
-* [Descrição](#descrição)
 * [Demonstração da aplicação](#demonstração-da-aplicação) 
 * [Tecnologias](#tecnologias)
 * [Como rodar o projeto](#como-rodar-o-projeto)
 * [Achou algum bug?](#problemas)
 * [Licença](#licença)
 
-# Descrição
-MyPokelist é uma plataforma onde lista todos os pokémon em uma interface interativa, e nela você pode favoritar os seus pokémon favoritos e compartilhar com os seus amigos :)
 
 # Demonstração da aplicação
 O projeto desenvolvido neste repositório está disponível em: 
-[https://my-pokelist.vercel.app/](https://my-pokelist.vercel.app/)
+[https://desafio-frontend-douglas-marcelino-trademap.vercel.app/](https://desafio-frontend-douglas-marcelino-trademap.vercel.app/)
 
 # Tecnologias
 Neste projeto foram utilizadas as seguintes tecnologias:
@@ -46,7 +43,7 @@ Neste projeto foram utilizadas as seguintes tecnologias:
 # Como rodar o projeto
 ```bash
 # Copie o repositório
-$ git clone https://github.com/TheeDouglasAM3/MyPokelist.git
+$ git clone https://github.com/TheeDouglasAM3/desafio-frontend.git
 
 # Instale as depedencias
 $ npm install
@@ -61,11 +58,11 @@ $ yarn start
 Acesse o website em: http://localhost:3000/
 
 # Problemas
-Se você encontrou algum bug, se sinta livre **para criar uma nova issue**  [clicando aqui!](https://github.com/TheeDouglasAM3/MyPokeList/issues). Se você já encontrou a solução para o problema, **faça um pull request**!
+Se você encontrou algum bug, se sinta livre **para criar uma nova issue**  [clicando aqui!](https://github.com/TheeDouglasAM3/desafio-frontend/issues). Se você já encontrou a solução para o problema, **faça um pull request**!
 
 # Licença
 
-Criado em 2020 
+Criado em 2021
 
 Feito com carinho por [Douglas Alves Marcelino](https://github.com/TheeDouglasAM3) :duck:
 
