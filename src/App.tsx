@@ -1,6 +1,6 @@
 //---------------------------------------------------------------< components >
 import Header from "./components/Header";
-import Body from "./components/Body";
+import Lista from "./components/Lista";
 //-------------------------------------------------------------------< styles >
 import "./styles/global.css";
 //==================================================================[ < App > ]
@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Body />
+      <Lista />
     </div>
   );
 }

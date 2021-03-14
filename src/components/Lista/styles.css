@@ -1,0 +1,14 @@
+.lista-container {
+  width: 100%;
+  padding-top: 4rem;
+
+  text-align: justify;
+}
+
+.lista-container > ul {
+  margin: 2rem 4rem;
+
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
