@@ -26,12 +26,18 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test-coverage": "react-scripts test --coverage --watchAll false",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
+    ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/components/**/*.tsx"
     ]
   },
   "browserslist": {
@@ -50,6 +56,7 @@
     "@types/js-cookie": "^2.2.6",
     "@types/react-redux": "^7.1.16",
     "@types/react-router-dom": "^5.1.7",
-    "@types/react-vis": "^1.11.6"
+    "@types/react-vis": "^1.11.6",
+    "@types/testing-library__jest-dom": "^5.9.5"
   }
 }
