@@ -63,7 +63,7 @@ const Favorites = (): ReactElement => {
           </TMButton>
           {
             stockChart.length === 0
-              ? <p><br />Não há nenhum favorito :(</p>
+              ? <p><br />Não há favoritos :(</p>
               : <ListStocks stockChart={stockChart} />
           }
 
