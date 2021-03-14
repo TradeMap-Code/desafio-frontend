@@ -3,7 +3,10 @@ import stocks from '../../stocks.json';
 import Chart from '../../components/Chart';
 
 import './styles.css';
+import { useSelector, connect } from 'react-redux';
 const Home = () => {
+  const stks = useSelector((state) => state.stocks);
+  console.log(stks);
   return (
     <div className="container">
       <div className="charts">
@@ -26,4 +29,5 @@ const Home = () => {
     </div>
   );
 };
+
 export default Home;
