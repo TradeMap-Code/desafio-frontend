@@ -4,11 +4,6 @@
   color: var(--grey-dark);
 }
 
-.filterWrapper h1 {
-  font-size: 2.5rem;
-  padding-bottom: 0.5rem;
-}
-
 .filterOptions label {
   padding: 0.2rem;
   width: 10rem;
