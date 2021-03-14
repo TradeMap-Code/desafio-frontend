@@ -6,22 +6,34 @@ import {
   AiOutlineStar as OutlineStarIcon,
 } from "react-icons/ai";
 //--------------------------------------------------------------------< hooks >
-import { useState } from "react";
+import { useMemo } from "react";
+//--------------------------------------------------------------------< redux >
+import { addFavorite, removeFavorite } from "../../store/favorite/actions";
 //-------------------------------------------------------------------< styles >
 import "./styles.css";
+import { useDispatch, useSelector } from "react-redux";
 //--------------------------------------------------------------------< types >
+import { RootState } from "../../store";
 type StockProps = {
   stock: IStock;
 };
 //================================================================[ < Stock > ]
 export default function Stock({ stock }: StockProps) {
   //-------------------------------------------------------------< properties >
-  const [isFavorite, setIsFavorite] = useState(false);
+  const favorite = useSelector((state: RootState) => state.favorite);
+  const dispatch = useDispatch();
   //---------------------------------------------------------------------------
-  const [minChartValue, maxChartValue] = getThreshold();
+  const isFavorite = useMemo(() => favorite.stocks.includes(stock), [
+    favorite,
+    stock,
+  ]);
   //----------------------------------------------------------------< methods >
   function onFavorite() {
-    setIsFavorite(!isFavorite);
+    dispatch(addFavorite(stock));
+  }
+
+  function onUnfavorite() {
+    dispatch(removeFavorite(stock));
   }
   //---------------------------------------------------------------------------
   function getThreshold() {
@@ -33,19 +45,20 @@ export default function Stock({ stock }: StockProps) {
   function drawLines() {
     const lines = [];
 
-    const span = maxChartValue - minChartValue;
+    const [min, max] = getThreshold();
+    const span = max - min;
     const nLines = stock.chart.length - 1;
 
+    const getXY = (i: number) => [
+      (100 * i) / nLines + "%",
+      100 * (1 - (stock.chart[i] - min) / span) + "%",
+    ];
+
     for (let i = 0; i < nLines; i++) {
-      lines.push(
-        <line
-          key={i}
-          x1={(100 / nLines) * i + "%"}
-          y1={100 - (100 * (stock.chart[i] - minChartValue)) / span + "%"}
-          x2={(100 / nLines) * (i + 1) + "%"}
-          y2={100 - (100 * (stock.chart[i + 1] - minChartValue)) / span + "%"}
-        />
-      );
+      const [x1, y1] = getXY(i);
+      const [x2, y2] = getXY(i + 1);
+
+      lines.push(<line key={i} x1={x1} y1={y1} x2={x2} y2={y2} />);
     }
 
     return lines;
@@ -59,7 +72,7 @@ export default function Stock({ stock }: StockProps) {
           <p>{stock.company}</p>
         </h1>
         {isFavorite ? (
-          <FillStarIcon onClick={onFavorite} />
+          <FillStarIcon onClick={onUnfavorite} />
         ) : (
           <OutlineStarIcon onClick={onFavorite} />
         )}

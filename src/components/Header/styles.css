@@ -11,4 +11,26 @@
 
 .header-container > img {
   width: 3rem;
+  margin-right: 2rem;
+}
+
+.header-container > button {
+  all: unset;
+
+  height: 100%;
+  padding: 0 1rem;
+
+  font-weight: 600;
+}
+
+.header-container > button:disabled {
+  color: var(--green-theme2);
+  border-bottom: 4px solid var(--green-theme2);
+}
+
+.header-container > button:enabled {
+  cursor: pointer;
+
+  color: var(--foreground2);
+  opacity: 0.5;
 }

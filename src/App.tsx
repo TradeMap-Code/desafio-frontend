@@ -3,18 +3,18 @@ import Header from "./components/Header";
 import List from "./components/List";
 import Favorites from "./components/Favorites";
 //--------------------------------------------------------------------< hooks >
-import { useState } from "react";
+import { useSelector } from "react-redux";
 //-------------------------------------------------------------------< styles >
 import "./styles/global.css";
+import { RootState } from "./store";
 //==================================================================[ < App > ]
 function App() {
   //-------------------------------------------------------------< properties >
-  const [tab, setTab] = useState<"list" | "favorites">("list");
-  //----------------------------------------------------------------< methods >
+  const { tab } = useSelector((state: RootState) => state.tab);
   //-----------------------------------------------------------------< return >
   return (
     <div className="App">
-      <Header changeTab={setTab} />
+      <Header />
       {tab === "list" && <List />}
       {tab === "favorites" && <Favorites />}
     </div>
