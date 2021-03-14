@@ -1,6 +1,6 @@
 export const INITIAL_STATE = {
   stocks: [],
-  favorites: [],
+  favourites: [],
 };
 const stockReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
@@ -8,6 +8,16 @@ const stockReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         stocks: action.value,
+      };
+    case 'ADD_TO_FAVOURITES':
+      return {
+        ...state,
+        favourites: state.favourites.concat(action.value),
+      };
+    case 'REMOVE_FROM_FAVOURITES':
+      return {
+        ...state,
+        favourites: state.favourites.filter((fav) => fav !== action.value),
       };
     default:
       return state;

@@ -1,7 +1,8 @@
 import React from 'react';
 import { Line } from '@reactchartjs/react-chart.js';
-
+import { addToFavourites, removeFromFavourites } from '../../actions';
 import './styles.css';
+import { useDispatch, useSelector } from 'react-redux';
 
 const getStockData = (stock, n) => ({
   labels: [...Array(n).keys()],
@@ -47,12 +48,23 @@ const Chart = ({
   chart,
   chartLength,
 }) => {
+  const favourites = useSelector((state) => state.favourites);
+  const isFavourited = ({ stock }) => favourites.includes(stock);
+  console.log('FFFF:', favourites);
   return (
     <div className="chart-container">
       <div key={id}>
         <div className="chart-header">
           <h1>{company}</h1>
-          <button>Favorito</button>
+          {isFavourited(stock) ? (
+            <button onClick={useDispatch(removeFromFavourites(stock))}>
+              Remove from favourites
+            </button>
+          ) : (
+            <button onClick={useDispatch(addToFavourites(stock))}>
+              Add to favourites
+            </button>
+          )}
         </div>
 
         <div className={setVariationClass(variation)}>
