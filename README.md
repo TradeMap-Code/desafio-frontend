@@ -33,7 +33,7 @@ Projeto criado para participar do desafio de candidatos à vaga de front-end no 
 
 # Demonstração da aplicação
 O projeto desenvolvido neste repositório está disponível em: 
-[https://desafio-frontend-douglas-marcelino-trademap.vercel.app/](https://desafio-frontend-douglas-marcelino-trademap.vercel.app/)
+[http://desafio-fronte-git-master-theedo-c7f3e5.vercel.app/](http://desafio-fronte-git-master-theedo-c7f3e5.vercel.app/)
 
 # Tecnologias
 Neste projeto foram utilizadas as seguintes tecnologias:
