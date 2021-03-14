@@ -17,6 +17,7 @@ export function StockList({
           stockName={stock.stock}
           price={stock.price}
           variation={stock.variation}
+          country={stock.country}
           chart={stock.chart}
           onButtonClick={onButtonClick}
           buttonFavText={buttonFavText}

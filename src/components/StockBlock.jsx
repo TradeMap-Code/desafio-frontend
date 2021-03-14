@@ -8,6 +8,7 @@ export function StockBlock({
   variation,
   onButtonClick,
   company,
+  country,
   chart,
   buttonFavText,
 }) {
@@ -20,6 +21,7 @@ export function StockBlock({
     <div className={styles.stockWrapper}>
       <div className={styles.stockHeader}>
         <h1>{stockName}</h1>
+        <h3>{company.toUpperCase()}</h3>
         <FavoriteButton
           onButtonClick={onButtonClick}
           company={company}
@@ -29,7 +31,7 @@ export function StockBlock({
       <XYPlot
         width={300}
         height={120}
-        margin={{ left: 0, right: 0, top: 10, bottom: 10 }}
+        margin={{ left: 0, right: 0, top: 40, bottom: 10 }}
       >
         <AreaSeries
           className='area-series-example'
@@ -50,6 +52,7 @@ export function StockBlock({
             Variação: <span>{variation}%</span>
           </li>
           <li>Preço: R$ {price}</li>
+          <li>{country}</li>
         </ul>
       </div>
     </div>

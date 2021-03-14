@@ -42,16 +42,14 @@ export default function App() {
   const [favoriteStocks, setFavoriteStock] = useState([]);
 
   useEffect(() => {
-    if (getLocalStore === null) {
-      localStorage.setItem('favoriteStocks', JSON.stringify([]));
-    } else {
-      setFavoriteStock(JSON.parse(getLocalStore));
-    }
+    // if localStore is not set, it set's a new item, else, gets it's value
+    getLocalStore === null
+      ? localStorage.setItem('favoriteStocks', JSON.stringify([]))
+      : setFavoriteStock(JSON.parse(getLocalStore));
   }, []);
 
-  console.log(favoriteStocks);
   function onFavoriteStock(selected) {
-    return stocks.map((stock) => {
+    stocks.map((stock) => {
       if (stock.company === selected) {
         setFavoriteStock([...favoriteStocks, stock]);
         localStorage.setItem(
