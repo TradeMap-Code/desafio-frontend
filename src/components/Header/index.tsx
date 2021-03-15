@@ -38,7 +38,7 @@ export default function Header() {
   }
   //-----------------------------------------------------------------< return >
   return (
-    <header className="header-container">
+    <header className={`header-container ${theme}`}>
       <img src={logo} alt="TradeMap" />
       <button
         type="button"
@@ -46,6 +46,7 @@ export default function Header() {
         onClick={onListButtonClick}
       >
         AÇÕES
+        <div />
       </button>
       <button
         type="button"
@@ -53,6 +54,7 @@ export default function Header() {
         onClick={onFavoritesButtonClick}
       >
         FAVORITOS
+        <div />
       </button>
       {/* temporario */}
       <button type="button" onClick={onSwitchTheme}>

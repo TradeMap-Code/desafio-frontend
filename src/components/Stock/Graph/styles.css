@@ -1,9 +1,10 @@
 .graph-container {
-  height: 10rem;
+  height: 5rem;
 
   position: relative;
 
-  background: var(--background2);
+  border-top: 2px solid var(--background2);
+  border-bottom: 2px solid var(--background2);
 }
 
 .graph-container > svg {
@@ -17,6 +18,10 @@
 
 .graph-container > svg line {
   pointer-events: none;
+}
+
+.graph-container.white-theme > svg line {
+  stroke: var(--blue);
 }
 
 .graph-container > svg:hover .increase {

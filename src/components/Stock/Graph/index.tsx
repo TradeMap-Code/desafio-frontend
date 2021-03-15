@@ -1,8 +1,10 @@
 //--------------------------------------------------------------------< hooks >
 import { useState } from "react";
+import { useSelector } from "react-redux";
 //-------------------------------------------------------------------< styles >
 import "./styles.css";
 //--------------------------------------------------------------------< types >
+import { RootState } from "../../../store";
 type GraphProps = {
   chart: number[];
 };
@@ -14,6 +16,8 @@ interface StyleProps {
 //================================================================[ < Graph > ]
 export default function Graph({ chart }: GraphProps) {
   //-------------------------------------------------------------< properties >
+  const { theme } = useSelector((state: RootState) => state.theme);
+  //---------------------------------------------------------------------------
   const [className, setClassName] = useState<ClassNameType>("hidden");
   const [style, setStyle] = useState<StyleProps>();
   const [value, setValue] = useState(0);
@@ -74,7 +78,7 @@ export default function Graph({ chart }: GraphProps) {
   }
   //-----------------------------------------------------------------< return >
   return (
-    <div className="graph-container">
+    <div className={`graph-container ${theme}`}>
       {drawLines()}
       <div className={`popup ${className}`} style={style}>
         R$ {value.toFixed(2)}

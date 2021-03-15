@@ -21,13 +21,11 @@ type StockProps = {
 //================================================================[ < Stock > ]
 export default function Stock({ stock }: StockProps) {
   //-------------------------------------------------------------< properties >
-  const favorite = useSelector((state: RootState) => state.favorite);
+  const { stocks } = useSelector((state: RootState) => state.favorite);
+  const { theme } = useSelector((state: RootState) => state.theme);
   const dispatch = useDispatch();
   //---------------------------------------------------------------------------
-  const isFavorite = useMemo(() => favorite.stocks.includes(stock), [
-    favorite,
-    stock,
-  ]);
+  const isFavorite = useMemo(() => stocks.includes(stock), [stocks, stock]);
   //----------------------------------------------------------------< methods >
   function onFavorite() {
     dispatch(addFavorite(stock));
@@ -38,7 +36,7 @@ export default function Stock({ stock }: StockProps) {
   }
   //-----------------------------------------------------------------< return >
   return (
-    <li className="stock-container">
+    <li className={`stock-container ${theme}`}>
       <header>
         <h1>
           {stock.stock}

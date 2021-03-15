@@ -9,6 +9,12 @@
   background: var(--background2);
 }
 
+.header-container.white-theme {
+  background: none;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid var(--background2);
+}
+
 .header-container > img {
   width: 3rem;
   margin-right: 2rem;
@@ -20,12 +26,25 @@
   height: 100%;
   padding: 0 1rem;
 
+  position: relative;
+
   font-weight: 600;
 }
 
 .header-container > button:disabled {
   color: var(--green-theme2);
-  border-bottom: 4px solid var(--green-theme2);
+}
+
+.header-container > button:disabled div {
+  width: 100%;
+  height: 4px;
+  bottom: 0;
+  left: 0;
+
+  position: absolute;
+
+  background: var(--green-theme2);
+  border-radius: 4px 4px 0 0;
 }
 
 .header-container > button:enabled {

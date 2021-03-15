@@ -1,13 +1,19 @@
 .stock-container {
-  min-width: 15rem;
-  max-width: 20rem;
-  padding: 1rem;
+  min-width: 20rem;
+  max-width: 25rem;
+  padding: 1rem 2rem;
 
   flex: 1;
   flex-direction: column;
 
   background: var(--background3);
   border-radius: 5px;
+}
+
+.stock-container.white-theme {
+  background: none;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-bottom: 3px solid var(--background3);
 }
 
 .stock-container > header {
@@ -33,6 +39,10 @@
   height: 1.5rem;
 
   cursor: pointer;
+}
+
+.stock-container.white-theme > header svg {
+  color: var(--yellow);
 }
 
 .stock-container > footer {
