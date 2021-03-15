@@ -11,9 +11,10 @@ import { RootState } from "./store";
 function App() {
   //-------------------------------------------------------------< properties >
   const { tab } = useSelector((state: RootState) => state.tab);
+  const { theme } = useSelector((state: RootState) => state.theme);
   //-----------------------------------------------------------------< return >
   return (
-    <div className="App black-theme">
+    <div className={`App ${theme}`}>
       <Header />
       {tab === "list" && <List />}
       {tab === "favorites" && <Favorites />}

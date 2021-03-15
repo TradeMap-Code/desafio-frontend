@@ -34,3 +34,7 @@
   color: var(--foreground2);
   opacity: 0.5;
 }
+
+.header-container > button:hover:enabled {
+  opacity: 1;
+}

@@ -1,23 +1,40 @@
 //--------------------------------------------------------------------< hooks >
 import { useDispatch, useSelector } from "react-redux";
+//--------------------------------------------------------------------< redux >
+import { gotoTab } from "../../store/tab/actions";
+import { switchTheme } from "../../store/theme/actions";
 //-------------------------------------------------------------------< assets >
 import logo from "../../assets/logo.png";
 //-------------------------------------------------------------------< styles >
 import "./styles.css";
 //--------------------------------------------------------------------< types >
 import { RootState } from "../../store";
-import { gotoTab } from "../../store/tab/actions";
 //===============================================================[ < Header > ]
 export default function Header() {
   //-------------------------------------------------------------< properties >
   const tab = useSelector((state: RootState) => state.tab);
+  const { theme } = useSelector((state: RootState) => state.theme);
   const dispatch = useDispatch();
   //----------------------------------------------------------------< methods >
   function onListButtonClick() {
     dispatch(gotoTab("list"));
   }
+
   function onFavoritesButtonClick() {
     dispatch(gotoTab("favorites"));
+  }
+
+  function onSwitchTheme() {
+    switch (theme) {
+      case "white-theme":
+        dispatch(switchTheme("black-theme"));
+        break;
+      case "black-theme":
+        dispatch(switchTheme("white-theme"));
+        break;
+      default:
+        break;
+    }
   }
   //-----------------------------------------------------------------< return >
   return (
@@ -36,6 +53,10 @@ export default function Header() {
         onClick={onFavoritesButtonClick}
       >
         FAVORITOS
+      </button>
+      {/* temporario */}
+      <button type="button" onClick={onSwitchTheme}>
+        switch theme
       </button>
     </header>
   );
