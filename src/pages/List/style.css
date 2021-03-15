@@ -2,6 +2,10 @@ body {
   background-color: var(--black);
 }
 
+.list__logo {
+  margin-bottom: 30px !important;
+}
+
 .list__container {
   width: 80%;
   margin: 0 auto;

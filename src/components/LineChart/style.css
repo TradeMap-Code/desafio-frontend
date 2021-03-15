@@ -1,5 +1,5 @@
 .select__content {
-  width: 60%;
+  width: 40%;
   margin: 0 auto;
 }
 
@@ -7,7 +7,7 @@
   width: 100%;
   font-family: var(--font);
   font-size: 1rem;
-  padding: 10px;
+  padding: 5px;
   outline: none;
   border-radius: 15px;
 }
