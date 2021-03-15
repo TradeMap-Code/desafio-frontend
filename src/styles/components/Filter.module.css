@@ -19,13 +19,14 @@
 
 .filterOptions ul:hover {
   margin: auto;
-  display: block;
+  display: grid;
   position: relative;
 }
 
 .filterWrapper label:hover + ul {
   margin: auto;
-  display: block;
+  display: grid;
+  justify-content: center;
   position: relative;
 }
 
@@ -34,11 +35,11 @@
   margin: 0.2rem 0;
 }
 
-.filterOptions li a {
-  color: var(--black);
-  padding: 0 1.5rem;
+.filterOptions li button {
+  background: none;
+  width: 100%;
 }
 
-.filterWrapper li:hover {
-  background-color: var(--text-highlight);
+.filterWrapper li button:hover {
+  background-color: var(--gray-light);
 }

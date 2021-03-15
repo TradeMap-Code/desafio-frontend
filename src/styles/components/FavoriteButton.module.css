@@ -2,15 +2,6 @@
   display: inline-block;
 }
 
-button {
-  float: right;
-  text-align: center;
-  border: none;
-  border-radius: 1rem;
-  padding: 0.25rem 0.5rem;
-  cursor: pointer;
-}
-
 .favoriteButton {
   background: var(--title);
   color: var(--text-highlight);

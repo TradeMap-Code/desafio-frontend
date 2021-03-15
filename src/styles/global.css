@@ -28,6 +28,15 @@ a {
   text-decoration: none;
 }
 
+button {
+  text-align: center;
+  border: none;
+  outline: none;
+  border-radius: 1rem;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+}
+
 .app-wrapper {
   margin: 0 auto;
   max-width: 1500px;
