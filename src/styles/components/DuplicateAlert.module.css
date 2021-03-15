@@ -1,0 +1,37 @@
+.overlay {
+  background: rgba(242, 243, 245, 0.5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.alertWrapper {
+  background: var(--white);
+  width: 100%;
+  max-width: 20rem;
+  padding: 2rem 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 5rem rgba(0, 0, 0, 1);
+  text-align: center;
+}
+
+.alertWrapper h1 {
+  color: var(--green);
+}
+
+.alertWrapper p {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+}
+
+.alertWrapper button {
+  padding: 0.5rem;
+  background-color: var(--text-highlight);
+  border: 0;
+  font-weight: bolder;
+}
