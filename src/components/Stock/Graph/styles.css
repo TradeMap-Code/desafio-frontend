@@ -34,6 +34,7 @@
   position: absolute;
   pointer-events: none;
   
+  color: var(--white);
   font-family: "Inconsolata", monospace;
   border-radius: 5px;
   transform: translate(-50%, calc(-100% - 10px));

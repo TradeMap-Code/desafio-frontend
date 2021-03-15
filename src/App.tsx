@@ -13,7 +13,7 @@ function App() {
   const { tab } = useSelector((state: RootState) => state.tab);
   //-----------------------------------------------------------------< return >
   return (
-    <div className="App">
+    <div className="App black-theme">
       <Header />
       {tab === "list" && <List />}
       {tab === "favorites" && <Favorites />}

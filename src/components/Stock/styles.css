@@ -51,6 +51,7 @@
   padding: 0.25rem 0.5rem;
 
   border-radius: 5px;
+  color: var(--white);
   font-family: "Inconsolata", monospace;
   line-height: 1.5rem;
 }

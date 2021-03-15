@@ -4,23 +4,6 @@
   box-sizing: border-box;
 }
 
-:root {
-  --white: #fff;
-  --green: #0aa050;
-  --red: #c41238;
-
-  --foreground1: #f0f0f0;
-  --foreground2: #c9c9c9;
-
-  --background1: #030303;
-  --background2: #181818;
-  --background3: #262626;
-
-  --green-theme1: #00a330;
-  --green-theme2: #00b37b;
-  --green-theme3: #00747d;
-}
-
 @media (max-width: 1080px) {
   html {
     font-size: 93.75%;
@@ -50,11 +33,48 @@ body,
 #root,
 .App {
   height: 100vh;
+
+  --white: #fff;
+  
+  --green-theme1: #00a330;
+  --green-theme2: #00b37b;
+  --green-theme3: #00747d;
+  
+  background: var(--background1);
+  color: var(--foreground1);
+}
+
+html,
+body,
+#root,
+.white-theme {
+  --green: #10c163;
+  --red: #ff2a58;
+  
+  --foreground1: #181818;
+  --foreground2: #565656;
+  
+  --background1: #f0f0f0;
+  --background2: #dedede;
+  --background3: #c9c9c9;
+}
+
+html,
+body,
+#root,
+.black-theme {
+  --green: #0aa050;
+  --red: #c41238;
+  
+  --foreground1: #f0f0f0;
+  --foreground2: #c9c9c9;
+
+  --background1: #030303;
+  --background2: #181818;
+  --background3: #262626;
 }
 
 body {
-  background: var(--background1);
-  color: var(--foreground1);
 }
 
 body,
