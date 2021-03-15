@@ -1,8 +1,9 @@
+//---------------------------------------------------------------< components >
+import { Switch } from "./Switch";
 //--------------------------------------------------------------------< hooks >
 import { useDispatch, useSelector } from "react-redux";
 //--------------------------------------------------------------------< redux >
 import { gotoTab } from "../../store/tab/actions";
-import { switchTheme } from "../../store/theme/actions";
 //-------------------------------------------------------------------< assets >
 import logo from "../../assets/logo.png";
 //-------------------------------------------------------------------< styles >
@@ -23,43 +24,29 @@ export default function Header() {
   function onFavoritesButtonClick() {
     dispatch(gotoTab("favorites"));
   }
-
-  function onSwitchTheme() {
-    switch (theme) {
-      case "white-theme":
-        dispatch(switchTheme("black-theme"));
-        break;
-      case "black-theme":
-        dispatch(switchTheme("white-theme"));
-        break;
-      default:
-        break;
-    }
-  }
   //-----------------------------------------------------------------< return >
   return (
     <header className={`header-container ${theme}`}>
-      <img src={logo} alt="TradeMap" />
-      <button
-        type="button"
-        disabled={tab.tab === "list"}
-        onClick={onListButtonClick}
-      >
-        AÇÕES
-        <div />
-      </button>
-      <button
-        type="button"
-        disabled={tab.tab === "favorites"}
-        onClick={onFavoritesButtonClick}
-      >
-        FAVORITOS
-        <div />
-      </button>
-      {/* temporario */}
-      <button type="button" onClick={onSwitchTheme}>
-        switch theme
-      </button>
+      <div>
+        <img src={logo} alt="TradeMap" />
+        <button
+          type="button"
+          disabled={tab.tab === "list"}
+          onClick={onListButtonClick}
+        >
+          AÇÕES
+          <div />
+        </button>
+        <button
+          type="button"
+          disabled={tab.tab === "favorites"}
+          onClick={onFavoritesButtonClick}
+        >
+          FAVORITOS
+          <div />
+        </button>
+      </div>
+      <Switch size={3} />
     </header>
   );
 }

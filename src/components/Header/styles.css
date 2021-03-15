@@ -1,12 +1,14 @@
 .header-container {
   width: 100%;
   height: 4rem;
-  padding: 0 2rem;
+  padding: 0 3rem;
   z-index: 100;
 
   position: fixed;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  
   background: var(--background2);
 }
 
@@ -16,12 +18,19 @@
   border-bottom: 2px solid var(--background2);
 }
 
-.header-container > img {
+.header-container > div {
+  height: 100%;
+  
+  display: flex;
+  align-items: center;
+}
+
+.header-container > div img {
   width: 3rem;
   margin-right: 2rem;
 }
 
-.header-container > button {
+.header-container > div button {
   all: unset;
 
   height: 100%;
@@ -32,11 +41,11 @@
   font-weight: 600;
 }
 
-.header-container > button:disabled {
+.header-container > div button:disabled {
   color: var(--green-theme2);
 }
 
-.header-container > button:disabled div {
+.header-container > div button:disabled div {
   width: 100%;
   height: 4px;
   bottom: 0;
@@ -48,13 +57,13 @@
   border-radius: 4px 4px 0 0;
 }
 
-.header-container > button:enabled {
+.header-container > div button:enabled {
   cursor: pointer;
 
   color: var(--foreground2);
   opacity: 0.5;
 }
 
-.header-container > button:hover:enabled {
+.header-container > div button:hover:enabled {
   opacity: 1;
 }

@@ -1,3 +1,57 @@
 .switch-container {
+  all: unset;
+
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  border-radius: 9999px;
+  background: var(--background3);
+}
+
+.switch-container:focus {
+  box-shadow: 0 0 1px 2px var(--green-theme2);
+}
+
+.switch-container.white-theme {
+  flex-direction: row;
+}
+
+.switch-container.black-theme {
+  flex-direction: row-reverse;
+}
+
+.switch-container > .ball {
+  width: calc(50% - 6px);
+  height: calc(100% - 6px);
+  margin: 3px;
+
+  position: absolute;
   
+  background: var(--foreground2);
+  border-radius: 9999px;
+  
+  animation-duration: 0.2s;
+  animation-timing-function: ease;
+}
+
+@keyframes to-white-theme {
+  from {
+    transform: translateX(100%);
+  }
+}
+
+.switch-container.white-theme > .ball {
+  animation-name: to-white-theme;
+}
+
+@keyframes to-dark-theme {
+  from {
+    transform: translate(-100%);
+  }
+}
+
+.switch-container.black-theme > .ball {
+  animation-name: to-dark-theme;
 }
