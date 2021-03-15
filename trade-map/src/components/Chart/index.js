@@ -49,22 +49,28 @@ const Chart = ({
   chartLength,
 }) => {
   const favourites = useSelector((state) => state.favourites);
+  const stocks = useSelector((state) => state.stocks);
   const isFavourited = ({ stock }) => favourites.includes(stock);
   console.log('FFFF:', favourites);
+  console.log(stocks.map((stock) => stock));
   return (
     <div className="chart-container">
       <div key={id}>
         <div className="chart-header">
           <h1>{company}</h1>
-          {isFavourited(stock) ? (
-            <button onClick={useDispatch(removeFromFavourites(stock))}>
-              Remove from favourites
-            </button>
-          ) : (
-            <button onClick={useDispatch(addToFavourites(stock))}>
-              Add to favourites
-            </button>
-          )}
+          {stocks.map((item) => {
+            <div>
+              {isFavourited(item) ? (
+                <button onClick={useDispatch(removeFromFavourites(item))}>
+                  Remove from favourites
+                </button>
+              ) : (
+                <button onClick={useDispatch(addToFavourites(item))}>
+                  Add to favourites
+                </button>
+              )}
+            </div>;
+          })}
         </div>
 
         <div className={setVariationClass(variation)}>
