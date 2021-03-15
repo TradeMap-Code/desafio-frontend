@@ -34,3 +34,12 @@ export function updateVariationOrder(inverseOrder: boolean) {
     },
   };
 }
+
+export function updateTheme(theme: string) {
+  return {
+    type: 'UPDATE_THEME',
+    payload: {
+      theme,
+    },
+  };
+}

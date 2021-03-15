@@ -3,6 +3,22 @@
   flex-direction: column;
 }
 
+.container.themeLight {
+  background: var(--background);
+}
+
+.container.themeDark {
+  background: var(--dark-background);
+}
+
+.container.themeLight button {
+  background: var(--dark-blue);
+}
+
+.container.themeDark button {
+  background: var(--dark-green);
+}
+
 .orderButtons {
   display: flex;
   justify-content: space-evenly;

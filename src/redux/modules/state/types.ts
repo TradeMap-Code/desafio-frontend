@@ -14,6 +14,7 @@ export interface State {
   variationOrderInverse: boolean;
   favoritesStocks: string[];
   stocks: Stock[];
+  theme: string;
 }
 
 export interface IState {

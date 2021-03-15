@@ -36,7 +36,7 @@
 
 
 body {
-  background: var(--dark-background);
+  background: var(--background);
   color: var(--text);
 }
 
@@ -47,8 +47,15 @@ body, input, textarea, button {
 
 button {
   cursor: pointer;
-  background: var(--dark-green);
   color: var(--white);
+}
+
+button .themLight {
+  background: var(--dark-blue);
+}
+
+button .themDarl {
+  background: var(--dark-green);
 }
 
 

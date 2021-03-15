@@ -9,6 +9,7 @@ const INITIAL_STATE: State = {
   variationOrderInverse: false,
   favoritesStocks: Cookies.get('favoritesStocks') ? Cookies.getJSON('favoritesStocks') as string[] : [],
   stocks: Stocks,
+  theme: 'themeDark',
 };
 
 const stateReducer: Reducer<State> = (state = INITIAL_STATE, action) => {
@@ -45,6 +46,10 @@ const stateReducer: Reducer<State> = (state = INITIAL_STATE, action) => {
         } 
         const sortedStocks = state.stocks.sort((stockA, stockB) => stockA.variation - stockB.variation);
         return { ...state, variationOrderInverse: inverseOrder, stocks: sortedStocks};
+      }
+      case 'UPDATE_THEME': {
+        const theme = action.payload;
+        return { ...state, theme};
       }
       default: {
         return state;

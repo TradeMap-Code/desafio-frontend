@@ -19,6 +19,7 @@ const Favorites: React.FC = () => {
   });
   const priceOrderInverse = useSelector((state: State) => state.priceOrderInverse);
   const variationOrderInverse = useSelector((state: State) => state.variationOrderInverse);
+  const theme = useSelector((state: State) => state.theme);
 
   function handlePriceOrder(inverse: boolean) {
     if(inverse) {
@@ -49,7 +50,7 @@ const Favorites: React.FC = () => {
   }
 
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${styles[theme]}`}>
       <Header />
 
       <div className={styles.orderButtons}>

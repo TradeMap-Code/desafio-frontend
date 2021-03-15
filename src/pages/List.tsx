@@ -16,6 +16,7 @@ const List: React.FC = () => {
   const stocks = useSelector((state: State) => state.stocks);
   const priceOrderInverse = useSelector((state: State) => state.priceOrderInverse);
   const variationOrderInverse = useSelector((state: State) => state.variationOrderInverse);
+  const theme = useSelector((state: State) => state.theme);
 
 
 
@@ -48,7 +49,7 @@ const List: React.FC = () => {
   }
 
   return (
-    <div className={`${styles.container}`}>
+    <div className={`${styles.container} ${styles[theme]}`}>
       <Header />
       <div className={styles.orderButtons}>
         <Button onClick={() => handlePriceOrder(!priceOrderInverse)}>
