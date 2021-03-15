@@ -1,5 +1,5 @@
 //--------------------------------------------------------------------< hooks >
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { useSelector } from "react-redux";
 //-------------------------------------------------------------------< styles >
 import "./styles.css";
@@ -36,46 +36,52 @@ export default function Graph({ chart }: GraphProps) {
     setClassName(className);
   }
   //---------------------------------------------------------------------------
-  function getThreshold() {
-    const _chart = [...chart];
-    _chart.sort((a, b) => a - b);
-    return [_chart[0] ?? 0, _chart.pop() ?? 0];
-  }
+  const getThreshold = useCallback(
+    function () {
+      const _chart = [...chart];
+      _chart.sort((a, b) => a - b);
+      return [_chart[0] ?? 0, _chart.pop() ?? 0];
+    },
+    [chart]
+  );
 
-  function drawLines() {
-    const lines = [];
+  const drawLines = useCallback(
+    function () {
+      const lines = [];
 
-    const [min, max] = getThreshold();
-    const span = max - min;
-    const nLines = chart.length - 1;
+      const [min, max] = getThreshold();
+      const span = max - min;
+      const nLines = chart.length - 1;
 
-    for (let i1 = 0, i2 = 1; i1 < nLines; i1++, i2++) {
-      const y1 = 1 - (chart[i1] - min) / span;
-      const y2 = 1 - (chart[i2] - min) / span;
-      const className = y1 - y2 >= 0 ? "increase" : "decrease";
+      for (let i1 = 0, i2 = 1; i1 < nLines; i1++, i2++) {
+        const y1 = 1 - (chart[i1] - min) / span;
+        const y2 = 1 - (chart[i2] - min) / span;
+        const className = y1 - y2 >= 0 ? "increase" : "decrease";
 
-      lines.push(
-        <svg
-          key={i1}
-          height="1"
-          width="1"
-          style={{ width: 100 / nLines + "%" }}
-          onMouseEnter={() => onPopup(chart[i2], className, i2 / nLines, y2)}
-          onMouseOut={() => setClassName("hidden")}
-        >
-          <line
-            className={className}
-            x1={"0%"}
-            y1={`${100 * y1}%`}
-            x2={"100%"}
-            y2={`${100 * y2}%`}
-          />
-        </svg>
-      );
-    }
+        lines.push(
+          <svg
+            key={i1}
+            height="1"
+            width="1"
+            style={{ width: 100 / nLines + "%" }}
+            onMouseEnter={() => onPopup(chart[i2], className, i2 / nLines, y2)}
+            onMouseOut={() => setClassName("hidden")}
+          >
+            <line
+              className={className}
+              x1={"0%"}
+              y1={`${100 * y1}%`}
+              x2={"100%"}
+              y2={`${100 * y2}%`}
+            />
+          </svg>
+        );
+      }
 
-    return lines;
-  }
+      return lines;
+    },
+    [chart, getThreshold]
+  );
   //-----------------------------------------------------------------< return >
   return (
     <div className={`graph-container ${theme}`}>

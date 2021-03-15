@@ -32,8 +32,6 @@ html,
 body,
 #root,
 .App {
-  height: 100vh;
-
   --white: #fff;
   --blue: #3492eb;
   --yellow: #cbb71f;
@@ -44,6 +42,12 @@ body,
   
   background: var(--background1);
   color: var(--foreground1);
+}
+
+.App {
+  height: max-content;
+  min-height: 100vh;
+  padding-bottom: 5rem;
 }
 
 html,
