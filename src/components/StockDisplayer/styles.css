@@ -1,9 +1,9 @@
-.list-container {
+.stock-displayer-container {
   width: 100%;
   padding-top: 4rem;
 }
 
-.list-container > ul {
+.stock-displayer-container > ul {
   margin: 2rem 4rem;
 
   display: flex;
@@ -12,7 +12,7 @@
   justify-content: center;
 }
 
-.list-container > p {
+.stock-displayer-container > p {
   width: 100%;
   margin-top: 4rem;
 
@@ -22,7 +22,7 @@
 }
 
 @media only screen and (max-width: 420px) {
-  .list-container {
+  .stock-displayer-container {
     padding-top: 1rem;
   }
 }

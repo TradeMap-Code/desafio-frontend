@@ -1,18 +1,22 @@
+//---------------------------------------------------------------< interfaces >
+import IStock from "../../interfaces/IStock";
 //---------------------------------------------------------------< components >
 import Stock from "../Stock";
-//--------------------------------------------------------------------< hooks >
-import { useSelector } from "react-redux";
 //-------------------------------------------------------------------< styles >
 import "./styles.css";
 //--------------------------------------------------------------------< types >
-import { RootState } from "../../store";
-//============================================================[ < Favorites > ]
-export default function Favorites() {
-  //-------------------------------------------------------------< properties >
-  const { stocks } = useSelector((state: RootState) => state.favorite);
+interface StockDisplayerProps {
+  stocks: IStock[];
+  placeholder: string;
+}
+//=======================================================[ < StockDisplayer > ]
+export default function StockDisplayer({
+  stocks,
+  placeholder,
+}: StockDisplayerProps) {
   //-----------------------------------------------------------------< return >
   return (
-    <div className="favorites-container">
+    <main className="stock-displayer-container">
       {stocks.length ? (
         <ul>
           {stocks.map((stock, index) => (
@@ -20,8 +24,8 @@ export default function Favorites() {
           ))}
         </ul>
       ) : (
-        <p>Você não tem nenhuma ação favoritada</p>
+        <p>{placeholder}</p>
       )}
-    </div>
+    </main>
   );
 }
