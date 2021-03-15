@@ -49,6 +49,7 @@ const Chart = ({
   chartLength,
 }) => {
   const favourites = useSelector((state) => state.favourites);
+
   const dispatch = useDispatch();
   const isFavourited = (stock) => favourites.includes(stock);
   const addFavourites = () => {
@@ -57,6 +58,7 @@ const Chart = ({
   const removeFavourites = () => {
     dispatch(removeFromFavourites(stock));
   };
+
   return (
     <div className="chart-container">
       <div key={id}>

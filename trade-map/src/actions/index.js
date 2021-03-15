@@ -18,3 +18,17 @@ export const removeFromFavourites = (stock) => {
     value: stock,
   };
 };
+
+export const setPriceOrder = (order) => {
+  return {
+    type: 'SET_PRICE_ORDER',
+    value: order,
+  };
+};
+
+export const setVariationOrder = (order) => {
+  return {
+    type: 'SET_VARIATION_ORDER',
+    value: order,
+  };
+};
