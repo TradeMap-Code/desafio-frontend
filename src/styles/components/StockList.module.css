@@ -24,3 +24,9 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 880px) {
+  .stockListWrapper {
+    padding: 0;
+  }
+}

@@ -20,3 +20,19 @@
   color: var(--white);
   padding: 1rem;
 }
+
+.navOptions button {
+  display: none;
+}
+
+@media (max-width: 880px) {
+  .navWrapper {
+    padding: 0.5rem 0;
+  }
+  .navOptions li {
+    display: grid;
+  }
+  .navOptions a {
+    padding: .2rem 1rem;
+  }
+}
