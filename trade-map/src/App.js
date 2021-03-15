@@ -12,8 +12,7 @@ const favourites = localStorage.getItem('favourites')
   : [];
 
 function App() {
-  const store = createStore(stockReducer, { ...INITIAL_STATE, favourites });
-  //const dispatch = useDispatch();
+  const store = createStore(stockReducer);
   store.subscribe(() => {
     localStorage.setItem(
       'favourites',

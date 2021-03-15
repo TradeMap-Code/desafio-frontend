@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Line } from '@reactchartjs/react-chart.js';
 import { addToFavourites, removeFromFavourites } from '../../actions';
 import './styles.css';
-import { useDispatch, useSelector } from 'react-redux';
+import { connect, useDispatch, useSelector } from 'react-redux';
 
 const getStockData = (stock, n) => ({
   labels: [...Array(n).keys()],
@@ -49,28 +49,24 @@ const Chart = ({
   chartLength,
 }) => {
   const favourites = useSelector((state) => state.favourites);
-  const stocks = useSelector((state) => state.stocks);
-  const isFavourited = ({ stock }) => favourites.includes(stock);
-  console.log('FFFF:', favourites);
-  console.log(stocks.map((stock) => stock));
+  const dispatch = useDispatch();
+  const isFavourited = (stock) => favourites.includes(stock);
+  const addFavourites = () => {
+    dispatch(addToFavourites(stock));
+  };
+  const removeFavourites = () => {
+    dispatch(removeFromFavourites(stock));
+  };
   return (
     <div className="chart-container">
       <div key={id}>
         <div className="chart-header">
           <h1>{company}</h1>
-          {stocks.map((item) => {
-            <div>
-              {isFavourited(item) ? (
-                <button onClick={useDispatch(removeFromFavourites(item))}>
-                  Remove from favourites
-                </button>
-              ) : (
-                <button onClick={useDispatch(addToFavourites(item))}>
-                  Add to favourites
-                </button>
-              )}
-            </div>;
-          })}
+          {isFavourited(stock) ? (
+            <button onClick={removeFavourites}>Remove from favourites</button>
+          ) : (
+            <button onClick={addFavourites}>Add to favourites</button>
+          )}
         </div>
 
         <div className={setVariationClass(variation)}>
@@ -91,5 +87,13 @@ const Chart = ({
     </div>
   );
 };
-
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addToFavourites: (stock) => () => dispatch(addToFavourites(stock)),
+    removeFromFavourites: (stock) => () =>
+      dispatch(removeFromFavourites(stock)),
+    setPriceOrder: (order) => dispatch(setPriceOrder(order)),
+    setVariationOrder: (order) => dispatch(setVariationOrder(order)),
+  };
+};
 export default Chart;
