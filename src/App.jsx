@@ -9,6 +9,7 @@ import { StockList } from './components/StockList';
 import { Filter } from './components/Filter';
 
 import './styles/global.css';
+import { DuplicatedAlert } from './components/DuplicateAlert';
 
 const getLocalStore = localStorage.getItem('favoriteStocks');
 
@@ -41,6 +42,7 @@ export default function App() {
     value: 'none',
   });
   const [favoriteStocks, setFavoriteStock] = useState([]);
+  const [isNotDuplicated, setIsNotDuplicated] = useState(true);
 
   useEffect(() => {
     // if localStore is not set, it set's a new item, else, gets it's value
@@ -49,17 +51,28 @@ export default function App() {
       : setFavoriteStock(JSON.parse(getLocalStore));
   }, []);
 
-  function onFavoriteStock(selected) {
-    stocks.map((stock) => {
-      if (stock.company === selected) {
-        setFavoriteStock([...favoriteStocks, stock]);
-        localStorage.setItem(
-          'favoriteStocks',
-          JSON.stringify([...favoriteStocks, stock])
-        );
+  function checkDuplicite(selected) {
+    for (let i = 0; i < favoriteStocks.length; i++) {
+      if (favoriteStocks[i].company === selected) {
+        return setIsNotDuplicated(false);
       }
-      return null;
-    });
+    }
+    onFavoriteStock(selected);
+  }
+
+  function onFavoriteStock(selected) {
+    isNotDuplicated
+      ? stocks.map((stock) => {
+          if (stock.company === selected) {
+            setFavoriteStock([...favoriteStocks, stock]);
+            localStorage.setItem(
+              'favoriteStocks',
+              JSON.stringify([...favoriteStocks, stock])
+            );
+          }
+          return null;
+        })
+      : setIsNotDuplicated(true);
   }
 
   function onUnfavoriteStock(selected) {
@@ -116,9 +129,10 @@ export default function App() {
         />
         <Switch>
           <Route exact path='/'>
+            <DuplicatedAlert setIsNotDuplicated={setIsNotDuplicated} isNotDuplicated={isNotDuplicated}/>
             <StockList
               displayFilteredStockList={displayFilteredStockList}
-              onButtonClick={onFavoriteStock}
+              onButtonClick={checkDuplicite}
               stocks={stocks}
               buttonFavText={'favoritar'}
             />
