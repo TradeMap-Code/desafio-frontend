@@ -9,15 +9,19 @@ import { RootState } from "../../store";
 //============================================================[ < Favorites > ]
 export default function Favorites() {
   //-------------------------------------------------------------< properties >
-  const favorite = useSelector((state: RootState) => state.favorite);
+  const { stocks } = useSelector((state: RootState) => state.favorite);
   //-----------------------------------------------------------------< return >
   return (
     <div className="favorites-container">
-      <ul>
-        {favorite.stocks.map((stock, index) => (
-          <Stock key={index} stock={stock} />
-        ))}
-      </ul>
+      {stocks.length ? (
+        <ul>
+          {stocks.map((stock, index) => (
+            <Stock key={index} stock={stock} />
+          ))}
+        </ul>
+      ) : (
+        <p>Você não tem nenhuma ação favoritada</p>
+      )}
     </div>
   );
 }

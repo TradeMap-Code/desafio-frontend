@@ -1,8 +1,6 @@
 .favorites-container {
   width: 100%;
   padding-top: 4rem;
-
-  text-align: justify;
 }
 
 .favorites-container > ul {
@@ -11,8 +9,17 @@
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
+.favorites-container > p {
+  width: 100%;
+  margin-top: 4rem;
+
+  text-align: center;
+  color: var(--foreground2);
+  opacity: 0.5;
+}
 
 @media only screen and (max-width: 420px) {
   .favorites-container {
