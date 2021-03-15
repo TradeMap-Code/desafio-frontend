@@ -10,11 +10,11 @@
   justify-content: space-between;
   
   background: var(--background2);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
 .header-container.white-theme {
   background: var(--background1);
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   border-bottom: 2px solid var(--background2);
 }
 
@@ -88,6 +88,16 @@
 @media only screen and (max-width: 420px) {
   .header-container {
     height: 5rem;
-    bottom: -2px;
+    bottom: 0;
+
+    border-bottom: 0 !important;
+    border-top: 2px solid var(--background3);
+  }
+
+  .header-container.white-theme {
+    height: 5rem;
+    bottom: 0;
+
+    border: 0;
   }
 }
