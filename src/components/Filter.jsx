@@ -1,15 +1,17 @@
-import styles from '../styles/components/Filter.module.css';
+import { useLocation } from 'react-router-dom';
 import { IoMdArrowDropdown } from 'react-icons/io';
 
-export function Filter({
-  filterOptions,
-  onSelectFilter,
-  activeFilter,
-}) {
+import styles from '../styles/components/Filter.module.css';
+
+export function Filter({ filterOptions, onSelectFilter, activeFilter }) {
+  const location = useLocation();
   const listedOptions = filterOptions.map((option) => {
     return (
       <li key={option.value}>
-        <a href='/#' onClick={() => onSelectFilter(option.label, option.value)}>
+        <a
+          href={location.pathname}
+          onClick={() => onSelectFilter(option.label, option.value)}
+        >
           {option.label}
         </a>
       </li>
