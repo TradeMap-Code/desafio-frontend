@@ -1,46 +1,44 @@
-# Getting Started with Create React App
+# TradeMap | Desafio Técnico ValeMobi
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Esse projeto é fruto do desafio técnico *front-end* da [ValeMobi](https://www.valemobi.com.br/).
 
-## Available Scripts
+## Descrição
 
-In the project directory, you can run:
+A aplicação consiste basicamente em um visualizador de ações, as quais é possível favoritar ou desfavoritar.
 
-### `yarn start`
+![Tela inicial](.github/stocks-web-black.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Favoritos
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Ações favoritadas podem ser visualizadas na aba **Favoritos**:
 
-### `yarn test`
+![Aba Favoritos](.github/favorites-web-black.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Temas & Responsividade
 
-### `yarn build`
+O aplicativo também é capaz de trocar entre os temas **claro** e **escuro**, além de ser **responsivo** para dispositivos *mobile*:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Tema escuro mobile](.github/stocks-mobile-black.png)
+![Tema claro mobile](.github/stocks-mobile-white.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## UI do Gráfico
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Ao passar o *mouse* pelo gráfico, um ***popup*** aparece indicando o valor da ação naquele ponto e se foi uma subida ou queda:
 
-### `yarn eject`
+![Popup de subida](.github/stock-white-up.png)
+![Popup de queda](.github/stock-white-down.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<br/>
+<br/>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Contato
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### **Lucas Rezende | Desenvolvedor *Front-end***
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<img alt="WhatsApp" src="https://logodownload.org/wp-content/uploads/2015/04/whatsapp-logo-1.png" height="15px"/> +55 (71) 9 9342-8942
 
-## Learn More
+<img alt="Gmail" src="https://logodownload.org/wp-content/uploads/2018/03/gmail-logo-16.png" height="15px"/> lucas.s.oliveira.rezende@gmail.com
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<img alt="LinkedIn" src="https://image.flaticon.com/icons/png/512/174/174857.png" height="15px"/> [LinkedIn](https://www.linkedin.com/in/lucas-rezende-b155a01b3/)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<img alt="GitHub" src="https://image.flaticon.com/icons/png/512/25/25231.png" height="15px"/> [GitHub](https://github.com/oLucasRez)
