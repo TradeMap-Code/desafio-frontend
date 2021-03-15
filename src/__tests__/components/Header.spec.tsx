@@ -17,6 +17,18 @@ jest.mock('react-router-dom', () => {
   };
 });
 
+const mockedUseDispatch = jest.fn();
+const mockedUseSelectorTheme = jest.fn();
+
+jest.mock('react-redux', () => {
+  return {
+    useDispatch: () => mockedUseDispatch,
+    useSelector:() => ({
+      theme: mockedUseSelectorTheme,
+    }),
+  };
+});
+
 
 describe('Header Component', () => {
   beforeEach(() => {
@@ -27,6 +39,7 @@ describe('Header Component', () => {
     mockedHistoryLocation.mockReturnValue({
       pathname: '/favorites',
     });
+
     const { getByText } = render(<Header />);
     
     const listPageButton = getByText('List');
@@ -45,5 +58,18 @@ describe('Header Component', () => {
     fireEvent.click(favoritesPageButton);
 
     expect(mockedHistoryPush).toHaveBeenCalledWith('/favorites');
+  });
+  
+  it('should be able to change theme', () => {
+    const { getByText } = render(<Header />);
+    
+    const changeThemeButton = getByText('Theme Dark');
+
+    fireEvent.click(changeThemeButton);
+
+    expect(mockedUseDispatch).toHaveBeenCalledWith({
+      type: 'UPDATE_THEME',
+      payload: 'themeDark'
+    });
   });
 });
