@@ -18,15 +18,13 @@ Ações favoritadas podem ser visualizadas na aba **Favoritos**:
 
 O aplicativo também é capaz de trocar entre os temas **claro** e **escuro**, além de ser **responsivo** para dispositivos *mobile*:
 
-<img alt="Tema escuro mobile" src=".github/stocks-mobile-black.png" height="560px"/>
-<img alt="Tema claro mobile" src=".github/stocks-mobile-white.png" height="560px"/>
+<img alt="Tema escuro mobile" src=".github/stocks-mobile-black.png" height="560px"/><img alt="Tema claro mobile" src=".github/stocks-mobile-white.png" height="560px"/>
 
 ## UI do Gráfico
 
 Ao passar o *mouse* pelo gráfico, um ***popup*** aparece indicando o valor da ação naquele ponto e se foi uma subida ou queda:
 
-<img alt="Popup de subida" src=".github/stock-white-up.png" height="240px"/>
-<img alt="Popup de queda" src=".github/stock-white-down.png" height="240px"/>
+<img alt="Popup de subida" src=".github/stock-white-up.png" height="240px"/><img alt="Popup de queda" src=".github/stock-white-down.png" height="240px"/>
 
 <br/>
 <br/>
