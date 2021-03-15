@@ -1,7 +1,7 @@
 .filterWrapper {
   padding: 0.5rem 5rem;
   text-align: center;
-  color: var(--grey-dark);
+  color: var(--black);
 }
 
 .filterOptions label {

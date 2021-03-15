@@ -6,20 +6,22 @@
 
 :root {
   --white: #fff;
-  --background: #f2f7f7;
+  --background: #6d7373;
   --title: #015c5b;
   --green: #1f7025;
   --green-logo: #33a351;
+  --green-lighter: #72c288;
+  --green-lighter-background: #c5e019;
   --red: #d4002a;
   --grey-dark: #373737;
   --black: #000;
-  --gray-light: #6d7373;
+  --gray-light: #b9bdbd;
   --text-highlight: #c3d6d6;
 }
 
 body {
   font: 62.5%, 'Helvetica Neue', Arial, sans-serif;
-  background: #b9bdbd;
+  background: var(--background);
 }
 
 a {

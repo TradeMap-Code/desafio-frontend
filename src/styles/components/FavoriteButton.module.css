@@ -12,15 +12,16 @@ button {
 }
 
 .favoriteButton {
-  background: #72c288;
-  color: #fff;
+  background: var(--title);
+  color: var(--text-highlight);
 }
 
 .favoritedButton {
-  background-color: #c5e019;
-  color: #000;
+  background-color: var(--green-lighter-background);
+  color: var(--black);
 }
 
 .favoriteButton:hover {
-  background-color: #c5e019;
+  background-color: var(--green-lighter-background);
+  color: var(--black)
 }
