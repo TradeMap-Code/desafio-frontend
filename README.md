@@ -3,7 +3,7 @@
 Este desafio foi desenvolvido em React.JS para empresa [TradeMap](https://www.linkedin.com/company/trademaphub)
 ###### (A aplicação pode ser testada em aqui: [TradeApp](https://trademap-acoes.vercel.app/))
 
-![App demonstration]()
+![App demonstration](https://github.com/arthurgusma/desafio-frontend/blob/master/gif/tradeapp.gif)
 
 ## Como usar?
 
