@@ -1,8 +1,6 @@
 .list-container {
   width: 100%;
   padding-top: 4rem;
-
-  /* text-align: justify; */
 }
 
 .list-container > ul {
@@ -12,4 +10,10 @@
   gap: 1rem;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+@media only screen and (max-width: 420px) {
+  .list-container {
+    padding-top: 1rem;
+  }
 }

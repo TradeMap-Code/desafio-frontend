@@ -67,3 +67,27 @@
 .header-container > div button:hover:enabled {
   opacity: 1;
 }
+
+@media only screen and (max-width: 520px) {
+  .header-container > div {
+    width: 100%;
+    left: 0;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+  }
+
+  .header-container > div img {
+    margin-left: 3rem;
+    left: 0;
+    
+    position: absolute;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .header-container {
+    height: 5rem;
+    bottom: -2px;
+  }
+}

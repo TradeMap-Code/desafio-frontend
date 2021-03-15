@@ -12,3 +12,10 @@
   gap: 1rem;
   flex-wrap: wrap;
 }
+
+
+@media only screen and (max-width: 420px) {
+  .favorites-container {
+    padding-top: 1rem;
+  }
+}

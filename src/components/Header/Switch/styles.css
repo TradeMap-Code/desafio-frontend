@@ -55,3 +55,12 @@
 .switch-container.black-theme > .ball {
   animation-name: to-dark-theme;
 }
+
+@media only screen and (max-width: 520px) {
+  .switch-container {
+    margin-right: 3rem;
+    right: 0;
+    
+    position: absolute;
+  }
+}
