@@ -6,14 +6,14 @@
   flex: 1;
   flex-direction: column;
 
-  background: var(--background3);
+  background: var(--background2);
   border-radius: 5px;
+  border-bottom: 3px solid var(--background3);
 }
 
 .stock-container.white-theme {
   background: none;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  border-bottom: 3px solid var(--background3);
 }
 
 .stock-container > header {
@@ -39,10 +39,18 @@
   height: 1.5rem;
 
   cursor: pointer;
+
+  color: var(--foreground2);
+  opacity: 0.5;
 }
 
-.stock-container.white-theme > header svg {
+.stock-container > header svg:hover {
+  opacity: 1;
+}
+
+.stock-container > header svg.favorited {
   color: var(--yellow);
+  opacity: 1;
 }
 
 .stock-container > footer {

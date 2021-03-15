@@ -3,32 +3,70 @@
 
   position: relative;
 
-  border-top: 2px solid var(--background2);
-  border-bottom: 2px solid var(--background2);
+  border-top: 2px solid var(--background3);
+  border-bottom: 2px solid var(--background3);
 }
 
-.graph-container > svg {
+.graph-container > .limit {
+  width: 100%;
+  height: 10px;
+
+  position: absolute;
+
+  fill: var(--foreground2);
+  opacity: 0.4;
+}
+
+.graph-container > .limit.min {
+  bottom: 0;
+
+  transform: translateY(12px);
+}
+
+.graph-container > .limit.max {
+  top: 0;
+
+  transform: translateY(-14px);
+}
+
+.graph-container > .grid {
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  pointer-events: none;
+}
+
+.graph-container > .grid line {
+  stroke: var(--foreground1);
+  opacity: 0.1;
+  stroke-width: 1px;
+}
+
+.graph-container > .grid text {
+  stroke: none;
+  fill: var(--foreground2);
+  opacity: 0.4;
+}
+
+.graph-container > .graph {
   height: 100%;
   
   overflow: visible;
 
-  stroke: var(--foreground2);
+  stroke: var(--blue);
   stroke-width: 2px;
 }
 
-.graph-container > svg line {
+.graph-container > .graph line {
   pointer-events: none;
 }
 
-.graph-container.white-theme > svg line {
-  stroke: var(--blue);
-}
-
-.graph-container > svg:hover .increase {
+.graph-container > .graph:hover .increase {
   stroke: var(--green);
 }
 
-.graph-container > svg:hover .decrease {
+.graph-container > .graph:hover .decrease {
   stroke: var(--red);
 }
 

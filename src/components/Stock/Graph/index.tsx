@@ -61,6 +61,7 @@ export default function Graph({ chart }: GraphProps) {
         lines.push(
           <svg
             key={i1}
+            className="graph"
             height="1"
             width="1"
             style={{ width: 100 / nLines + "%" }}
@@ -82,9 +83,57 @@ export default function Graph({ chart }: GraphProps) {
     },
     [chart, getThreshold]
   );
+
+  const drawGrid = useCallback(
+    function () {
+      const lines = [];
+
+      const [min, max] = getThreshold();
+      const span = max - min;
+
+      const nLines = 10;
+
+      const step = Math.pow(10, Math.floor(Math.log10(span)));
+
+      for (let i = step, c = 0; i < step * nLines; i += step, c++) {
+        const y = 1 - (i - (min % step)) / span;
+
+        if (y < 0) break;
+        if (c % 2 !== 0) continue;
+
+        lines.push(
+          <line
+            key={i}
+            x1="0%"
+            y1={`${100 * y}%`}
+            x2="100%"
+            y2={`${100 * y}%`}
+          />
+        );
+      }
+
+      return (
+        <>
+          <svg className="limit min">
+            <text x="0%" y={`100%`} fontSize="10">
+              R$ {min.toFixed(2)}
+            </text>
+          </svg>
+          <svg className="grid">{lines}</svg>
+          <svg className="limit max">
+            <text x="100%" y={`100%`} fontSize="10" textAnchor="end">
+              R$ {max.toFixed(2)}
+            </text>
+          </svg>
+        </>
+      );
+    },
+    [getThreshold]
+  );
   //-----------------------------------------------------------------< return >
   return (
     <div className={`graph-container ${theme}`}>
+      {drawGrid()}
       {drawLines()}
       <div className={`popup ${className}`} style={style}>
         R$ {value.toFixed(2)}

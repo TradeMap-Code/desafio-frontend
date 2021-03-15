@@ -43,7 +43,7 @@ export default function Stock({ stock }: StockProps) {
           <p>{stock.company}</p>
         </h1>
         {isFavorite ? (
-          <FillStarIcon onClick={onUnfavorite} />
+          <FillStarIcon className="favorited" onClick={onUnfavorite} />
         ) : (
           <OutlineStarIcon onClick={onFavorite} />
         )}
