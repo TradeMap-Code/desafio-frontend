@@ -1,0 +1,69 @@
+.graph-container {
+  height: 10rem;
+
+  position: relative;
+
+  background: var(--background2);
+}
+
+.graph-container > svg {
+  height: 100%;
+  
+  overflow: visible;
+
+  stroke: var(--foreground2);
+  stroke-width: 2px;
+}
+
+.graph-container > svg line {
+  pointer-events: none;
+}
+
+.graph-container > svg:hover .increase {
+  stroke: var(--green);
+}
+
+.graph-container > svg:hover .decrease {
+  stroke: var(--red);
+}
+
+.graph-container > .popup {
+  width: max-content;
+  padding: 0.25rem 0.5rem;
+  
+  position: absolute;
+  pointer-events: none;
+  
+  font-family: "Inconsolata", monospace;
+  border-radius: 5px;
+  transform: translate(-50%, calc(-100% - 10px));
+}
+
+.graph-container > .popup svg {
+  left: 50%;
+  top: 100%;
+  
+  position: absolute;
+
+  transform: translateX(-50%);
+}
+
+.graph-container > .hidden {
+  display: none;
+}
+
+.graph-container > .increase {
+  background: var(--green);
+}
+
+.graph-container > .decrease {
+  background: var(--red);
+}
+
+.graph-container > .increase svg {
+  fill: var(--green);
+}
+
+.graph-container > .decrease svg {
+  fill: var(--red);
+}

@@ -5,6 +5,7 @@ import {
   AiFillStar as FillStarIcon,
   AiOutlineStar as OutlineStarIcon,
 } from "react-icons/ai";
+import Graph from "./Graph";
 //--------------------------------------------------------------------< hooks >
 import { useMemo } from "react";
 //--------------------------------------------------------------------< redux >
@@ -35,34 +36,6 @@ export default function Stock({ stock }: StockProps) {
   function onUnfavorite() {
     dispatch(removeFavorite(stock));
   }
-  //---------------------------------------------------------------------------
-  function getThreshold() {
-    const chart = [...stock.chart];
-    chart.sort((a, b) => a - b);
-    return [chart[0] ?? 0, chart.pop() ?? 0];
-  }
-
-  function drawLines() {
-    const lines = [];
-
-    const [min, max] = getThreshold();
-    const span = max - min;
-    const nLines = stock.chart.length - 1;
-
-    const getXY = (i: number) => [
-      (100 * i) / nLines + "%",
-      100 * (1 - (stock.chart[i] - min) / span) + "%",
-    ];
-
-    for (let i = 0; i < nLines; i++) {
-      const [x1, y1] = getXY(i);
-      const [x2, y2] = getXY(i + 1);
-
-      lines.push(<line key={i} x1={x1} y1={y1} x2={x2} y2={y2} />);
-    }
-
-    return lines;
-  }
   //-----------------------------------------------------------------< return >
   return (
     <li className="stock-container">
@@ -77,11 +50,7 @@ export default function Stock({ stock }: StockProps) {
           <OutlineStarIcon onClick={onFavorite} />
         )}
       </header>
-      <div className="graph-container">
-        <svg height="1" width="1" style={{ width: "100%" }}>
-          {drawLines()}
-        </svg>
-      </div>
+      <Graph chart={stock.chart} />
       <footer>
         <h3>R$ {stock.price.toFixed(2)}</h3>
         <span className={stock.variation >= 0 ? "increase" : "decrease"}>

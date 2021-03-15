@@ -35,19 +35,6 @@
   cursor: pointer;
 }
 
-.stock-container > .graph-container {
-  height: 10rem;
-
-  background: var(--background2);
-}
-
-.stock-container > .graph-container svg {
-  height: 100%;
-
-  stroke: var(--foreground2);
-  stroke-width: 2px;
-}
-
 .stock-container > footer {
   padding-top: 1rem;
 
