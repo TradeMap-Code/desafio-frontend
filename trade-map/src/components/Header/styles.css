@@ -1,0 +1,20 @@
+#header {
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 10px 10px 10px rgba(10, 9, 9, 0.9);
+  border: 1px solid black;
+  border-radius: 0.4rem;
+  background-image: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#header a {
+  text-decoration: none;
+}
+
+#header h1 {
+  cursor: pointer;
+}
