@@ -69,7 +69,7 @@ const Favorites: React.FC = () => {
       <div className={styles.stockList}>
         {stocks.length > 0 ? (
           stocks.map(stock => (
-            <div key={stock.stock}>
+            <div data-testid={stock.stock} key={stock.stock}>
               <Stock {...stock} />
             </div>
           ))
