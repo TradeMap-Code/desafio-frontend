@@ -30,7 +30,7 @@ const Chart: React.FC<ChartProps> = ({ chart, price, variation }) => {
         textAnchor="middle"
       />
       <VictoryLabel
-        text={variation}
+        text={`${variation} %`}
         style={{ fill: variation > 0 ? 'green' : 'red' }}
         x={260 + (3 * numberOfVariationDigits)} y={30}
         textAnchor="middle"
