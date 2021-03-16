@@ -58,8 +58,8 @@ describe('Favorites Page', () => {
       theme: 'themeDark',
     }})
     
-    const divMessage = getByText('No Favorites stocks');
+    const divMessage = getByText('Sem favoritos');
 
-    expect(divMessage.textContent).toBe('No Favorites stocks');
+    expect(divMessage.textContent).toBe('Sem favoritos');
   });
 });

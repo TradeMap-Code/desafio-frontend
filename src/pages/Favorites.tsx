@@ -75,7 +75,7 @@ const Favorites: React.FC = () => {
           ))
         ) : (
           <div>
-            No Favorites stocks
+            Sem favoritos
           </div>
         )}
       </div>

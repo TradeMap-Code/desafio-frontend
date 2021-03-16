@@ -42,7 +42,7 @@ describe('Header Component', () => {
 
     const { getByText } = render(<Header />);
     
-    const listPageButton = getByText('List');
+    const listPageButton = getByText('Listagem');
 
     fireEvent.click(listPageButton);
 
@@ -53,7 +53,7 @@ describe('Header Component', () => {
   
     const { getByText } = render(<Header />);
     
-    const favoritesPageButton = getByText('Favorites');
+    const favoritesPageButton = getByText('Favoritos');
 
     fireEvent.click(favoritesPageButton);
 
@@ -63,7 +63,7 @@ describe('Header Component', () => {
   it('should be able to change theme', () => {
     const { getByText } = render(<Header />);
     
-    const changeThemeButton = getByText('Theme Dark');
+    const changeThemeButton = getByText('Tema Escuro');
 
     fireEvent.click(changeThemeButton);
 

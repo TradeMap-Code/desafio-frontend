@@ -34,7 +34,7 @@ const Header: React.FC = () => {
             className={history.location.pathname === '/' ? styles.buttonDisabled : undefined}
             onClick={() => history.push('/')}
           >
-            List
+            Listagem
             <FiList />
           </Button>
           <Button
@@ -42,11 +42,11 @@ const Header: React.FC = () => {
             className={history.location.pathname === '/favorites' ? styles.buttonDisabled : undefined}
             onClick={() => history.push('/favorites')}
           >
-            Favorites
+            Favoritos
             <FiHeart />
           </Button>
           <Button onClick={() => handleChangeTheme(theme === 'themeDark' ? 'themeLight' : 'themeDark')}>
-            {theme === 'themeDark' ? 'Theme Light' : 'Theme Dark'}
+            {theme === 'themeDark' ? 'Tema Claro' : 'Tema Escuro'}
             {theme === 'themeDark' ? <FiSun /> : <FiMoon />}
           </Button>
         </div>
