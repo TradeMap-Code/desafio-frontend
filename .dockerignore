@@ -1,0 +1,4 @@
+/node_modules
+.dockerignore
+.github
+README.md
