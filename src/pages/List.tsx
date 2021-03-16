@@ -65,7 +65,7 @@ const List: React.FC = () => {
       </div>
       <div className={styles.stockList}>
         {stocks.map(stock => (
-          <div key={stock.stock}>
+          <div data-testid={stock.stock} key={stock.stock}>
             <Stock {...stock} />
           </div>
         ))}
