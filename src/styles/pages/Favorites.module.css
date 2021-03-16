@@ -6,13 +6,13 @@
 .container.themeLight {
   background: var(--background);
   color: var(--text);
-  height: 100%;
+  height: 100vh;
 }
 
 .container.themeDark {
   background: var(--dark-background);
   color: var(--white);
-  height: 100%;
+  height: 100vh;
 }
 
 .container.themeLight button {

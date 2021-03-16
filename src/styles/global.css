@@ -9,10 +9,6 @@ html, body {
   box-sizing: border-box;
 }
 
-#root {
-  height: 100%;
-}
-
 :root {
   --white: #fff;
   --background: #f2f3f5;
@@ -55,14 +51,6 @@ body, input, textarea, button {
 button {
   cursor: pointer;
   color: var(--white);
-}
-
-button .themLight {
-  background: var(--dark-blue);
-}
-
-button .themDarl {
-  background: var(--dark-green);
 }
 
 

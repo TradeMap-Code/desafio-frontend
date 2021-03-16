@@ -7,6 +7,7 @@
   margin-right: 12%;
   padding: 0 8rem 1.5rem 0;
   border-bottom-right-radius: 65px;
+  min-width: 560px;
 }
 
 .header.themeDark {

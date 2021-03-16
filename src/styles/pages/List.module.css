@@ -3,6 +3,10 @@
   flex-direction: column;
 }
 
+#root {
+  height: unset;
+}
+
 .container.themeLight {
   background: var(--background);
   height: 100%;
