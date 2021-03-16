@@ -4,7 +4,7 @@
 }
 
 .stock-displayer-container > ul {
-  margin: 2rem 4rem;
+  margin: 4rem;
 
   display: flex;
   gap: 1rem;
@@ -15,10 +15,94 @@
 .stock-displayer-container > p {
   width: 100%;
   margin-top: 4rem;
-
+  
   text-align: center;
+
   color: var(--foreground2);
-  opacity: 0.5;
+  opacity: 0.67;
+}
+
+.stock-displayer-container > span {
+  z-index: 50;
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem 0.5rem 4rem;
+
+  position: fixed;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  
+  background: var(--background1);
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  
+  animation-duration: 0.4s;
+  animation-timing-function: ease;
+}
+
+@keyframes show-controller {
+  from {
+    transform: translateY(-200%);
+  }
+}
+
+@keyframes hide-controller {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-200%);
+  }
+}
+
+.stock-displayer-container > span.hidden {
+  animation-name: hide-controller;
+  transform: translateY(-200%);
+}
+
+.stock-displayer-container > span.visible {
+  animation-name: show-controller;
+}
+
+.stock-displayer-container > span p {
+  margin-right: 0.7rem;
+
+  color: var(--foreground2);
+  opacity: 0.67;
+}
+
+.stock-displayer-container > span strong {
+  padding: 0.2rem 0.4rem;
+
+  cursor: pointer;
+
+  font-family: "Inconsolata", monospace;
+  background: var(--background3);
+  border-radius: 5px;
+  font-weight: 500;
+  border-bottom: none;
+}
+
+.stock-displayer-container.white-theme > span strong {
+  border: 1px solid var(--background3);
+  background: var(--background1);
+  color: var(--foreground2);
+}
+
+.stock-displayer-container > span strong:active {
+  border-top: 0.2rem solid var(--background2);
+  padding-bottom: 0;
+}
+
+.stock-displayer-container.white-theme > span strong:active {
+  border-top: 0.2rem solid var(--background3);
+}
+
+.stock-displayer-container > span strong::selection {
+  background: var(--background2);
+}
+.stock-displayer-container > span strong::-moz-selection {
+  background: var(--background2);
 }
 
 @media only screen and (max-width: 420px) {
