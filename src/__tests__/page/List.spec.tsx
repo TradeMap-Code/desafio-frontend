@@ -26,9 +26,9 @@ function render(
     initialState,
     store = createStore(reducer, initialState),
     ...renderOptions
-  } = {}
+  } = {} as any
 ) {
-  function Wrapper({ children }) {
+  function Wrapper({ children }: any) {
     return <Provider store={store}>{children}</Provider>
   }
   return rtlRender(ui, { wrapper: Wrapper, ...renderOptions })
