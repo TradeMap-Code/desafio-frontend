@@ -1,8 +1,11 @@
 import { FavoriteActionTypes, FavoriteState } from "./types";
+import { defineState } from "redux-localstore";
 
-const initialState: FavoriteState = {
+const defaultState: FavoriteState = {
   stocks: [],
 };
+
+const initialState: FavoriteState = defineState(defaultState)("favorite");
 
 export function favoriteReducer(
   state = initialState,

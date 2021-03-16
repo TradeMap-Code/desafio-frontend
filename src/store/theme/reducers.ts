@@ -1,8 +1,11 @@
 import { ThemeActionTypes, ThemeState } from "./types";
+import { defineState } from "redux-localstore";
 
-const initialState: ThemeState = {
+const defaultState: ThemeState = {
   theme: "black-theme",
 };
+
+const initialState: ThemeState = defineState(defaultState)("theme");
 
 export function themeReducer(
   state = initialState,

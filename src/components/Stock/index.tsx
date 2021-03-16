@@ -25,7 +25,8 @@ export default function Stock({ stock }: StockProps) {
   const { theme } = useSelector((state: RootState) => state.theme);
   const dispatch = useDispatch();
   //---------------------------------------------------------------------------
-  const isFavorite = useMemo(() => stocks.includes(stock), [stocks, stock]);
+  const isFavorite =
+    stocks.filter((_stock) => _stock.stock === stock.stock).length === 1;
   //----------------------------------------------------------------< methods >
   function onFavorite() {
     dispatch(addFavorite(stock));
