@@ -9,6 +9,7 @@ function Information({ stock }) {
                     <th>Exchange</th>
                     <th>Country</th>
                     <th>Company</th>
+                    <th>Price</th>
                     <th>Variation</th>
                 </tr>
                 <tr>
@@ -16,7 +17,8 @@ function Information({ stock }) {
                     <td>{stock[0].exchange}</td>
                     <td>{stock[0].country}</td>
                     <td>{stock[0].company}</td>
-                    <td style={stock[0].variation > 0 ? { color: "var(--up)", fontWeight: "bold" } : { color: "var(--down)", fontWeight: "bold" }}>{stock[0].variation}</td>
+                    <td>{stock[0].price}</td>
+                    <td style={stock[0].variation > 0 ? { color: "var(--up)", fontWeight: "bold" } : { color: "var(--down)", fontWeight: "bold" }}>{stock[0].variation}%</td>
                 </tr>
             </table>
         </div>

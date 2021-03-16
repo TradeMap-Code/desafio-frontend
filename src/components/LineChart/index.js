@@ -1,17 +1,17 @@
-import { useEffect, useState } from 'react';
-import Information from '../Information';
-import Chart from 'react-apexcharts';
-import { FiArrowDown, FiArrowUp } from 'react-icons/fi';
-import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
-import './style.css';
+import { useEffect, useState } from "react";
+import Information from "../Information";
+import Chart from "react-apexcharts";
+import { FiArrowDown, FiArrowUp } from "react-icons/fi";
+import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
+import "./style.css";
 
 function LineChart({ stocks, favorites, setFavorites }) {
-    const [selectValue, setSelectValue] = useState('PETR4');
+    const [selectValue, setSelectValue] = useState("PETR4");
     const [stock, setStock] = useState();
     const [dataTable, setDataTable] = useState();
     const [price, setPrice] = useState(true);
     const [variation, setVariation] = useState(true);
-    const [active, setActive] = useState(true);
+    const [currentIsFav, setCurrentIsFav] = useState(false);
 
     useEffect(() => {
         const active = stocks.filter((item) => {
@@ -20,7 +20,6 @@ function LineChart({ stocks, favorites, setFavorites }) {
 
         stocks = active;
         setDataTable(stocks);
-
     }, [selectValue, stocks]);
 
     useEffect(() => {
@@ -31,15 +30,15 @@ function LineChart({ stocks, favorites, setFavorites }) {
                         id: "basic-bar",
                         toolbar: {
                             show: false,
-                            autoSelected: ""
-                        }
+                            autoSelected: "",
+                        },
                     },
                     title: {
                         text: stocks[0].company,
-                        align: 'left',
+                        align: "left",
                         style: {
-                            color: "#c9d1d9"
-                        }
+                            color: "#c9d1d9",
+                        },
                     },
                     xaxis: {
                         labels: {
@@ -68,7 +67,7 @@ function LineChart({ stocks, favorites, setFavorites }) {
                     },
                 ],
             });
-        };
+        }
     }, [selectValue, stocks]);
 
     function handleOrderPrice() {
@@ -81,7 +80,7 @@ function LineChart({ stocks, favorites, setFavorites }) {
 
         setSelectValue(stocks[0].stock);
         setDataTable(stocks);
-    };
+    }
 
     function handleOrderVariation() {
         setVariation(!variation);
@@ -94,38 +93,42 @@ function LineChart({ stocks, favorites, setFavorites }) {
 
         setSelectValue(stocks[0].stock);
         setDataTable(stocks);
-    };
+    }
 
+    useEffect(() => {
+        if (favorites.filter((obj) => obj.stock === selectValue).length > 0) {
+            setCurrentIsFav(true);
+        } else {
+            setCurrentIsFav(false);
+        }
+    }, [selectValue, favorites]);
 
     function handleFavorite() {
-        setActive(!active);
-        let arr = [];
-        if (active === true) {
-            setFavorites([...favorites, dataTable[0]]);
-            arr = favorites;
+        if (favorites.filter((obj) => obj.stock === selectValue).length > 0) {
+            setCurrentIsFav(false);
+            setFavorites(favorites.filter((fav) => fav !== dataTable[0]));
         } else {
-            arr = favorites.filter(function (item) {
-                return item !== dataTable[0];
-            });
-            setFavorites(arr);
+            setCurrentIsFav(true);
+            setFavorites([...favorites, dataTable[0]]);
         };
     };
 
     return (
         <div>
             <div className="select__content">
-                <select name="actives"
+                <select
+                    name="actives"
                     id="actives"
                     className="select__input"
                     onChange={({ target }) => {
-                        setSelectValue(target.value)
-                        setActive(!active)
-                    }}>
-
-                    <option value="selected" disabled selected>Selecione o ativo</option>
+                        setSelectValue(target.value);
+                    }}
+                >
+                    <option value="selected" disabled selected>
+                        Selecione o ativo
+          </option>
                     {stocks.map((active) => (
-                        <option key={active.company}
-                            value={active.stock}>
+                        <option key={active.company} value={active.stock}>
                             {active.stock} - {active.company}
                         </option>
                     ))}
@@ -133,23 +136,30 @@ function LineChart({ stocks, favorites, setFavorites }) {
             </div>
             <div className="btn__group">
                 <button onClick={handleOrderPrice}>
-                    {price ? 'Ordenar por maior Preço' : 'Ordenar por menor Preço'} {price ? <FiArrowUp /> : <FiArrowDown />}
+                    {price ? "Ordenar por maior Preço" : "Ordenar por menor Preço"}
+                    {price ? <FiArrowUp /> : <FiArrowDown />}
                 </button>
                 <button onClick={handleOrderVariation}>
-                    {variation ? 'Ordenar por maior Variação' : 'Ordenar por menor Variação'} {variation ? <FiArrowUp /> : <FiArrowDown />}
+                    {variation ? "Ordenar por maior Variação" : "Ordenar por menor Variação"}
+                    {variation ? <FiArrowUp /> : <FiArrowDown />}
                 </button>
             </div>
             {dataTable && <Information stock={dataTable} />}
-            {stock && <Chart
-                options={stock.options}
-                series={stock.series}
-                type="line"
-                height="300px"
-                className="chart__content"
-            />}
-            <button className="btn__fav" onClick={handleFavorite}>{active ? 'Adicionar Favorito' : 'Remover Favorito'} {active ? <AiFillHeart className="btn__icon" /> : <AiOutlineHeart className="btn__icon" />}</button>
+            {stock && (
+                <Chart
+                    options={stock.options}
+                    series={stock.series}
+                    type="line"
+                    height="300px"
+                    className="chart__content"
+                />
+            )}
+            <button className="btn__fav" onClick={handleFavorite}>
+                {currentIsFav ? "Remover Favorito" : "Adiconar Favorito"}
+                {currentIsFav ? <AiFillHeart className="btn__icon" /> : <AiOutlineHeart className="btn__icon" />}
+            </button>
         </div>
     );
-};
+}
 
 export default LineChart;
