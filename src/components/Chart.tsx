@@ -32,7 +32,7 @@ const Chart: React.FC<ChartProps> = ({ chart, price, variation }) => {
       <VictoryLabel
         text={`${variation} %`}
         style={{ fill: variation > 0 ? 'green' : 'red' }}
-        x={260 + (3 * numberOfVariationDigits)} y={30}
+        x={262 + (4 * numberOfVariationDigits)} y={30}
         textAnchor="middle"
       />
       <VictoryAxis dependentAxis />
