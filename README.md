@@ -2,7 +2,8 @@
 
 ### Aplicação 
 
-O ultimo deploy desta aplicação se encontra no endereço: https://flamboyant-hypatia-7ccdbe.netlify.app/
+O último deploy desta aplicação se encontra no endereço: https://flamboyant-hypatia-7ccdbe.netlify.app/
+
 ### Pré-requisitos
 
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
