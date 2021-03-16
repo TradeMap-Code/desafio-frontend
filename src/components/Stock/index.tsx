@@ -7,12 +7,11 @@ import {
 } from "react-icons/ai";
 import Graph from "./Graph";
 //--------------------------------------------------------------------< hooks >
-import { useMemo } from "react";
+import { useDispatch, useSelector } from "react-redux";
 //--------------------------------------------------------------------< redux >
 import { addFavorite, removeFavorite } from "../../store/favorite/actions";
 //-------------------------------------------------------------------< styles >
 import "./styles.css";
-import { useDispatch, useSelector } from "react-redux";
 //--------------------------------------------------------------------< types >
 import { RootState } from "../../store";
 type StockProps = {
