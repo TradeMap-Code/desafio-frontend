@@ -1,7 +1,6 @@
 import React from 'react';
-import { FiArrowUp, FiArrowDown } from 'react-icons/fi';
 
-import { VictoryAxis, VictoryChart, VictoryContainer, VictoryLabel, VictoryLine, VictoryScatter } from 'victory';
+import { VictoryAxis, VictoryChart, VictoryContainer, VictoryLabel, VictoryLine } from 'victory';
  
 type ChartProps = {
   chart: number[];
