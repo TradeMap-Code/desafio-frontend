@@ -1,3 +1,39 @@
+<h1 align="center">Trade Map Front-End</h1>
+
+### Aplicação 
+
+O ultimo deploy desta aplicação se encontra no endereço: https://flamboyant-hypatia-7ccdbe.netlify.app/
+### Pré-requisitos
+
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
+[Git](https://git-scm.com), [Yarn](https://classic.yarnpkg.com/pt-BR/). 
+Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
+
+### 🎲 Excutando a aplicação
+
+```bash
+# Clone este repositório
+$ git clone https://github.com/tallesv/desafio-frontend
+
+# Acesse a pasta do projeto no terminal/cmd
+$ cd desafio-fontend
+
+# Instale as dependências
+$ yarn
+
+# Execute a aplicação
+$ yarn start
+
+# A aplicação inciará na porta:3000 - acesse <http://localhost:3000>
+
+# Para executar os testes
+$ yarn test
+
+# Para executar o test coverage
+$ yarn test-coverage
+```
+
+
 # Desafio Front-End
 
 Esse é o nosso desafio para os candidatos à vaga de front-end no [TradeMap](https://www.linkedin.com/company/trademaphub)
