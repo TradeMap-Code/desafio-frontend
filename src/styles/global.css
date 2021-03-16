@@ -1,8 +1,16 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+#root {
+  height: 100%;
 }
 
 :root {
@@ -33,7 +41,6 @@
     font-size: 87.5%;
   }
 }
-
 
 body {
   background: var(--background);

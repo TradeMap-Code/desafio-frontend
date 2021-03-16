@@ -67,11 +67,17 @@ const Favorites: React.FC = () => {
       </div>
       
       <div className={styles.stockList}>
-        {stocks.map(stock => (
-          <div key={stock.stock}>
-            <Stock {...stock} />
+        {stocks.length > 0 ? (
+          stocks.map(stock => (
+            <div key={stock.stock}>
+              <Stock {...stock} />
+            </div>
+          ))
+        ) : (
+          <div>
+            No Favorites stocks
           </div>
-        ))}
+        )}
       </div>
     </div>
   );

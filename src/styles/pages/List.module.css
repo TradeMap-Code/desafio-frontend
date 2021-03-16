@@ -5,10 +5,12 @@
 
 .container.themeLight {
   background: var(--background);
+  height: 100%;
 }
 
 .container.themeDark {
   background: var(--dark-background);
+  height: 100%;
 }
 
 .container.themeLight button {
