@@ -49,9 +49,9 @@ const Chart = ({
   chartLength,
 }) => {
   const favourites = useSelector((state) => state.favourites);
-
   const dispatch = useDispatch();
-  const isFavourited = (stock) => favourites.includes(stock);
+  const isFavourited = (stock) =>
+    favourites.map((item) => item.stock).some((item) => item === stock);
   const addFavourites = () => {
     dispatch(addToFavourites(stock));
   };

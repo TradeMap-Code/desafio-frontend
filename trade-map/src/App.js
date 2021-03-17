@@ -12,7 +12,7 @@ const favourites = localStorage.getItem('favourites')
   : [];
 
 function App() {
-  const store = createStore(stockReducer);
+  const store = createStore(stockReducer, { ...INITIAL_STATE, favourites });
   store.subscribe(() => {
     localStorage.setItem(
       'favourites',

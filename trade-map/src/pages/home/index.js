@@ -2,16 +2,19 @@ import React from 'react';
 import Chart from '../../components/Chart';
 
 import './styles.css';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { setPriceOrder, setVariationOrder } from '../../actions';
 import StockFilter from '../../components/StockFilter';
 const Home = () => {
   const stocks = useSelector((state) => state.stocks);
+  const priceOrder = useSelector((state) => state.priceOrder);
+  const variationOrder = useSelector((state) => state.variationOrder);
+  console.log('home', stocks);
   return (
     <div className="container">
       <div className="charts">
-        <StockFilter />
-
-        {stocks &&
+        <StockFilter stocks={stocks} page="home" />
+        {!!stocks &&
           stocks.map((stock, id) => {
             return (
               <Chart
