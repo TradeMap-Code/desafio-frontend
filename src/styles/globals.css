@@ -1,12 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=ABeeZee&display=swap");
-
 html,
 body {
   padding: 0;
   margin: 0;
   background-color: var(--bg2-color);
-  /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
@@ -25,13 +23,12 @@ a {
   flex-flow: wrap;
   width: 100%;
   height: auto;
+  margin-top: 30px;
 }
 .Card {
   /* Add shadows to creat the "card" effect */
-  box-shadow: 0 4px 8px 0 var(--details-color);
+  box-shadow: 0 4px 8px 0 var(--text-color);
   transition: 0.3s;
-  width: 200px;
-  height: 380px;
   margin: 37px;
   background-color: var(--bg-color);
   color: var(--text-color);
@@ -41,6 +38,7 @@ a {
   width: 20%;
   height: 300px;
   text-align: center;
+  padding: 10px;
 }
 
 .CardSubtext {
@@ -61,11 +59,9 @@ a {
 }
 
 .NavBarContainer {
-  font-family: "ABeeZee", sans-serif;
   background-color: var(--bg-color);
   color: var(--text2-color);
   font-size: 30px;
-  margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -73,6 +69,7 @@ a {
   width: 100%;
   height: auto;
   position: fixed;
+  top: 0;
 }
 
 .NavBar2 {
@@ -94,8 +91,8 @@ a {
 }
 
 :root {
-  --bg-color: rgb(20, 20, 20);
-  --bg2-color: rgb(120, 220, 181);
+  --bg-color: rgb(225, 228, 232);
+  --bg2-color: rgb(201, 209, 217);
   --details-color: rgb(97, 152, 63);
   --details-color2: rgb(130, 230, 187);
   --sub-menus: rgb(125, 210, 138);

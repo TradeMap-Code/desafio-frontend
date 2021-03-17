@@ -13,7 +13,7 @@ export default function index() {
      
       {stocks.map((stock,key) =><Card key={key} stock={stock}/>)}
       {/* {stocks.map((stock,key) =><FavoriteSelect key={key} stock={stock}/>)} ) */}
-      {/* {stocks.map((stock,key) =><Chart key={key} stock={stock} />)} */}
+      {/* {stocks.map((stock,key) =><FinanceChart key={key} stock={stock} />)} */}
     </div>
     </section>
   )

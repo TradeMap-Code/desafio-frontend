@@ -1,57 +1,47 @@
-// import React from "react";
-// import Chart from "react-apexcharts";
+import React, { Component } from "react";
+import Chart from "chart.js";
 
-// export default function FinanceChart({ stock }) {
-//   const [state, setYears] = useState(initialState);
-
-//   Years = {
-//     options: {
-//       chart: {
-//         id: "basic-bar",
-//       },
-//       xaxis: {
-//         categories: [
-//           1991,
-//           1992,
-//           1993,
-//           1994,
-//           1995,
-//           1996,
-//           1997,
-//           1998,
-//           1999,
-//           2000,
-//           2001,
-//           2002,
-//           2003,
-//           2004,
-//           2005,
-//           2006,
-//           2007,
-//           2008,
-//         ],
-//       },
-//     },
-//     series: [
-//       {
-//         name: "series-1",
-//         data: <FinanceChart key={key} stock={stock} />,
-//       },
-//     ],
-//   };
-
-//   return (
-//     <div className="app">
-//       <div className="row">
-//         <div className="mixed-chart">
-//           <Chart
-//             options={state.options}
-//             series={state.series}
-//             type="bar"
-//             width="500"
-//           />
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
+export default function FinanceChart({ stock }) {
+  var ctx = document.getElementById("myChart");
+  var myChart = new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+      datasets: [
+        {
+          label: "# of Votes",
+          data: [12, 19, 3, 5, 2, 3],
+          backgroundColor: [
+            "rgba(255, 99, 132, 0.2)",
+            "rgba(54, 162, 235, 0.2)",
+            "rgba(255, 206, 86, 0.2)",
+            "rgba(75, 192, 192, 0.2)",
+            "rgba(153, 102, 255, 0.2)",
+            "rgba(255, 159, 64, 0.2)",
+          ],
+          borderColor: [
+            "rgba(255, 99, 132, 1)",
+            "rgba(54, 162, 235, 1)",
+            "rgba(255, 206, 86, 1)",
+            "rgba(75, 192, 192, 1)",
+            "rgba(153, 102, 255, 1)",
+            "rgba(255, 159, 64, 1)",
+          ],
+          borderWidth: 1,
+        },
+      ],
+    },
+    options: {
+      scales: {
+        yAxes: [
+          {
+            ticks: {
+              beginAtZero: true,
+            },
+          },
+        ],
+      },
+    },
+  });
+  return <canvas id="myChart" width="400" height="400"></canvas>;
+}
