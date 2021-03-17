@@ -26,7 +26,6 @@ const ListActives = () => {
     useEffect(() => {
         let orderedList = list.sort(orderByPriceOrVariation);
         setList(orderedList);
-        console.log(filter)
     }, [filter]);
 
     const orderByPriceOrVariation = (a, b) => {

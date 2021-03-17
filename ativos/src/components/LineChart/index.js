@@ -38,7 +38,6 @@ const LineChart = ({ item }) => {
            setIconFavorite(!iconFavorite)
            item.iconFavorite = false;
            const index = favorites.indexOf(item);
-           console.log(index)
            if (index > -1) {
               favorites = favorites.filter(aux => aux.stock !== item.stock);
            };
