@@ -34,25 +34,42 @@ const StockFilter = ({ stocks, page }) => {
 
   return (
     <div className="chart-filter">
-      {priceOrder === 'asc' ? (
-        <h2 className="arrow" onClick={() => sortByPrice('des')}>
-          Price(des)
-        </h2>
-      ) : (
-        <h2 className="arrow" onClick={() => sortByPrice('asc')}>
-          Price(asc)
-        </h2>
-      )}
+      <div className="filter-title">
+        <h3>Ordenação por:</h3>
+      </div>
+      <div>
+        {priceOrder === 'asc' ? (
+          <h4 className="arrow pointer" onClick={() => sortByPrice('des')}>
+            Preço{' '}
+            <span>
+              <i className="fas fa-arrow-down"></i>
+            </span>
+          </h4>
+        ) : (
+          <h4 className="arrow pointer" onClick={() => sortByPrice('asc')}>
+            Preço{' '}
+            <span>
+              <i className="fas fa-arrow-up"></i>
+            </span>
+          </h4>
+        )}
 
-      {variationOrder === 'asc' ? (
-        <h2 className="arrow" onClick={() => sortByVariation('des')}>
-          Variation(desc)
-        </h2>
-      ) : (
-        <h2 className="arrow" onClick={() => sortByVariation('asc')}>
-          Variation(asc)
-        </h2>
-      )}
+        {variationOrder === 'asc' ? (
+          <h4 className="arrow pointer" onClick={() => sortByVariation('des')}>
+            Variação{' '}
+            <span>
+              <i className="fas fa-arrow-down"></i>
+            </span>
+          </h4>
+        ) : (
+          <h4 className="arrow pointer" onClick={() => sortByVariation('asc')}>
+            Variação{' '}
+            <span>
+              <i className="fas fa-arrow-up"></i>
+            </span>
+          </h4>
+        )}
+      </div>
     </div>
   );
 };

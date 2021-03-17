@@ -1,20 +1,29 @@
-#header {
+nav {
   width: 100%;
-  background-size: cover;
-  background-position: center;
-  box-shadow: 10px 10px 10px rgba(10, 9, 9, 0.9);
-  border: 1px solid black;
+  box-shadow: 10px 10px 10px rgba(27, 27, 27, 0.253);
+  border: 1px solid rgb(209, 204, 204);
   border-radius: 0.4rem;
-  background-image: no-repeat;
   display: flex;
-  justify-content: center;
   align-items: center;
+  padding: 1rem;
 }
 
-#header a {
+ul {
+  display: flex;
+}
+li {
+  list-style: none;
+  margin-right: 1rem;
+}
+a {
   text-decoration: none;
+  font-weight: bold;
 }
 
-#header h1 {
+a:hover {
+  color: rgb(128, 3, 45);
+}
+
+h1 {
   cursor: pointer;
 }

@@ -9,11 +9,10 @@ const Home = () => {
   const stocks = useSelector((state) => state.stocks);
   const priceOrder = useSelector((state) => state.priceOrder);
   const variationOrder = useSelector((state) => state.variationOrder);
-  console.log('home', stocks);
   return (
     <div className="container">
+      <StockFilter stocks={stocks} page="home" />
       <div className="charts">
-        <StockFilter stocks={stocks} page="home" />
         {!!stocks &&
           stocks.map((stock, id) => {
             return (
@@ -29,6 +28,12 @@ const Home = () => {
               />
             );
           })}
+
+        {stocks.length === 0 && (
+          <div>
+            <p>Não existe favoritos</p>
+          </div>
+        )}
       </div>
     </div>
   );

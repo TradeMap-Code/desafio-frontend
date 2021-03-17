@@ -2,9 +2,12 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  background: #f1f1f1;
+  max-width: 350px;
+  background: #e0dfdf;
   padding: 0.5rem;
   margin-bottom: 2rem;
+  border-radius: 0.3rem;
+  box-shadow: 5px 10px 10px #888888;
 }
 
 .chart-header {
@@ -16,14 +19,79 @@
   font-size: 1.3rem;
 }
 
+.chart-header span {
+  font-size: 1.3rem;
+}
+
+.favorite {
+  color: #f5dd06;
+}
+
+.stock {
+  display: flex;
+  flex-direction: row;
+}
+
+.stock h3 {
+  font-size: 1rem;
+}
+
 .stock-variation.up {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   background: lightgreen;
+  width: 100px;
+  border-radius: 0.3rem;
+}
+
+.stock-variation.up span {
+  display: flex;
+  flex-direction: row;
+  margin-left: 0.3rem;
+  color: green;
+  width: 100px;
+  border-radius: 0.3rem;
+}
+
+.stock-variation {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
 }
 
 .stock-variation.down {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   background: lightcoral;
+  width: 100px;
+  border-radius: 0.3rem;
+}
+
+.stock-variation.down span {
+  color: red;
+  margin-left: 0.3rem;
+  margin-top: 1rem;
 }
 
 .stock-chart {
   max-width: 400px;
+  background-color: black;
+  border-radius: 0.3rem;
+  margin-top: 1rem;
+}
+
+.price {
+  margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .chart-container {
+    margin-bottom: 0rem;
+  }
 }

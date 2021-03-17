@@ -11,9 +11,9 @@ const getStockData = (stock, n) => ({
       label: '',
       data: stock,
       fill: true,
-      backgroundColor: 'rgb(110, 110, 132)',
-      borderColor: 'rgba(110, 110, 132, 0.2)',
-      pointRadius: 0,
+      backgroundColor: 'black',
+      borderColor: '#1E90FF',
+      pointRadius: 1,
     },
   ],
 });
@@ -64,22 +64,21 @@ const Chart = ({
       <div key={id}>
         <div className="chart-header">
           <h1>{company}</h1>
+
           {isFavourited(stock) ? (
-            <span
-              onClick={removeFavourites}
-              style={{ color: 'yellow', fontSize: '2rem' }}
-            >
+            <span className="favorite pointer" onClick={removeFavourites}>
               <i className="fas fa-star"></i>
             </span>
           ) : (
-            <span onClick={addFavourites} style={{ fontSize: '2rem' }}>
+            <span className="pointer" onClick={addFavourites}>
               <i className="far fa-star"></i>
             </span>
           )}
         </div>
-
+        <div className="stock">
+          <h3>{stock}</h3> <h3>({country})</h3>
+        </div>
         <div className={setVariationClass(variation)}>
-          <p>Variação</p>
           <h1>{variation}</h1>
           {variation > 0 ? (
             <span>
@@ -91,15 +90,13 @@ const Chart = ({
             </span>
           )}
         </div>
-        <div>
-          <h3>{stock}</h3> <h3>{country}</h3>
-        </div>
+
         <div className="stock-chart">
           <Line data={getStockData(chart, chartLength)} options={options} />
         </div>
-        <div>
+        <div className="price">
           <p>Preço</p>
-          <h1>{price}</h1>
+          <h1>{price} R$</h1>
         </div>
       </div>
     </div>

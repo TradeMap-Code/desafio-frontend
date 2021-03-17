@@ -1,10 +1,28 @@
+:root {
+  --primary-color: #322153;
+  --title-color: #34cb39;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html {
+  font-family: 'Roboto', sans-serif;
+}
+
 html,
 body {
   height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Ubuntu', sans-serif;
 }

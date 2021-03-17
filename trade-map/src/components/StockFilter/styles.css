@@ -1,0 +1,41 @@
+.chart-filter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  box-shadow: 5px 10px 10px #888888;
+  background: #e0dfdf;
+  width: 100%;
+  max-width: 732px;
+}
+
+.filter-title {
+  justify-content: center;
+  align-items: center;
+}
+
+.filter-title h3 {
+  text-align: center;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.chart-filter div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.chart-filter div div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
