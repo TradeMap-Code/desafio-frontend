@@ -100,7 +100,7 @@ function LineChart({ stocks, favorites, setFavorites }) {
             setCurrentIsFav(true);
         } else {
             setCurrentIsFav(false);
-        }
+        };
     }, [selectValue, favorites]);
 
     function handleFavorite() {

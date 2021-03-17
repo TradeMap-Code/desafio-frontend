@@ -11,8 +11,7 @@ function Favorites() {
     return (
         <div className="favorites__content">
             <Header />
-            <h1 style={{ color: "white" }}>Favoritos</h1>
-            <ListFavorites stock={fav} />
+            <ListFavorites favorites={fav} setFavorites={setFav} />
         </div>
     );
 };

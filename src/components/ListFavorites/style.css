@@ -1,3 +1,13 @@
+.table__content h1 {
+    font-size: 2rem;
+    color: var(--white);
+    margin-bottom: 30px;
+}
+
+.table__content .btn__group {
+    margin-bottom: 30px;
+}
+
 .table__content tbody tr button {
     padding: 5px 10px;
     background-color: var(--bgChart);
