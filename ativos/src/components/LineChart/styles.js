@@ -16,7 +16,7 @@ export const Wrapper = styled.div`
 export const Infos = styled.section`
     font-weight: bold;
     color: #8B8989;
-    font-size: 1rem;
+    font-size: .9rem;
 
     display: flex;
     justify-content: flex-end;

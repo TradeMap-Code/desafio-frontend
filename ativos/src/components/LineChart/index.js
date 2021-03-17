@@ -5,20 +5,22 @@ import * as S from './styles';
 import StarIcon from '@material-ui/icons/Star';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
 
-const LineChart = ({ item }) => {
-    const [favorite, setFavorite] = useState(false);
+let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
+const LineChart = ({ item }) => {
+    const [iconFavorite, setIconFavorite] = useState(item.iconFavorite);    
+    
     const data = {
-        labels: ['','','','','','','','','','','','','','','','','',''],
+        labels: ['','','','','','','','','','','','','','','','', '',''],
         datasets: [
             {
                 label: item.stock,
                 data: item.chart,
-                backgroundColor: ['rgba(75, 192, 192, 0.8)'],
+                backgroundColor: ['rgba(0, 151, 255, .8)'],
             }
         ]
     };
-
+    
     const options = {
         title: {
             display: true,
@@ -27,7 +29,21 @@ const LineChart = ({ item }) => {
     };
 
     const handleFavorite = () => {
-        setFavorite(!favorite);
+        if (item.iconFavorite === false) {
+            setIconFavorite(!iconFavorite)
+            item.iconFavorite = !item.iconFavorite
+            favorites.push(item);
+            localStorage.setItem('favorites', JSON.stringify(favorites));
+        } else {
+           setIconFavorite(!iconFavorite)
+           item.iconFavorite = false;
+           const index = favorites.indexOf(item);
+           console.log(index)
+           if (index > -1) {
+              favorites = favorites.filter(aux => aux.stock !== item.stock);
+           };
+           localStorage.setItem('favorites', JSON.stringify(favorites));
+        };
     };
 
     return (
@@ -40,7 +56,7 @@ const LineChart = ({ item }) => {
                 |
                 <S.PriceAndVariation>{item.price} / {item.variation}%</S.PriceAndVariation>
                 <S.IconFavorite>
-                    {favorite ? <StarIcon color='primary' onClick={handleFavorite} />
+                    {iconFavorite === true ? <StarIcon color='primary' onClick={handleFavorite} />
                     :
                     <StarBorderIcon color='primary' onClick={handleFavorite} />
                     }
