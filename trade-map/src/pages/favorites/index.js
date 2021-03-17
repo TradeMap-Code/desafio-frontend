@@ -13,25 +13,27 @@ const Favorites = () => {
     <div className="container">
       <h1>Favoritos</h1>
       <StockFilter stocks={favourites} page="favourites" />
-      {favourites.map((stock, id) => {
-        return (
-          <Chart
-            key={id}
-            company={stock.company}
-            stock={stock.stock}
-            country={stock.country}
-            price={stock.price}
-            variation={stock.variation}
-            chart={stock.chart}
-            chartLength={stock.chart.length}
-          />
-        );
-      })}
-      {favourites.length === 0 && (
-        <div>
-          <p>Não existe favoritos</p>
-        </div>
-      )}
+      <div className="charts">
+        {favourites.map((stock, id) => {
+          return (
+            <Chart
+              key={id}
+              company={stock.company}
+              stock={stock.stock}
+              country={stock.country}
+              price={stock.price}
+              variation={stock.variation}
+              chart={stock.chart}
+              chartLength={stock.chart.length}
+            />
+          );
+        })}
+        {favourites.length === 0 && (
+          <div>
+            <p>Não existe favoritos</p>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
