@@ -5,7 +5,7 @@ import Card from '../components/Card'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
-export default function index() {
+export default function favorite() {
   console.log(stocks)
   return (
     
@@ -16,10 +16,7 @@ export default function index() {
     </div>
 
     <div className="CardContainer">
-     
-      {stocks.map((stock,key) =><Card key={key} stock={stock}/>)}
-      {/* {stocks.map((stock,key) =><FavoriteSelect key={key} stock={stock}/>)} ) */}
-      {/* {stocks.map((stock,key) =><Chart key={key} stock={stock} />)} */}
+        <Card/>
     </div>
 
     <div>

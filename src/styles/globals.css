@@ -32,7 +32,7 @@ a {
   transition: 0.3s;
   width: 200px;
   height: 380px;
-  margin: 20px;
+  margin: 37px;
   background-color: var(--bg-color);
   color: var(--text-color);
   border: 3xp solid;
@@ -59,6 +59,38 @@ a {
 .Checkbox {
   margin: .4rem;
 }
+
+.NavBar{
+  font-family: 'ABeeZee', sans-serif;
+  background-color: var(--bg-color);
+  color: var( --text2-color);
+  font-size: 30px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex-flow: wrap;
+  width: 100%;
+  height: auto;
+  position: fixed;
+}
+
+.aNavBar{
+  margin: 3px 20px;
+}
+
+.Footer{
+  background-color: var(--bg-color);
+  color: var( --text2-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-flow: wrap;
+  margin: auto 0px 0px 0px;
+  width: 100%;
+  height: auto;
+}
+
 
 :root {
   --bg-color: rgb(20,20,20);
