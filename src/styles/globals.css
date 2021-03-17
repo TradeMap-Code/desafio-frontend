@@ -47,6 +47,18 @@ a {
   font-size: 20px; 
   color: var(--text2-color);
 }
+.CardFavorite{
+  font-size: 20px; 
+  color: var(--details-color2);
+}
+
+.Label {
+  font: 1rem 'Fira Sans', sans-serif;
+}
+
+.Checkbox {
+  margin: .4rem;
+}
 
 :root {
   --bg-color: rgb(20,20,20);
