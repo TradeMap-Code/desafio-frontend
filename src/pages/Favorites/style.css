@@ -1,0 +1,8 @@
+.favorites__content .header__content {
+    margin-bottom: 100px;
+}
+
+.favorites__content h1 {
+    font-family: var(--font);
+    text-align: center;
+}

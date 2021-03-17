@@ -1,0 +1,16 @@
+.table__content tbody tr button {
+    padding: 5px 10px;
+    background-color: var(--bgChart);
+    color: var(--text-color-primary);
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+    transition: all ease-in 0.2s;
+}
+  
+.table__content tbody tr button:hover {
+    background-color: var(--text-color-primary);
+    color: var(--black);
+}
