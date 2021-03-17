@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=ABeeZee&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=ABeeZee&display=swap");
 
 html,
 body {
@@ -43,27 +43,27 @@ a {
   text-align: center;
 }
 
-.CardSubtext{
-  font-size: 20px; 
+.CardSubtext {
+  font-size: 20px;
   color: var(--text2-color);
 }
-.CardFavorite{
-  font-size: 20px; 
+.CardFavorite {
+  font-size: 20px;
   color: var(--details-color2);
 }
 
 .Label {
-  font: 1rem 'Fira Sans', sans-serif;
+  font: 1rem "Fira Sans", sans-serif;
 }
 
 .Checkbox {
-  margin: .4rem;
+  margin: 0.4rem;
 }
 
-.NavBar{
-  font-family: 'ABeeZee', sans-serif;
+.NavBarContainer {
+  font-family: "ABeeZee", sans-serif;
   background-color: var(--bg-color);
-  color: var( --text2-color);
+  color: var(--text2-color);
   font-size: 30px;
   margin: auto;
   display: flex;
@@ -75,79 +75,77 @@ a {
   position: fixed;
 }
 
-.aNavBar{
+.NavBar2 {
   margin: 3px 20px;
 }
 
-.Footer{
+.Footer {
   background-color: var(--bg-color);
-  color: var( --text2-color);
+  color: var(--text2-color);
   display: flex;
   flex-direction: column;
   justify-content: center;
   flex-flow: wrap;
-  margin: auto 0px 0px 0px;
+  margin: 3px 0px 0px 0px;
   width: 100%;
   height: auto;
+  position: fixed;
+  bottom: 0;
 }
-
 
 :root {
-  --bg-color: rgb(20,20,20);
-  --bg2-color: rgb(120,220,181);
-  --details-color: rgb(97,152,63);
-  --details-color2: rgb(130,230,187);
-  --sub-menus: rgb(125,210,138);
-  --text-color: rgb(0,120,130);
-  --text2-color: rgb(101,160,66);
+  --bg-color: rgb(20, 20, 20);
+  --bg2-color: rgb(120, 220, 181);
+  --details-color: rgb(97, 152, 63);
+  --details-color2: rgb(130, 230, 187);
+  --sub-menus: rgb(125, 210, 138);
+  --text-color: rgb(0, 120, 130);
+  --text2-color: rgb(101, 160, 66);
 }
-
-
 
 /* Responsive media */
-@media screen and (max-width:1200px){
+@media screen and (max-width: 1200px) {
   .Card {
-      width: 40%;
+    width: 40%;
   }
 }
 
-@media screen and (max-width:600px){
+@media screen and (max-width: 600px) {
   .Card {
-      width: 40%;
+    width: 40%;
   }
 }
 
-
-@media (max-width:750px){
+@media (max-width: 750px) {
   main {
-      background-image: none;
+    background-image: none;
   }
 
   .section-body {
-      background: rgba(17, 13, 29);
-      margin: 5% auto;
-      padding: 1% 3% 3% 3%;
+    background: rgba(17, 13, 29);
+    margin: 5% auto;
+    padding: 1% 3% 3% 3%;
   }
-  
+
   .carousel-inner {
-      border-bottom: white 0px solid;
+    border-bottom: white 0px solid;
   }
 
   .video-frame {
-      border: 2px solid white;
-      width: 100%;
-      height: 300px;
-  }
-}
-
-@media (max-width: 500px){
-  .video-frame {
-      height: 200px;
+    border: 2px solid white;
+    width: 100%;
+    height: 300px;
   }
 }
 
-@media (min-width: 1500px){
+@media (max-width: 500px) {
   .video-frame {
-      height: 600px;
+    height: 200px;
+  }
+}
+
+@media (min-width: 1500px) {
+  .video-frame {
+    height: 600px;
   }
 }

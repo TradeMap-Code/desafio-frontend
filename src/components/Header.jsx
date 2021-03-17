@@ -1,18 +1,24 @@
-import React from 'react'
+import React from "react";
+
+import Link from "next/link";
 
 export default function Header() {
-
-    return (
-        <section>
-            <div className="NavBar">
-            <nav>
-                <div>
-                    <a href="index.js" className="aNavBar"><strong>Lista</strong></a>
-                    <a href="favorit.js" className="aNavBar"><strong>Favoritos</strong></a>
-                </div>
-            </nav>
-            </div>
-                
-        </section>
-    )
+  return (
+    <section>
+      <div className="NavBarContainer">
+        <nav>
+          <div>
+            <Link href="/">
+              <a className="NavBar2">
+                <strong>Lista</strong>
+              </a>
+            </Link>
+            <a href="/favorite" className="NavBar2">
+              <strong>Favoritos</strong>
+            </a>
+          </div>
+        </nav>
+      </div>
+    </section>
+  );
 }
