@@ -1,0 +1,39 @@
+
+
+.container {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 600px));
+    grid-gap: 20px;
+    place-content: center;
+    margin-top: 40px;
+    margin-bottom: 48px;
+
+    & > * {
+
+        border-radius: 8px;
+        box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+
+    };
+
+    div {
+
+        padding-top: 20px;
+        padding-left: 20px;
+    }
+};
+
+
+.icon {
+
+    font-size: 24px;
+    color: #ffe227;
+}
+
+
+.logo {
+
+    padding-left: 24px;
+    font-size: 32px;
+    color: #00C7FF;
+};
