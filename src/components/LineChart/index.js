@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import Information from "../Information";
-import Chart from "react-apexcharts";
 import { FiArrowDown, FiArrowUp } from "react-icons/fi";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
+import Information from "../Information";
+import Chart from "react-apexcharts";
 import "./style.css";
 
 function LineChart({ stocks, favorites, setFavorites }) {
@@ -17,9 +17,9 @@ function LineChart({ stocks, favorites, setFavorites }) {
         const active = stocks.filter((item) => {
             return item.stock === selectValue;
         });
-
         stocks = active;
         setDataTable(stocks);
+
     }, [selectValue, stocks]);
 
     useEffect(() => {
@@ -67,33 +67,8 @@ function LineChart({ stocks, favorites, setFavorites }) {
                     },
                 ],
             });
-        }
+        };
     }, [selectValue, stocks]);
-
-    function handleOrderPrice() {
-        setPrice(!price);
-        if (price === true) {
-            stocks.sort((a, b) => b.price - a.price);
-        } else {
-            stocks.sort((a, b) => a.price - b.price);
-        }
-
-        setSelectValue(stocks[0].stock);
-        setDataTable(stocks);
-    }
-
-    function handleOrderVariation() {
-        setVariation(!variation);
-
-        if (variation === true) {
-            stocks.sort((a, b) => b.variation - a.variation);
-        } else {
-            stocks.sort((a, b) => a.variation - b.variation);
-        }
-
-        setSelectValue(stocks[0].stock);
-        setDataTable(stocks);
-    }
 
     useEffect(() => {
         if (favorites.filter((obj) => obj.stock === selectValue).length > 0) {
@@ -111,6 +86,31 @@ function LineChart({ stocks, favorites, setFavorites }) {
             setCurrentIsFav(true);
             setFavorites([...favorites, dataTable[0]]);
         };
+    };
+
+    function handleOrderPrice() {
+        setPrice(!price);
+        if (price === true) {
+            stocks.sort((a, b) => b.price - a.price);
+        } else {
+            stocks.sort((a, b) => a.price - b.price);
+        };
+
+        setSelectValue(stocks[0].stock);
+        setDataTable(stocks);
+    };
+
+    function handleOrderVariation() {
+        setVariation(!variation);
+
+        if (variation === true) {
+            stocks.sort((a, b) => b.variation - a.variation);
+        } else {
+            stocks.sort((a, b) => a.variation - b.variation);
+        };
+
+        setSelectValue(stocks[0].stock);
+        setDataTable(stocks);
     };
 
     return (
@@ -160,6 +160,6 @@ function LineChart({ stocks, favorites, setFavorites }) {
             </button>
         </div>
     );
-}
+};
 
 export default LineChart;

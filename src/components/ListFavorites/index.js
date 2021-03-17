@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { FiArrowDown, FiArrowUp } from "react-icons/fi";
 import './style.css';
 
@@ -28,10 +28,6 @@ function ListFavorites({ favorites, setFavorites }) {
     function removeFavorites(active) {
         setFavorites(favorites.filter((fav) => fav.stock !== active));
     };
-
-    useEffect(() => {
-        console.log("Teste: ", favorites);
-    }, [favorites]);
 
     return (
         <div className="table__content">

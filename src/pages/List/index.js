@@ -13,7 +13,7 @@ function List() {
         <div className="list">
             <Header />
             <div className="list__container">
-                <LineChart favorites={global.favorites} setFavorites={global.setFavorites} stocks={data} />
+                <LineChart favorites={global.favorites} setFavorites={global.setFavorites} saveFavorites={global.saveFavorites} setSaveFavorites={global.setSaveFavorites} stocks={data} />
             </div>
         </div>
     );
