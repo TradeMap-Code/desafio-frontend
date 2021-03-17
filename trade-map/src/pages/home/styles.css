@@ -13,6 +13,23 @@
   margin: auto;
 }
 
+.favorites-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  box-shadow: 5px 10px 10px #888888;
+  background: #e47d7d;
+  width: 100%;
+  max-width: 732px;
+  color: red;
+}
+
 @media (min-width: 768px) {
   .charts {
     display: grid;

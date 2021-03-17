@@ -28,12 +28,12 @@ const Favorites = () => {
             />
           );
         })}
-        {favourites.length === 0 && (
-          <div>
-            <p>Não existe favoritos</p>
-          </div>
-        )}
       </div>
+      {favourites.length === 0 && (
+        <div className="favorites-error">
+          <p>Você não possui favoritos</p>
+        </div>
+      )}
     </div>
   );
 };

@@ -28,13 +28,12 @@ const Home = () => {
               />
             );
           })}
-
-        {stocks.length === 0 && (
-          <div>
-            <p>Não existe favoritos</p>
-          </div>
-        )}
       </div>
+      {stocks.length === 0 && (
+        <div className="favorites-error">
+          <p>Você não possui favoritos</p>
+        </div>
+      )}
     </div>
   );
 };
