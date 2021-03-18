@@ -1,0 +1,213 @@
+/*Geral*/
+body {
+  margin: 0;  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;  -moz-osx-font-smoothing: grayscale;  font-size: 18px;  font-family: "Helvetica Neue" sans-serif;
+}
+/*.Botao {
+  float: right; border: none;  padding: 15px 32px;  text-align: center;  text-decoration: none;
+  display: inline-block;  font-size: 16px;  border-radius: 10px;  box-shadow: 0 2px 10px;
+}*/
+.Botao :hover {
+  background: rgb(10, 10, 10);
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+a {
+  text-decoration: none;  font-weight: bold;
+}
+
+.nav a {
+  text-align: center;  padding: 10px 0;  color: rgb(13, 14, 13);  background: rgb(240, 241, 240);
+}
+.header {
+ width: 100%;  box-shadow: 0 2px 10px;  background-color: rgb(237, 243, 236); 
+}
+/*pequeno Smartphones*/
+@media screen and (max-width: 480px) {
+  .header {
+    display: flex;    flex-direction: column;    background-color: rgb(248, 246, 246);    width: 100%;    box-shadow: 0 2px 10px;
+    background-color: rgb(250, 245, 245);    margin: bottom 20px;
+  }
+  .nav {
+    display: none;    flex-direction: column;    order: 2;
+  }
+  .nav a {
+    width: 100%;
+  }
+  .nav a:hover {
+    background: rgb(10, 182, 38);
+  }
+  .buttonMob {
+    float: right;    order: 1;    text-align: right;    padding: 10px 5% 5px 0;
+  }
+  
+  .Logo {
+    float: left;    position: absolute;    
+  }
+  .contato {
+    margin-left: 200px;    float: left;    padding: 15px 5% 10px 20%;    line-height: 20px;    order: 3;    font-size: 15px;
+  }
+  .footer {
+    width: 100%;    height: 100px;    position: absolute;    bottom: 0;    left: 0;    box-shadow: 0 2px 10px;    background-color: rgb(248, 246, 246);
+  }
+}
+.contatosFooter {
+  flex-direction: row;  justify-content: center;  align-items: center;  display: flex;  color: rgb(12, 12, 12);  float: right;  position: relative;
+}
+.LogoFooter {
+  padding-top: 10px;  margin-left: 10px;  display: flex;  float: left;
+}
+.direitosFooter {
+  display: flex;  align-items: center;  margin-left: 40%;  font-size: 15px;  padding-top: inherit;
+}
+.nomeFooter {
+  display: flex;  margin-top: 20%;
+}
+/*Medio Smartphones*/
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .header {
+    display: flex;    flex-direction: column;    width: 100%;    box-shadow: 0 2px 10px;    background-color: rgb(250, 245, 245);
+    margin: bottom 20px;
+  }
+  .nav {
+    display: none;    flex-direction: column;    order: 2;
+  }
+  .nav a {
+    width: 100%;
+  }
+  .nav a:hover {
+    background: rgb(10, 182, 38);
+  }
+  .buttonMob {
+    order: 1;
+    text-align: right;    padding: 5px 5% 5px 0;
+  }
+  .endereço {
+    text-align: center;
+  }
+  .Logo {
+    float: left;    position: absolute;    top: 0%;    left: 5%;    padding: 30px 0 15px 10%;
+  }
+  .contato {
+    margin-left: 200px;    float: left;    padding: 15px 5% 10px 20%;    line-height: 20px;    order: 3;    font-size: 15px;
+  }
+  .footer {
+    display: flex; width: 100%;    height: 100px;    position: absolute;    bottom: 0;    left: 0;    box-shadow: 0 2px 10px;    background-color: rgb(248, 246, 246);
+  }
+}
+.contatosFooter {
+  display: flex;  text-align: center;  color: rgb(12, 12, 12);  float: right;  margin-left: 35%;
+}
+.LogoFooter {
+  padding-top: 10px;  margin-left: 10px;  display: flex;  float: left;
+}
+.direitosFooter {
+  display: flex;  align-items: center;  margin-left: 40%;  padding-top: 60px;  font-size: 15px;
+}
+.nomeFooter {
+  display: flex;  padding-top: 30px;
+}
+/*Largo Smartphones ou pequenos Notebooks*/
+@media screen and (min-width: 769px) and (max-width: 1199px) {
+  .nav {
+    display: flex;
+  }
+  .nav a {
+    width: 25%;
+  }
+  .nav a:hover {
+    background: rgb(10, 182, 38);
+  }
+  .buttonMob {
+    display: none;
+  }
+  .endereço {
+    text-align: center;
+  }
+  .Logo {
+    float: left;    padding: 15px 0 15px 10%;
+  }
+  .contato {
+    font-size: 30px;
+  }
+  .footer {
+    display: flex;    background: rgb(190, 12, 12);    width: 100%;    height: 100px;    position: absolute;    bottom: 0;
+    left: 0;    box-shadow: 0 2px 10px;    background-color: rgb(248, 246, 246);
+  }
+}
+.contatosFooter {
+  display: flex;  text-align: center;  color: rgb(12, 12, 12);  float: right;  margin-left: 35%;
+}
+.LogoFooter {
+  padding-top: 10px;  margin-left: 10px;  display: flex;  float: left;
+}
+.direitosFooter {
+  display: flex;  align-items: center;  margin-left: 40%;  padding-top: 60px;  font-size: 15px;
+}
+.nomeFooter {
+  display: flex;  padding-top: 30px;
+}
+/*Telas largas*/
+@media screen and (min-width: 1200px) {
+  .nav {
+    display: flex;
+  }
+  .nav a {
+    width: 25%;
+  }
+  .nav a:hover {
+    background: rgb(39, 236, 39);
+  }
+  .buttonMob {
+    display: none;
+  }
+  .Home{
+    float:left;
+  font: 100% sans-serif;
+  width: 90%;
+  margin:2%;
+  padding:10px 20px;
+  border: 2px solid rgb(17, 16, 16);
+  }
+  .endereço {
+    text-align: center;
+  }
+  .Logo {
+    float: left;    padding: 10px 0 15px 10%;
+  }
+  .titulo{
+    display: flex;
+  }
+  .contato {
+    font-size: 30px;    margin-left: 1020px;
+  }
+  .footer {
+    display: flex;  width: 100%;    height: 100px;    position: relative;   bottom: 0;
+    left: 0;    box-shadow: 0 2px 10px;    background-color: #f8f6f6;
+  }
+}
+
+.LogoFooter {
+  padding-top: 10px;  margin-left: 10px;  display: flex;  float: left;
+}
+.direitosFooter {
+  display: flex;  align-items: center;  margin-left: 32%;  padding-top: 75px;  font-size: 15px;
+}
+.tituloFooter{
+  display: flex; padding-top: 25px;
+}
+.Contato{
+  display: flex;  width: 50%;  margin: 20px 25%;  flex-direction: column;
+}
+.Contato h1{color:rgb(15, 14, 14); text-align: center; font-size: 30px;}
+.Contato input{margin: 6px 0; height: 40px; }
+.Contato input[type="text"],
+.Contato input[type="tel"],
+.Contato input[type="email"]{  width: 100%; padding: 0 5px; border: 2px solid rgb(17, 16, 16);
+}
+.Contato input[type="submit"]{  background-color: rgb(179, 173, 173);  cursor: pointer;  color: #000;  font-weight: bold;  border: none;
+  border-radius: 5px;  width: 30%; border: 2px solid rgb(17, 16, 16);}
+.Contato textarea{  width: 100%;  height: 150px;  color: rgb(5, 5, 5);  padding: 5px; border: 2px solid rgb(17, 16, 16); }
