@@ -1,0 +1,28 @@
+.sidebar {
+    width: 300px;
+    background-color: var(--color-background-dark);
+    grid-column: 1/2;
+    grid-row: 1/3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .container_filter {
+    min-height: 13vh;
+    display: flex;
+    align-items: center;
+  }
+  
+  .filter {
+    width: 240px;
+    height: 30px;
+    padding: 0 10px;
+    border: none;
+    border-radius: 20px;
+    color: var(--color-text-grey);
+    font-size: 12px;
+    margin: 1vh 0;
+    background-color: var(--color-background-grey);
+  }

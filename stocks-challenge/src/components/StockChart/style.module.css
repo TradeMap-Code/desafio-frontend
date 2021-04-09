@@ -1,0 +1,39 @@
+.stock_information {
+  width: 40%;
+  height: 10%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.stock_name,
+.stock__stock {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--color-text-grey-lighter);
+}
+
+.stock__price {
+  color: var(--color-text-grey-lighter);
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.stock__variation_negative {
+  font-size: 15px;
+  font-weight: bold;
+  color: var(--color-text-negative);
+}
+
+.stock__variation_positive {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--color-text-positive);
+}
+
+.stock_chart {
+  width: 100%;
+  height: 90%;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  background-color: #fff;
+}

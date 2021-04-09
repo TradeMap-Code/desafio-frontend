@@ -1,0 +1,19 @@
+.container {
+  height: 90%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.stocks__exchange {
+  width: 100%;
+  height: 48%;
+  overflow-y: auto;
+}
+
+h2.exchange_title {
+  color: var(--color-text-grey);
+  font-size: 18px;
+  margin-left: 15px;
+}

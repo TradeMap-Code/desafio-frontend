@@ -1,0 +1,25 @@
+.container_chart {
+    width: 100%;
+    grid-row: 2/3;
+    grid-column: 2/3;
+    padding: 3% 5%;
+  }
+  
+  .container_pages {
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5vh;
+  }
+  
+  .pages_item {
+    color: var(--color-text-grey);
+    font-size: 18px;
+    font-weight: bolder;
+    cursor: pointer;
+  }
+  
+  .chart {
+    width: 90%;
+    height: 90%;
+  }

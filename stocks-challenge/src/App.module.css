@@ -1,0 +1,6 @@
+main {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: 13vh 87vh;
+  overflow: hidden;
+}
